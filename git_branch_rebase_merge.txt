@@ -1,0 +1,53 @@
+git branch, rebase & merge
+
+/* find common base for two branches */
+git merge-base <branch A> <branch b>
+
+/* undo rebase */
+reset, rebase and merge all save your original HEAD pointer into ORIG_HEAD
+git reset --hard ORIG_HEAD
+
+/* list branches that contain a certain commit */
+git branch -a --contains <commit>
+
+/* rename branch */
+git branch -m old new
+
+/* merge branch */
+http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging
+git checkout master
+git merge hotfix
+
+/* fast-forward after git fetch */
+git rebase <remote/branch>
+
+/* change commit (non-head) */
+http://stackoverflow.com/questions/1186535/how-to-modify-a-specified-commit
+git rebase <id>^ --interactive
+	change pick <id> to edit <id>
+git add <files_changed>
+git commit --amend
+git rebase --continue
+
+/* list all branches, including remote */
+git branch -a
+
+/* collapse multiple commits into one */
+http://git-scm.com/book/en/Git-Branching-Rebasing
+git rebase -i HEAD~3
+Then change the command from "pick" to "squash" for last two commits
+
+/* git cherry-pick */
+http://technosophos.com/content/git-cherry-picking-move-small-code-patches-across-branches
+git cherry-pick <commit>
+
+/* branching and merging */
+http://olex.openlogic.com/wazi/2011/git-tutorial-branching-and-merging/
+git branch: list the current branches of the project.
+git branch -d BranchName: delete the named branch (use -D to force the delete even if data will be lost).
+git checkout BranchName: update the current working directory to match, and work on, BranchName. 
+git checkout -b BranchName will create the branch at the same time as it checks it out.
+git merge BranchName
+git rebase BranchName
+git stash
+git reflog show master

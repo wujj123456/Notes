@@ -1,0 +1,10 @@
+mogrify
+
+http://www.smokinglinux.com/tutorials/howto-batch-image-resize-on-linux
+
+/* Batch Image Resize */
+mogrify -resize 640 *.jpg
+mogrify -resize 640×480! *.jpg
+
+/* Batch rotate images (degree clockwise) */
+mogrify -rotate 90 *.JPG

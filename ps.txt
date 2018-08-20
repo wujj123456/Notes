@@ -1,0 +1,20 @@
+ps
+
+/* show all processes */
+ps -e
+ps aux
+
+/* show all processes with CPU */
+ps -eF
+
+/* show nice */
+ps -el
+
+/* show customized columns */
+ps -eo state,uid,pid,ppid,rtprio,time,comm
+
+/* get parent pid of a process */
+ps -o ppid= -p <pid>
+
+/* show threads of a process */
+ps -T -p <pid>

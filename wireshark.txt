@@ -1,0 +1,19 @@
+wireshark
+
+/* no sudo capture */
+http://wiki.wireshark.org/CaptureSetup/CapturePrivileges
+
+1. Create user "wireshark" in group "wireshark".
+2. chgrp wireshark /usr/bin/dumpcap
+3. chmod 754 /usr/bin/dumpcap
+4. setcap 'CAP_NET_RAW+eip CAP_NET_ADMIN+eip' /usr/bin/dumpcap
+5. Ensure Wireshak works only from root and from a user in the "wireshark" group 
+
+/* TCP Graph */
+Statistics -> TCP Stream Graph -> Round Trip Time Graph
+
+/* wireless capture */
+http://wiki.wireshark.org/CaptureSetup/WLAN#Data_Packets
+iw dev wlan0 interface add mon0 type monitor
+ifconfig mon0 up
+iw dev mon0 interface del

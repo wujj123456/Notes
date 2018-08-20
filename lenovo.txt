@@ -1,0 +1,7 @@
+Lenovo
+
+/* Flash bios from CD */
+https://forums.lenovo.com/t5/Linux-Discussion-Knowledge-Base/Updating-the-BIOS-via-USB-X220-s-running-Linux/ta-p/674677
+
+geteltorito.pl 8duj10uc.iso > biosupdate.img
+sudo dd if=biosupdate.img of=/dev/usbthumdrive bs=512K

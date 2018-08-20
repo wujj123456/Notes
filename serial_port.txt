@@ -1,0 +1,12 @@
+Serial Port
+
+http://www.cyberciti.biz/faq/find-out-linux-serial-ports-with-setserial/
+dmesg | grep tty
+setserial -g /dev/ttyS[0123]
+
+/* picocom */
+picocom -b 115200 -e o /dev/ttyUSB0
+(Press ^O^Q to exit)
+
+/* redirect to a file */
+(stty raw; cat | tee received.txt) < /dev/ttyUSB0

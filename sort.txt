@@ -1,0 +1,7 @@
+sort
+
+/* force case sensitive */
+LC_COLLATE=C sort
+
+/* uniq */
+sort -u

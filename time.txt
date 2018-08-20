@@ -1,0 +1,14 @@
+time
+
+man time
+
+/usr/bin/time -f "%E real,%U user,%S sys" ls -Fs
+
+Note: bash has a built-in time command that provides less functionality than the real time command. 
+
+/* bash time format */
+TIMEFORMAT=%R
+
+/* bash get time */
+http://mywiki.wooledge.org/BashFAQ/032
+TIME=$((time ./dod 2 > /dev/null 2>&1) 2>&1)

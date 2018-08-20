@@ -1,0 +1,5 @@
+hddtemp
+
+/* let non-root use hddtemp */
+https://bugs.launchpad.net/ubuntu/+source/hddtemp/+bug/228306
+sudo chmod u+s /usr/sbin/hddtemp

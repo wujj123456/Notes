@@ -1,0 +1,13 @@
+~/.inputrc
+
+readline-based tool will honor this file
+
+/* use vi mode for command line */
+set editing-mode vi
+
+/* use arrow keys for reverse search */
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+/* enable ^C-w for command line */
+"\C-w": backward-delete-word

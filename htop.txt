@@ -1,0 +1,8 @@
+htop
+
+/* color meaning */
+http://serverfault.com/questions/180711/what-exactly-do-the-colors-in-htop-status-bars-mean
+Hit 'h' for help
+
+/* select columns, change CPU number, etc */
+F2 -> Columns

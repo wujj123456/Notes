@@ -1,0 +1,16 @@
+git
+
+http://www.openlogic.com/wazi/bid/268619/Git-tips-and-tricks
+
+/* save space */
+git repack -da
+
+/* ignore/exclude certain files */
+http://book.git-scm.com/4_ignoring_files.html
+create .gitignore in the top level of your working directory
+
+Sub-division:
+git config
+git remote
+git local operations
+git branch, rebase & merge

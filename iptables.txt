@@ -1,0 +1,29 @@
+iptables
+
+/* rate limit */
+https://lwn.net/Articles/704292/
+The following lines of iptables commands log and reject the fourth and subsequent new connections in a rolling 60-second window:
+    iptables -A INPUT -p tcp -m state --state NEW --dport 22 -m recent --name sshrate --set
+    iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --name sshrate --rcheck --seconds 60 --hitcount 4 -j LOG  --log-prefix "SSH REJECT: "
+    iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --name sshrate --rcheck --seconds 60 --hitcount 4 -j REJECT --reject-with tcp-reset
+
+/* save & restore iptables */
+iptables-save > /root/dsl.fw
+iptables-restore < /root/dsl.fw
+Add to vim /etc/rc.local
+Or
+use package iptables-persistent
+
+/* list current entries */
+iptables -L
+
+/* Redirect all traffic from one port to another */
+iptables -t nat -A PREROUTING -p tcp --dport 570 -j REDIRECT --to-ports 22
+iptables -t nat -A PREROUTING -p udp --dport 570 -j REDIRECT --to-ports 22
+
+/* use ipt_recent module to limit connection */
+The following iptables commands allow only three connections per minute per host, using the ipt_recent module.
+export _SSH_PORT="2022"
+iptables -A INPUT -p tcp --dport $_SSH_PORT -m state --state NEW -m recent --set --name ssh_bf -j ACCEPT
+iptables -A INPUT -p tcp --dport $_SSH_PORT -m recent --update --seconds 60 --hitcount 4 --rttl --name ssh_bf -j LOG --log-prefix "firewall; ssh_bf: "
+iptables -A INPUT -p tcp --dport $_SSH_PORT -m recent --update --seconds 60 --hitcount 4 --rttl --name ssh_bf -j DROP

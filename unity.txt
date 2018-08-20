@@ -1,0 +1,54 @@
+Unity
+
+/* disable unity file/music/video lens/search */
+apt-get remove unity-lens-music unity-lens-video unity-lens-files
+
+/* disable user name menu on panel */
+/* disable user switching menu on panel */
+http://askubuntu.com/questions/87649/dont-display-user-name-in-panel
+gsettings set com.canonical.indicator.session show-real-name-on-panel false
+gsettings set com.canonical.indicator.session user-show-menu false
+
+/* change launch bar size/width */
+http://www.ubuntugeek.com/how-to-change-unity-launcher-bar-size-on-ubuntu-11-04natty.html
+ccsm -> Ubuntu Unity Plugin
+
+/* show date in indicator */
+http://askubuntu.com/questions/129985/how-to-make-the-date-appear-next-to-the-time-indicator-in-gnome-classic
+apt-get install dconf-tools
+dconf-editor -> com -> canonical -> indicator -> datetime
+
+/* indicators */
+indicator-weather
+
+/* multi-monitor: cross over pressure and delay */
+gconf-editor
+/apps/compiz-1/plugins/unityshell/screen0/options/overcome_pressure
+/apps/compiz-1/plugins/unityshell/screen0/options/stop_velocity
+
+/* multi-monitor: launcher only on one monitor */
+Displays -> Launcher placement
+
+/* shortcuts */
+http://www.howtogeek.com/113330/how-to-master-ubuntus-unity-desktop-8-things-you-need-to-know/
+Super: Long press to show shortcut help
+Alt+Tab: wait a while to switch inside an application
+Alt+`: switch inside an application
+Super+Tab: switch from launcher
+Super+W: show all applications
+
+/* How to display Computer,Home,Network,Trash and Mounted volumes icons */
+http://www.ubuntugeek.com/hhow-to-display-computerhomenetworktrash-and-mounted-volumes-icons-on-ubuntu-12-04-precise-desktop.html
+
+/* sysmonitor indicator */
+http://www.webupd8.org/2011/05/how-to-display-network-upload-download.html
+
+/* sensor indicator */
+http://askubuntu.com/questions/66624/how-do-i-get-sensors-applet-working
+psensor
+
+OR
+
+sudo add-apt-repository ppa:alexmurray/indicator-sensors
+sudo apt-get update
+sudo apt-get install indicator-sensors

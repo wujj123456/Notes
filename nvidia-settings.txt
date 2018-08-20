@@ -1,0 +1,19 @@
+nvidia-settings
+
+/* Error: Could not apply the stored configuration for monitors */
+http://askubuntu.com/questions/23869/could-not-apply-the-stored-configuration-for-the-monitor
+Remove ~/.config/monitors.xml
+
+/* Enable fan speed control in Nvidia control panel */
+http://ubuntuforums.org/showthread.php?t=1678374
+vim /etc/X11/xorg.conf
+add
+	Option "Coolbits" "4"
+in
+	Section "Device"
+
+/* query and set fan speed in command line */
+http://askubuntu.com/questions/117465/coolbits-not-working
+http://en.gentoo-wiki.com/wiki/Nvidia#Manual_Fan_Control_for_nVIDIA_Settings
+nvidia-settings -q fans
+nvidia-settings -a [fan:0]/GPUCurrentFanSpeed=80

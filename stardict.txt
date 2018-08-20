@@ -1,0 +1,14 @@
+stardict
+
+http://yeelou.com/huzheng/stardict-dic/
+
+牛津现代英汉双解词典
+cedict-gb dictionary(zh_CN - en)
+langdao-ec-gb dictionary(en - zh_CN) 朗道英汉字典
+langdao-ce-gb dictionary(zh_CN - en) 朗道汉英字典
+金山词霸2007
+	美国传统词典[双解]
+	现代英汉综合大辞典
+	英汉双解计算机词典
+
+for i in `ls *.tar.bz2`; do tar -xjvf $i; mv ${i%.tar.bz2} /usr/share/stardict/dic; done

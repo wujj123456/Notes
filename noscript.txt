@@ -1,0 +1,18 @@
+NoScript
+
+/* Switch to full domain */
+Appearance -> Full Domains
+
+/* Airdroid ABE */
+http://forum.airdroid.com/discussion/551/airdroid-vs-noscript-with-abe-enabled/p1
+Copy to SYSTEM ruleset
+# Prevent Internet sites from requesting LAN resources.
+Site LOCAL
+Accept from LOCAL
+Accept GET from *192.168.1.*
+Accept GET from *web.airdroid.com*
+Deny
+
+/* wildcard */
+http://noscript.net/features#sitematching
+192.168

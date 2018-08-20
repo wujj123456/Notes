@@ -1,0 +1,22 @@
+svn
+
+http://wiki.greenstone.org/wiki/index.php/Useful_SVN_Commands
+
+/* git show equivalent, show last commit */
+svn diff -rPREV
+
+/* remove before commit */
+svn rm --keep-local <file>
+
+/* ssh checkout */
+svn checkout http://encfs.googlecode.com/svn/trunk/ encfs-read-only
+svn co svn+ssh://
+
+/* change to a specific version */
+svn up -r74
+
+/* commit */
+svn ci -m "message"
+
+/* add file */
+svn add <file|dir>

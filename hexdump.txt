@@ -1,0 +1,15 @@
+hexdump
+
+http://zagaeski.devio.us/0006.html
+http://256.com/gray/docs/misc/hexdump_manual_how_to.html
+
+/* Display files in hex */
+hexdump <file>
+
+/* hexdump into C array format */
+hexdump -v -e '8/1 "0x%02x, " "\n"' <file>
+
+/* dump into xxd format */
+hexdump -v -e '16/1 "%02x " "\n"'
+Revert back to binary using:
+xxd -r -p

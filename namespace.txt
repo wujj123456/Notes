@@ -1,0 +1,7 @@
+namespace
+
+/* Find the pid inside chroot from host */
+cat /proc/<pid>/status | grep NSpid
+
+/* list all namespaces */
+lsns

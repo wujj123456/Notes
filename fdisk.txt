@@ -1,0 +1,4 @@
+fdisk
+
+/* partition information */
+fdisk -l /dev/hdb

@@ -1,0 +1,21 @@
+atop
+
+/* atopsar: capture atop output */
+atopsar -C 1 1
+atopsar -b 16:00 -e 16:00 -c
+
+/* read log file */
+atop -r <file>
+
+/* navigate log file */
+t: forward
+T: rewind
+
+/* begin time stamp */
+-b HH:mm
+
+/* tutorial */
+http://lwn.net/Articles/387202/
+
+/* configuration */
+/etc/default/atop

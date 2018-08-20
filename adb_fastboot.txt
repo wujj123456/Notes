@@ -1,0 +1,30 @@
+adb/fastboot
+
+/* wake up from adb */
+adb shell input keyevent 26
+
+/* unlock from adb */
+adb shell input keyevent 82
+
+/* back */
+adb shell input keyevent 4
+
+/* tap event */
+adb shell input tap <x> <y>
+
+/* open camera app from adb */
+adb shell am start -n com.android.gallery3d/com.android.camera.Camera
+
+/* reboot to fastboot */
+adb reboot bootloader
+
+/* restart adb server */
+sudo adb kill-server
+sudo adb start-server
+
+/* continue */
+fastboot continue
+
+/* flash */
+fastboot flash <section> <image>
+boot, cache, aboot (emmc_appboot.mbn), persist, recovery, userdata, system

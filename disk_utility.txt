@@ -1,0 +1,15 @@
+Disk Utility
+
+/* Ubuntu default disk utility */
+/usr/bin/palimpsest
+
+/* SMART command line */
+smartmontools
+smartctl -a /dev/sda
+
+/* recover files in ntfs */
+http://www.howtogeek.com/howto/13706/recover-deleted-files-on-an-ntfs-hard-drive-from-a-ubuntu-live-cd/
+ntfsundelete
+
+/* recover files in ext* */
+extundelete

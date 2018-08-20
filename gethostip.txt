@@ -1,0 +1,5 @@
+gethostip
+
+converts the given hostname or IP address into a variety formats
+
+gethostip -d <domainname>

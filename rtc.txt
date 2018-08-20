@@ -1,0 +1,26 @@
+rtc
+
+/* Wake Up Linux With an RTC Alarm Clock */
+https://www.linux.com/learn/docs/672849-wake-up-linux-with-an-rtc-alarm-clock/
+
+1. Turn off BIOS wake up
+2. Check kernel support
+$ grep -i rtc /boot/config-3.2.0-23-generic 
+CONFIG_HPET_EMULATE_RTC=y 
+CONFIG_PM_TRACE_RTC=y 
+CONFIG_RTC_LIB=y 
+CONFIG_RTC_CLASS=y 
+CONFIG_RTC_HCTOSYS=y 
+CONFIG_RTC_HCTOSYS_DEVICE="rtc0" 
+[...]
+or
+# grep -i rtc /var/log/messages 
+$ grep -i rtc /var/log/kern.log
+
+3. simple wakeup test
+cat /sys/class/rtc/rtc0/wakealarm
+No value returned means no alarms are set.
+
+$ sudo sh -c "echo 0 > /sys/class/rtc/rtc0/wakealarm" 
+$ sudo sh -c "echo `date '+%s' -d '+ 3 minutes'` > /sys/class/rtc/rtc0/wakealarm"
+These two commands reset the alarm to zero, and then set a wakeup alarm three minutes in the future:

@@ -1,0 +1,14 @@
+mencoder
+
+/* join/merge/concatenate videos */
+mencoder file1.avi file2.avi -ovc copy -oac copy -o output.avi
+Or
+mencoder file1.mp4 file2.mp4 -ovc copy -oac pcm -o output.mp4
+
+/* generate MJPEG from BMP files */
+File format: (m char)+(n digit).bmp
+mencoder "mf:///dev/shm/*.bmp" -mf fps=30 -ovc lavc -lavcopts vcodec=mjpeg -oac copy -o /dev/shm/II_mjpeg.avi
+
+/* high quality MJPEG */
+http://www.ps3mediaserver.org/forum/viewtopic.php?f=2&t=4930
+mencoder "mf:///dev/shm/*.bmp" -mf fps=25 -ovc lavc -lavcopts vcodec=mjpeg:vqscale=0:keyint=1 -oac copy -o II_mjpeg.avi

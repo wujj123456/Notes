@@ -1,0 +1,7 @@
+mount
+
+/* mount iso */
+sudo mount file.iso /media/iso -t iso9660 -o loop
+
+/* FUSE umount */
+fusermount -u /partition

@@ -1,0 +1,7 @@
+uniq
+
+/* remove adjacent duplicate text lines */
+sort file-name | uniq
+
+/* remove duplicate lines without sorting */
+awk ' !x[$0]++' file3

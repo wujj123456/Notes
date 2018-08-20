@@ -1,0 +1,7 @@
+Battery
+
+acpi -b
+cat /proc/acpi/battery/BAT0/state
+cat /proc/acpi/battery/BAT0/info
+
+cat /sys/devices/platform/smapi/BAT0/*

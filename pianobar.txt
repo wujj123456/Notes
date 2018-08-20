@@ -1,0 +1,9 @@
+pianobar
+
+http://redkrieg.com/2011/01/02/pianobar-an-open-source-pandora-client/
+https://github.com/PromyLOPh/pianobar/blob/master/contrib/eventcmd-examples/eventcmd.sh
+
+/usr/bin/pianobar-notify
+~/.config/pianobar/config
+user = <email>
+password = <plaintext password>

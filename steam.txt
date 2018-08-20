@@ -1,0 +1,38 @@
+Steam
+
+/* change chat font size */
+https://gaming.stackexchange.com/questions/116537/how-do-i-adjust-steam-chat-font-sizes
+steam.styles -> search friends_chat_*
+
+/* enable console */
+steam.exe -console
+
+/* console commands */
+license_print
+
+/* Flash player on 64-bit for Linux */
+http://steamcommunity.com/app/221410/discussions/0/882965239653368215/
+Download 32-bit Linux Flash:
+https://get.adobe.com/flashplayer/completion/?installer=Flash_Player_11.2_for_other_Linux_(.tar.gz)_32-bit
+Extract to:
+~/.local/share/Steam/ubuntu12_32/plugins/
+
+/* local download cache */
+# install docker
+sudo curl -sSL https://get.docker.com/ | sh
+# setup data directory
+sudo mkdir -p /srv/steamcache/data
+sudo chmod -R 777 /srv/steamcache/data
+# steam cache docker image
+sudo docker run --name steamcache --restart=always -d -v /srv/steamcache/data:/data/cache -p 80:80 steamcache/steamcache:latest
+# dnsmasq config on router
+address=/.cs.steampowered.com/192.168.32.21
+address=/content1.steampowered.com/192.168.32.21
+address=/content2.steampowered.com/192.168.32.21
+address=/content3.steampowered.com/192.168.32.21
+address=/content4.steampowered.com/192.168.32.21
+address=/content5.steampowered.com/192.168.32.21
+address=/content6.steampowered.com/192.168.32.21
+address=/content7.steampowered.com/192.168.32.21
+address=/content8.steampowered.com/192.168.32.21
+address=/steamcontent.com/192.168.32.21

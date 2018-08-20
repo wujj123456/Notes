@@ -1,0 +1,9 @@
+affinity
+
+http://www.cyberciti.biz/tips/setting-processor-affinity-certain-task-or-process.html
+
+taskset 0x00000001 -p 13545
+0x00000003 is processors #0 and #1
+
+# taskset -c 1 -p 13545
+# taskset -c 3,4 -p 13545

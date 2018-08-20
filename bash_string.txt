@@ -1,0 +1,23 @@
+bash string
+
+http://tldp.org/LDP/abs/html/string-manipulation.html
+
+/* check/match substring */
+http://stackoverflow.com/questions/229551/string-contains-in-bash
+string='My string';
+if [[ "$string" == *My* ]]
+then
+  echo "It's there!";
+fi
+
+/* Extracts $length characters from $string starting at $position */
+echo `expr substr $stringZ 1 2`
+echo ${stringZ:7:3}
+
+/* convert string to number */
+number=$((str))
+
+/* regex expression */
+if [[ $chgnum =~ [0-9]+/ ]]; then
+	...
+fi

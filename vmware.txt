@@ -1,0 +1,4 @@
+vmware
+
+/* uninstall on Linux */
+vmware-installer -u vmware-player

@@ -1,0 +1,22 @@
+ipmitool/BMC/DCMI/IPMI
+
+/* default username and password for SV7210 */
+-U USERID -P PASSW0RD
+
+/* IPMIv2 over LAN */
+ipmitool -I lanplus -H 192.168.32.22 -U <username> -P <password> <command>
+
+/* list user */
+user list 1
+
+/* check chasis power status */
+chassis power status
+
+/* hard power reset */
+chassis power reset
+
+/* activate SoL (Serial over LAN) */
+sol activate
+
+/* deactivate */
+sol deactivate

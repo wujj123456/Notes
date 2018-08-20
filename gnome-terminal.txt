@@ -1,0 +1,12 @@
+gnome-terminal
+
+/* start in specific directory */
+gnome-terminal --working-directory <dir>
+
+/* clear current terminal */
+reset
+
+/* shortcut */
+Ctrl + A = Move cursor to beginning of line
+Ctrl + E = Move cursor to end of line
+Ctrl + Shift + T = new tab

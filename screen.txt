@@ -1,0 +1,55 @@
+screen
+
+http://www.math.utah.edu/docs/info/screen_toc.html
+
+/* change scrollback */
+echo defscrollback 30000 >> ~/.screenrc
+
+/* vertical split */
+^a, |
+
+/* switch between panes */
+^a, TAB
+
+/* remove current pane */
+^a, :remove
+
+/* enter command */
+^a, :
+
+/* change session name */
+command: sessionname
+
+/* change windows title (rename) */
+^a, A
+
+/* Reattach to a screen, detach if necessary */
+screen -d -r <name>
+
+/* scroll (copy mode) */
+http://web.mit.edu/gnu/doc/html/screen_11.html
+^a, [
+copy: space, select, space
+Y: copy whole line
+y: mark beginning of line
+paste: ^a, ]
+search next: /pattern
+search prev: ?pattern
+
+/* keep a log */
+^a, H
+
+/* windows management */
+^a, c: create a new windows
+^a, p: previous window
+^a, n: next window
+^a, 0-9: quick window switch
+
+/* launch background job */
+screen -d -m -L bash -c "command"
+
+/* better screen */
+byobu
+
+/* change buffer history size */
+screen -h 10000

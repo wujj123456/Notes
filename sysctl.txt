@@ -1,0 +1,6 @@
+sysctl
+
+/* swap aggressiveness */
+Query: sysctl -q vm.swappiness
+Change: sysctl vm.swappiness=1
+Permanent change: /etc/sysctl.conf

@@ -1,0 +1,10 @@
+KernelCheck
+
+http://ubuntuforums.org/showthread.php?t=618563&highlight=KernelCheck
+
+NOTE: Check kernel version!
+
+bzr branch lp:kernelcheck
+cd kernelcheck
+sudo python setup.py install
+sudo kernelcheck

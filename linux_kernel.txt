@@ -1,0 +1,25 @@
+Linux Kernel
+
+/* kernel parameters */
+maxcpus=1
+debug
+ddebug_query="file file.c +p"
+
+/* Kbuild */
+http://www.linuxjournal.com/content/kbuild-linux-kernel-build-system
+
+/* online kernel source browser */
+http://lxr.free-electrons.com/
+
+/* install kernel */
+make oldconfig/menuconfig
+make
+sudo make modules_install
+sudo make install
+
+/* manually remove a kernel */
+/boot/
+/lib/modules/
+update-grub
+/var/lib/dkms/*/
+/var/lib/initramfs-tools/

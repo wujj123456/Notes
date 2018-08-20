@@ -1,0 +1,62 @@
+PyCrypto
+
+/* prebuilt package for Windows */
+http://www.voidspace.org.uk/downloads/pycrypto26/
+
+/* compile and run in Ubuntu */
+apt-get install python-dev
+
+/* compile and run in Windows (Python 2.7) */
+http://blog.victorjabur.com/2011/06/05/compiling-python-2-7-modules-on-windows-32-and-64-using-msvc-2008-express/
+
+1) Python 64 bit
+
+2) Microsoft Visual C++ Express Editon 2008
+
+3) Microsoft Windows SDK for Windows 7 and .NET Framework 3.5 SP1
+http://www.microsoft.com/downloads/en/details.aspx?FamilyID=c17ba869-9671-4330-a63e-1fd44e0e2505
+
+4) Install Python setup tools
+http://pypi.python.org/pypi/setuptools#downloads
+
+5) Append to environmental variable "Path"
+D:\Python27\Scripts;D:\Python27
+
+6) Copy
+C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin\vcvars64.bat
+to
+C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin\amd64\vcvarsamd64.bat
+
+7) Edit the file msvc9compiler.py inside of directory C:\Python27\Lib\distutils\msvc9compiler.py
+After the line 683 approximately, find this line: – ld_args.append(‘/MANIFESTFILE:’ + temp_manifest)
+Add the following line after the above line:
+ld_args.append('/MANIFEST')
+
+8) Edit the file msvccompiler.py inside of directory C:\Python27\Lib\distutils\msvccompiler.py
+At line 153 approximately, insert this line: return 9.0, as following, in this piece of code:
+def get_build_version():
+    """Return the version of MSVC that was used to build Python.
+
+    For Python 2.3 and up, the version number is included in
+    sys.version.  For earlier versions, assume the compiler is MSVC 6.
+    """
+    return 9.0
+    prefix = "MSC v."
+    i = string.find(sys.version, prefix)
+    if i == -1:
+        return 6
+
+9) Certify that exists the follow environment variable in your system, if don’t exist create a new one:
+Name: VS90COMNTOOLS
+Value: C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\
+
+10) Extract the file pycrypto-2.3.tar.gz that you downloaded before, open a dos command and access the pycrypto-2.3 folder
+
+11) Execute this command to compile, build and install the module:
+python setup.py build --compiler msvc
+python setup.py install
+
+12) Test if the package was generated successfully executing an import Crypto at Python shell.
+
+13) It’s finish. Optionally, you can distribute your compiled modules as an windows executable (.exe) file, executing this simple command on folder of your module, this case is pycrypto-2.3:
+python setup.py bdist_wininst

@@ -1,0 +1,8 @@
+Banshee
+
+/* Banshee remote */
+http://www.dartmouth.edu/~nstamato/android.html
+https://play.google.com/store/apps/details?id=org.nstamato.bansheeremote
+
+/* jump to current listening song */
+Ctrl + J

@@ -1,0 +1,5 @@
+ccsm
+
+/* force program to start maximized */
+Windows Management -> Window Rules
+for gvim: Put class=Gvim in Maximize

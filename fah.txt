@@ -1,0 +1,5 @@
+FAH
+
+http://foldingforum.org/viewtopic.php?f=54&t=6793
+
+nice -n 19 wine Folding@home-Win32-GPU.exe -forcegpu nvidia_g80

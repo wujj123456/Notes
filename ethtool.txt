@@ -1,0 +1,13 @@
+ethtool
+
+/* check queue info */
+ethtool -l eth0
+
+/* check Rx flow hash indirection */
+ethtool -x eth0
+
+/* config rx queue number */
+ethtool -L rx 16 eth0
+
+/* network scaling */
+https://www.kernel.org/doc/Documentation/networking/scaling.txt

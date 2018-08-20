@@ -1,0 +1,9 @@
+dnsmasq
+
+https://help.ubuntu.com/community/Dnsmasq
+
+/* config file */
+/etc/dnsmasq.conf
+
+/* check which DNS it's using */
+nmcli dev show | grep DNS

@@ -1,0 +1,17 @@
+luks
+
+/* create encrypted container */
+dd if=/dev/zero of=/data/data.img bs=1M count=$((1024*20))
+sudo cryptsetup --align-payload=1 luksFormat /data/data.img
+
+/* use keyfile instead of password */
+sudo cryptsetup luksAddKey /data/data.img <keyfile>
+
+/* map container */
+sudo cryptsetup open /data/data.img data --key-file /home/wujj/.lukskeyfile
+
+/* first time format */
+sudo mkfs.ext4 /dev/mapper/data
+
+/* mount container */
+sudo mount /dev/mapper/data /mnt/data

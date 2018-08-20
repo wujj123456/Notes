@@ -1,0 +1,4 @@
+cscope
+
+/* browse kernel code */
+cscope -Rk

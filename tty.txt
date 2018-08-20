@@ -1,0 +1,8 @@
+tty
+
+http://tombuntu.com/index.php/2010/01/01/enable-automatic-login-in-ubuntu-9-10-server/
+
+/* auto-login */
+sudo nano /etc/init/tty1.conf
+replace last line with: 
+exec /bin/login -f USERNAME < /dev/tty1 > /dev/tty1 2>&1

@@ -1,0 +1,10 @@
+qjoypad
+
+http://qjoypad.sourceforge.net/
+http://superuser.com/questions/192570/cant-map-xf86audioraisevolume-key-in-qjoypad/268918
+
+/* change MAXKEY */
+src/constant.h
+
+/* layout folder */
+~/.qjoypad3

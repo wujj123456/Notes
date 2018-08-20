@@ -1,0 +1,16 @@
+alias
+
+http://www.unix.com/unix-dummies-questions-answers/83856-alias-variable.html
+
+/* check active alias */
+alias
+
+/* define alias with arguments */
+alias love="echo $1"
+
+Or use function
+function d
+{
+	gvim -d part.$1 part.$2
+}
+d 01 02

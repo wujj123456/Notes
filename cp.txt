@@ -1,0 +1,7 @@
+cp
+
+/* preserve time stamp */
+cp -p
+
+/* make backups */
+cp --backup=numbered

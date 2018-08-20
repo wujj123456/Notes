@@ -1,0 +1,43 @@
+SIMICS
+
+/* connect to real network */
+http://www.cs.utah.edu/~manua/sim_doc/simics-user-guide-unix/topic22.html
+connect-real-network 10.10.0.50
+
+/* trace mode commands */
+
+    https://www.simics.net/simics/info/first-steps.html
+
+	cpu-switch-time 1
+	r 16000
+	new-tracer
+	trace0->print_data=0
+	trace0->print_virtual_address=0
+	trace0->trace_instructions=0
+	trace0->trace_exceptions=0
+	trace0.start file = /nfs/twenisch_vol/users/wujj/570_raw/bl4.trace
+	c
+
+/* understand trace mode outputs */
+
+    http://www.cs.sfu.ca/~fedorova/Tech/simics-guides-3.0.26/simics-user-guide-unix/topic19.html
+
+    Lines beginning with inst: are executed instructions. Each line contains the address (both virtual and physical) and the instruction itself, in both hexadecimal form and the mnemonic.
+
+    Lines beginning with data: indicate that some instructions are performing memory operations. Each line contains the operation address (again, both virtual and physical), the type of operation (read or write), the size and the value.
+
+/* breakpoints */
+http://www.cs.sfu.ca/~fedorova/Tech/simics-guides-3.0.26/simics-user-guide-unix/topic59.html
+
+/* identify atomic instructions */
+@cpu = SIM_get_object("cpu0")
+@SIM_disassemble(cpu, SIM_get_program_counter(cpu), 1)
+
+/* identify memory operations */
+cpu0_mem.break 0 0xffffffffffffffff -r -w
+
+/* instruction callback haps */
+
+
+track X unique memory locations after each atomic instruction
+intersect each atomic instruction's set

@@ -1,0 +1,11 @@
+powertop
+
+https://www.linux.com/learn/tutorials/638380-powertop-finds-power-hogs-on-your-linux-pc
+
+powertop --calibrate
+powertop --html=<filename>
+
+/* powertop fix */
+for con in /sys/bus/pci/devices/*/power/control; do
+	echo on > "$con"
+done

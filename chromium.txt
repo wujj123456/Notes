@@ -1,0 +1,18 @@
+Chromium
+
+/* Create and use new profile */
+--user-data-dir=""
+
+/* change user agent */
+--user-agent=
+
+For Outlook Web App:
+Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/534.4 (KHTML, like Gecko) Chrome/6.0.481.0 Safari/534.4
+
+/* start incognito */
+google-chrome --incognito
+
+/* Profile Could Not Be Opened Correctly Error */
+http://www.fourleaftechnology.com/index.php/General/google-chrome-profile-could-not-be-opened-correctly-error.html
+cd ~/.config/google-chrome/Default
+rm -r Web\ Data

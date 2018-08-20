@@ -1,0 +1,55 @@
+/* regex */
+import re
+pattern = re.compile(r'\s*(?P<name>\w+) state=(?P<state>\d+) cpu_id=(?P<cpu_id>\d+).*')
+g = pattern.match(str)
+if g:
+    d = g.groupdict()
+    cpu = int(d['cpu_id'])
+
+/* files */
+with open(file_name, 'r') as f:
+    data = f.readlines()
+    for l in data:
+        # do things
+
+/* map */
+clk_list = list(map(str.strip, str(options.clocks).split(',')))
+
+/* option parser */
+from optparse import OptionParser
+parser = OptionParser()
+parser.add_option("-f", '--ftrace', dest='ftrace_filename', help='ftrace file to parse', metavar='FILE')
+parser.add_option('', '--reset-ts', action='store_true', dest='reset_ts', default=False, help='Fake an integer timestamp at begining')
+(options, args) = parser.parse_args()
+
+/* main */
+if __name__ == '__main__':
+
+/* exceptions */
+try:
+    # something
+    raise.Exception('string')
+except Exception as e:
+
+/* nested functions declarations */
+def register_parser(trace_type):
+    def add_parser(parser):
+        _parsers[trace_type] = parser
+        return parser
+    return add_parser
+
+register_parser('sync_timeline')(parse_default)
+
+@register_parser('clock_set_rate')
+def parse_clock_set_rate(data_dict):
+    return ClockSetRate(data_dict)
+
+/* class init */
+class Name(object):
+    def __init__(self, arg1):
+        # something
+
+/* inheritance */
+class SubName(Name):
+    def __init__(self, arg1, arg2):
+        super(SubName, self).__init__(arg1)

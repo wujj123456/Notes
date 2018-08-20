@@ -1,0 +1,7 @@
+gnome-about
+
+/* find out gnome version */
+gnome-about --gnome-version
+
+/* find out X.org version */
+X -version

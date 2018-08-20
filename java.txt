@@ -1,0 +1,10 @@
+Java
+
+/* Check java version */
+java -version
+
+/* classpath and allocate memory */
+java -Xmx1850M -classpath japng.jar:. A1Main 1 1 100000 image.jpg
+
+/* Java plugin in Firefox Ubuntu */
+apt-get install icedtea-7-plugin

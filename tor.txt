@@ -1,0 +1,21 @@
+Tor
+
+https://docs.google.com/View?id=dfc32596_290ffjb68dt
+
+apt-get install vidalia
+apt-get install privoxy
+
+http://blog.mypapit.net/2007/06/how-to-setup-tor-and-privoxy-in-ubuntu-feisty-fawn.html
+
+    gedit /etc/privoxy/config
+
+    You need to comment "logfile logfile" line and add this line at the end of the file
+    forward localhost:9050  .
+
+    Save the file and restart privoxy service.
+    sudo /etc/init.d/privoxy restart
+
+    You should be able to connect through Tor by using application which supports SOCK 4a/SOCK 5 interface with port 9050.
+
+/* check Tor status */
+https://check.torproject.org/

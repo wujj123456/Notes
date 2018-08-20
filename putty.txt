@@ -1,0 +1,17 @@
+PuTTY
+
+/* invisible cursor in remote desktop */
+http://nodsw.com/blog/leeland/2008/07/17-putty-ssh-default-pointer-rdesktop-where-my-mouse
+Control Panel->Mouse->Pointers->Text Select
+beam_XX.cur
+
+/* enable function keys (F1-F4) */
+http://the.earth.li/~sgtatham/putty/0.53b/htmldoc/Chapter4.html#4.4.3
+Use Xterm R6 mode
+
+/* enable number pad */
+http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings
+Terminal -> Features -> Disable application keypad mode
+
+/* Export sessions */
+regedit /e "%userprofile%\desktop\putty.reg" HKEY_CURRENT_USER\Software\SimonTatham

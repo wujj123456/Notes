@@ -1,0 +1,147 @@
+Firefox addons/tricks
+
+/* disable TRR (cloudflare DNS) */
+https://blog.usejournal.com/getting-started-with-dns-over-https-on-firefox-e9b5fc865a43
+network.trr.mode = 5
+
+/* HiDPI */
+https://fedoramagazine.org/how-to-get-firefox-looking-right-on-a-high-dpi-display-and-fedora/
+layout.css.devPixelsPerPx
+
+/* disable pingsender */
+https://www.ghacks.net/2017/10/14/what-is-pingsender-exe-on-windows/
+about:config?filter=toolkit.telemetry.shutdownPingSender.enabled
+
+/* disable VR */
+dom.vr.enabled
+dom.vr.oculus.enabled
+dom.vr.openvr.enabled
+
+/* screenshot */
+shift + F2: screenshot --fullpage
+Or ctrl + shift + M
+
+/* zoom full page instead of only fonts */
+browser.zoom.full
+
+/* start in private mode */
+firefox -private
+
+/* create and use separate profile */
+https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options
+firefox -P
+firefox -no-remote -P <profile name>
+
+/* change release channel */
+<firefox location>/defaults/pref/channel-prefs.js
+pref("app.update.channel", "release");
+nightly
+beta
+release
+
+/* enable plugins in apps directory */
+http://www.ghacks.net/2013/05/15/why-you-may-have-lost-access-to-plugins-or-extensions-in-firefox-21/
+plugins.load_appdir_plugins: true
+
+/* remove/delete plugins */
+http://www.ghacks.net/2010/10/02/how-to-remove-plugins-from-firefox/
+about:config -> plugin.expose_full_path to true
+about:plugins
+Rename npfile to X<npfile>
+
+/* use RAM as cache without a RAM disk */
+http://lifehacker.com/5687850/speed-up-firefox-by-moving-your-cache-to-ram-no-ram-disk-required
+browser.cache.disk.enable: false
+browser.cache.memory.enable: true
+browser.cache.memory.capacity: integer in KB (max 1GB)
+
+To confirm: about:cache
+
+/* empty extensions list */
+https://support.mozilla.org/en-US/questions/922028
+Delete in profile folder:
+    extensions.sqlite
+    extensions.sqlite-journal
+    extensions.ini
+    extensions.cache
+    extensions.rdf 
+
+/* enable command line */
+devtools.toolbar.enabled = true
+Tools -> Web Developer -> Developer Toolbar
+
+/* flash plugin, blue tint */
+http://superuser.com/questions/434762/disable-hardware-acceleration-for-flash-player-in-linux
+vim /etc/adobe/mms.cfg
+EnableLinuxHWVideoDecode=0
+
+Or
+
+Fullscreen a Youtube video and uncheck hardware acceleration in settings
+
+/* acfun/bilibili, watch QQ and youku video */
+Addon: RefControl
+vsrctfs.tc.qq.com, v.youku.com:
+Add site -> Forge
+
+/* limit number of history entries */
+http://support.mozilla.org/en-US/questions/814285
+places.history.expiration.max_pages
+
+/* address bar lag */
+http://www.edmondscommerce.co.uk/firefox/firefox-address-bar-lag-solution/
+browser.urlbar.search.timeout = 10
+
+/* launch Firefox with no addons */
+firefox -safe-mode
+
+/* launch Firefox over ssh */
+firefox -no-remote
+
+/* open tabs at background */
+browser.tabs.loadDivertedInBackground = true
+
+ /* change Firefox Cache */
+browser.cache.disk.parent_directory: /tmp/firefox
+
+/* adjust pop up count limit */
+dom.popup_maximum
+
+/* add ons */
+Adblock Plus
+AutoPager
+Bland Your Monitor + Easy Reading
+Customizable Shortcuts
+Disconnect
+DownThemAll!
+Easy Youtube Video Downloader Express
+Flash Video Downloader - Full HD Download
+FindBar Tweak
+FireGestures
+FoxyProxy
+Ghostery
+HTTPS Everywhere (https://www.eff.org/https-everywhere)
+NoScript
+RefControl
+Stylish
+Unblock Youku
+YouTube High Definition
+
+Dev:
+Web Developer
+
+Linux only: 
+Flash-Aid
+Disable Ctrl-Q Shortcut
+
+Onetime:
+Privacyfix (http://privacyfix.com)
+
+/* Greasemonkey scripts */
+http://userscripts.org/scripts/show/######
+Google Reader Compact/Full Screen Mode (129691)
+Invert Colors (125970)
+
+/* User Styles */
+Firefox Reader: custom width + multi column
+https://userstyles.org/styles/114669/firefox-reader-custom-width-multi-column

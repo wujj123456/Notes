@@ -1,0 +1,8 @@
+ts
+
+http://mainisusuallyafunction.blogspot.com/2012/12/a-shell-recipe-for-backups-with-logs.html
+/* install */
+apt-get install moreutils
+
+/* usage */
+echo test | ts

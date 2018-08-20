@@ -1,0 +1,29 @@
+rsync
+
+/* sync truecrypt files or skip modification time and size check */
+-c
+
+/* diff remote dir */
+--dry-run
+rsync -avz --dry-run remote-user@remote-machine:remote-dir local-dirrsync -rvtl -e 'ssh -p 3222' --numeric-ids --delete /media/Backup/Backup/ wujj.selfip.com:/media/All/Backups
+
+/* rsync with a non-standard ssh port */
+rsync -avz -e "ssh -p $portNumber" user@remoteip:/path/to/files/ /local/path/
+
+/* rsync through ssh */
+rsync -rvtl -e ssh --delete $BACKDIR/ wujj.selfip.com:/media/All/Backups
+
+/* local rsync */
+rsync -av --delete /home/wujj/workspace/ /media/All/Backups/Ubuntu/workspace/
+
+rsync -av --delete /media/All/Backups/ /media/d6c4cf8b-7fc9-4e38-971c-8480b16225a4/Backup
+
+rsync -av --delete $SOURCEDIR/$folder/ $BACKDIR/$folder/
+
+/* exclude multiple files */
+http://articles.slicehost.com/2007/10/10/rsync-exclude-files-and-folders
+
+nano /home/backup/exclude.txt
+--exclude-from '/home/backup/exclude.txt'
+
+rsync -e 'ssh -p 30000' -avl --delete --stats --progress --exclude-from '/home/backup/exclude.txt' demo@123.45.67.890:/home/demo /backup/

@@ -1,0 +1,14 @@
+split
+
+/* split */
+split -b 250m in_file out_pattern
+
+/* tar & split */
+tar czvf file.tar.gz file/
+tar czvfp - file.tar.gz | split -b 5m
+cat x* > file.tar.gz
+
+/* cat & split */
+cat file | split -b 10m
+split --bytes=1024m bigfile.iso small_file_
+cat small_file_* > joined_file.iso

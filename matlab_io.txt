@@ -1,0 +1,12 @@
+MATLAB I/O
+
+/* write bit map */
+IM=zeros(y_res,x_res,3);
+imwrite(IM,'title.ext','BMP');
+
+/* load data */
+load filename
+f = filename(:,1);
+
+/* xls */
+[data hdr] = xlsread('myproj_apr23.xls', 'trial2');

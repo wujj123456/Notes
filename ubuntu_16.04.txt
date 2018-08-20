@@ -1,0 +1,17 @@
+Ubuntu 16.04
+
+/* The method driver /usr/lib/apt/methods/http could not be found. */
+https://askubuntu.com/questions/165676/how-do-i-fix-a-e-the-method-driver-usr-lib-apt-methods-http-could-not-be-foun
+sudo apt-get install apt-transport-https
+
+/* suspend */
+systemctl suspend
+
+/* schedule wake up */
+sudo sh -c "echo $(date +%s -d5min) > /sys/class/rtc/rtc0/wakealarm"
+
+/* use exFAT drive */
+apt-get install exfat-fuse exfat-utils
+
+/* disable suspend */
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target

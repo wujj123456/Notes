@@ -1,0 +1,7 @@
+/sys
+
+/* find out cache line size, cache size, set associativity etc */
+/sys/devices/system/cpu/cpu0/cache/index0/
+
+/* tell whether multiple CPUs on your system are in the same clock domain */
+/sys/devices/system/cpu/cpu0/cpufreq/affected_cpus

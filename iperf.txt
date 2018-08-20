@@ -1,0 +1,8 @@
+iperf
+
+/* LAN speed test */
+Server: iperf -s
+Client: iperf -c <server ip>
+
+-t <seconds>: time period
+-P <n>: number of parallel connections

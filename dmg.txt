@@ -1,0 +1,18 @@
+dmg
+
+http://ubuntuforums.org/showthread.php?t=343808
+http://www.ehow.com/how_5847479_convert-dmg-iso-ubuntu.html
+
+* Open the Terminal window by going to "Applications," selecting "Accessories" and clicking on "Terminal."
+* Convert the DMG file to an IMG file by entering the following command, replacing the word "example" with the name of the DMG file:
+    dmg2img /path/to/example.dmg /path/to/example.img
+  Do not mount the file when asked. You need to use a different method in order to convert the file.
+
+* Mount the IMG file using a series of three commands. Replace the word "example" in the commands with the name of your file. After inputting each command, press enter:
+    sudo mkdir /media/example
+    sudo modprobe hfsplus
+    sudo mount -t hfsplus -o loop example.img /media/example
+
+* Open Brasero by going to "Applications," selecting "Sound & Video" and clicking on "Brasero." Select "Data Disk" from the window. In the View menu, select "Enable Side Panel."
+
+* Convert the IMG file to an ISO file by locating it in the side panel and pressing "Burn." Select "Image File" as the type of output. Press "Burn" again to create the ISO file.

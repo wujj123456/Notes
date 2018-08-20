@@ -1,0 +1,29 @@
+dns
+
+/* network-manager tool */
+nm-tool
+
+/* dns resolve problem after juniper vpn disconnect */
+sudo service resolvconf restart
+(check /etc/resolv.conf
+
+/* Ubuntu way of configuring DNS */
+http://www.linuxjournal.com/content/ubuntus-new-dns-unknown-host
+/etc/network/interfaces
+dns-nameservers 192.168.1.1   
+dns-domain example.com   
+dns-search example.com
+
+/* dyndns.com */
+sudo apt-get install ddclient
+sudo /etc/init.d/ddclient start
+
+/* flush dns on ubuntu */
+sudo apt-get install nscd
+sudo /etc/init.d/nscd restart
+
+/* configure IPV6 DNS */
+sudo vim /etc/resolv.conf
+
+/* Display DNS records under Windows */
+ipconfig /displaydns

@@ -1,0 +1,10 @@
+Launcher
+
+/* URL launcher */
+Firefox: drag & drop icon from address bar
+
+/* create a launcher on desktop */
+http://helpsite.org/launcher-to-linux-mint-12-lisa-desktop/
+cd ~/.gnome2/nautilus-scripts
+vim "Create New Launcher", put in:
+gnome-desktop-item-edit . --create-new

@@ -1,0 +1,4 @@
+getconf
+
+/* check cache information (size, set associativity) */
+getconf -a | grep -i cache

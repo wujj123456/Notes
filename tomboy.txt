@@ -1,0 +1,15 @@
+tomboy
+
+/* fail to sync workaround */
+create a "New Note Template" on one.ubuntu.com
+Sync and select rename local note
+
+/* start minimized */
+tomboy --tray-icon
+
+/* export as plain text */
+http://www.robpvn.net/plaintext-export/
+
+/* plugin installation directory */
+https://live.gnome.org/Tomboy/Directories
+For Linux: ~/.config/tomboy/addins

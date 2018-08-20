@@ -1,0 +1,11 @@
+Synergy
+
+https://help.ubuntu.com/community/SynergyHowto
+
+/* Quicksynergy */
+apt-get install quicksynergy
+Client:
+	"Use" tab
+Server:
+	"Share" tab
+Screen name "Use" must match name in "Share"

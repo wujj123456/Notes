@@ -1,0 +1,66 @@
+git config
+
+/* change email */
+git config user.email "correct@new.email"
+
+/* pre-commit hooks */
+chmod +x .git/hooks/pre-commit
+
+/* kernel checkpatch.pl pre-commit hook */
+http://www.fluff.org/ben/linux/githooks/pre-commit
+~/Dropbox/Linux/git_pre-commit
+
+/* alias */
+git config --global alias.st "status"
+[alias] 
+    st = status 
+    co = checkout 
+    cm = commit 
+
+/* global ignore files */
+git config --global core.excludesfile ~/.gitignore
+
+/* bash auto completion */
+/etc/bash_completion.d/git
+
+/* set username/email */
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+
+/* change diff tab width to 4 */
+git config --global core.pager 'less -x4'
+
+/* git alias */
+git config --global alias.tlog "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+/* change default editor */
+git config --global core.editor "vim"
+
+/* change difftool */
+Global git config file: ~/.gitconfig
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+
+/* color and format settings */
+[format]
+	numbered = auto
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	status = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan

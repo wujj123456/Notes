@@ -1,0 +1,8 @@
+mail
+
+/* send-mail: fatal: open /etc/postfix/main.cf */
+http://ubuntuforums.org/showthread.php?t=1605548
+dpkg-reconfigure postfix
+
+/* simple email */
+echo "sth" | mail -s "title" address@example.org

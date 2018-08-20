@@ -1,0 +1,8 @@
+service
+
+/* list services */
+http://www.cyberciti.biz/faq/check-running-services-in-rhel-redhat-fedora-centoslinux/
+service --status-all
+
+/* print status of certain service */
+service <service name> status

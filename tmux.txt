@@ -1,0 +1,53 @@
+tmux
+
+http://www.ubuntugeek.com/tmux-terminal-multiplexer.html
+
+/* synchronize all panes (send same command to all panes) */
+C-b :setw synchronize-panes on
+
+/* capture current buffer/scrollback */
+:capture-pane -S -20000
+:save-buffer <filename>
+
+/* rebind prefix */
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+/* quick commands */
+https://robots.thoughtbot.com/a-tmux-crash-course
+
+/* change scrollback */
+echo set -g history-limit 30000 >> ~/.tmux.conf
+
+/* copy/paste */
+http://cheat.errtheblog.com/s/tmux/
+      * press CTRL-SPACE or CTRL-@ to start selecting text
+      * move cursor to end of desired text
+      * press ALT-w to copy selected text
+
+/* create new session */
+tmux new -s <session-name>
+
+/* list active sessions */
+tmux list-session
+
+/* re-order windows */
+http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows
+let window number 3 and window number 1 swap their positions:
+	^B, :swap-window -s 3 -t 1
+
+/* vertical split */
+<control combo> + %
+
+/* horizontal split */
+<control combo> + "
+
+/* move between split */
+<control combo> + arrow keys
+
+/* zoom into a split */
+<control combo> + z
+
+/* even split */
+:select-layout even-horizontal

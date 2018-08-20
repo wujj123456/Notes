@@ -1,0 +1,10 @@
+cut
+
+/* display only first field */
+cut -d'.' -f1
+
+/* display from 2nd field */
+cut -d' ' -f2-
+
+/* return empty if delimiter is not found */
+cut -d' ' -s -f 1

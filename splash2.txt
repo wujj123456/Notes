@@ -1,0 +1,8 @@
+SPLASH-2
+
+/* patch */
+1. patch -p1 < splash2-modified.patch
+2. Edit the file "codes/Makefile.config" and adjust it to your needs. The most important part is to change the BASEDIR variable
+3. MACRO
+codes/null_macros
+

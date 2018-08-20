@@ -1,0 +1,5 @@
+vncviewer
+
+vncviewer -via vnc.engin.umich.edu localhost:51
+
+1280x1024 is port 52 and 1600x1200 is port 53.  

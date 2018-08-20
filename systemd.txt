@@ -1,0 +1,33 @@
+systemd
+
+https://www.linux.com/learn/cleaning-your-linux-startup-process
+
+/* boot chain */
+systemd-analyze critical-chain
+
+/* view boot services */
+systemctl list-unit-files --type=service
+
+/* stop services */
+systemctl stop bluetooth.service
+systemctl disable bluetooth.service
+
+/* mask service to make sure it won't start */
+systemctl mask bluetooth.service
+
+/* display logs */
+journalctl -b
+journalctl _PID=1
+
+/* find longest startup */
+systemd-analyze blame
+
+/* write directly to journald */
+systemd-cat
+
+/* run new processs in a cgroup */
+systemd-run --slice tbd.slice --scope <binary>
+
+/* stop systemd-resolve */
+sudo systemctl disable systemd-resolved.service
+remove symlink /etc/resolv.conf and add a real one

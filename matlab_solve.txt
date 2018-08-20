@@ -1,0 +1,6 @@
+MATLAB solve
+
+/* solve equations */
+syms Ib Ic Ie Vce
+S = solve('Vcc - Ib*Rb = 0.7 + Ie*RE', 'Vcc - Ic*Rc = Vce + Ie*RE', 'Ic = Beta*Ib', 'Ie = Ib + Ic', Ib, Ic, Ie, Vce);
+S = eval([S.Ib S.Ic S.Ie S.Vce])

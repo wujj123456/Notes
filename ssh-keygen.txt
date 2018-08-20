@@ -1,0 +1,13 @@
+ssh-keygen
+
+/* generate public key from private key */
+ssh-keygen -y
+
+/* get ssh key fingerprint */
+ssh-keygen -l -f /tmp/ssh_host_rsa_dsa_key.pub
+
+/* get the public ssh key */
+ssh-keyscan -p 22 -t rsa,dsa {remote_host} > /tmp/ssh_host_rsa_dsa_key.pub
+
+/* central CA setup (facebook) */
+https://code.facebook.com/posts/365787980419535/scalable-and-secure-access-with-ssh/

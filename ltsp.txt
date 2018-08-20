@@ -1,0 +1,17 @@
+LTSP
+
+https://help.ubuntu.com/community/UbuntuLTSP/LTSPQuickInstall
+
+/* fresh install */
+Get alternative CD
+Hit F4
+choose LTSP Server
+
+/* install on top of running desktop */
+sudo apt-get install ltsp-server-standalone openssh-server
+sudo ltsp-build-client
+
+/* error FAQ */
+If you change the IP data after you have done the initial setup, please run the command sudo ltsp-update-sshkeys to make the ssh server aware of the change.
+
+This workstation isn't authorized to connect to server error message on client, please run commands sudo ltsp-update-sshkeys and sudo ltsp-update-image (in this order) reference: https://bugs.launchpad.net/ubuntu/+source/ltsp/+bug/144296

@@ -1,0 +1,6 @@
+ClusterSSH
+
+http://www.ubuntugeek.com/execute-commands-simultaneously-on-multiple-servers-using-psshcluster-sshmultixterm.html
+http://www.linux.com/learn/tutorials/413853:managing-multiple-linux-servers-with-clusterssh
+
+configure file: ~/.csshrc

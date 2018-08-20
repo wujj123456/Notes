@@ -1,0 +1,61 @@
+bash shell
+
+/* show return status on prompt */
+$PS1 add [$?]
+
+/* erase a word */
+Ctrl-w
+
+/* start bash with custom init file */
+bash --init-file <file.sh>
+
+/* check alias or function */
+type -a <mm>
+
+/* detect if it's an ssh session */
+http://forums.justlinux.com/showthread.php?118349-Bash-Script-Detect-Remote-Local-login
+env | grep -q 'SSH_CLIENT'
+if [ $? -eq 1 ]; then
+     # local 
+else
+     #remote
+fi
+
+/* no such file or directory, but file exist */
+install ia32-libs
+
+/* redirection */
+stderr to file: 2> file
+stderr to stdout 2>&1
+stderr and stdout to file: &>
+
+/* change default shell */
+cat /etc/shells : list all available shells
+chsh
+
+/* add time to prompt */
+export PS1="\[\033[00;31m\][\t]$PS1"
+
+/* prompt string */
+http://www.thegeekstuff.com/2008/09/bash-shell-ps1-10-examples-to-make-your-linux-prompt-like-angelina-jolie/ (color section may not be correct)
+
+$PS1
+Colors:
+	uncomment force_color_prompt=yes in .bashrc
+Mint default:
+	\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] 
+Ubuntu default:
+	\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ 
+Display time:
+	\t
+
+/* history shortcut */
+previous command - !!
+name of previous command - !:0
+first parameter of previous command - !:1
+final parameter of previous command - !:-1 or !$ or Alt+'.'
+all parameters of previous command - !:*
+
+/* run last matching command */
+!str
+Ctrl-r, type string for search

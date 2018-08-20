@@ -1,0 +1,46 @@
+LaTeX
+
+http://linuxandfriends.com/2009/10/06/install-latex-in-ubuntu-linux/
+
+/* math equations */
+http://webdemo.visionobjects.com/equation.html
+
+/* table */
+http://en.wikibooks.org/wiki/LaTeX/Tables
+\begin{center}
+  \begin{tabular}{ l | c || r }
+    \hline
+    1 & 2 & 3 \\ \hline
+    4 & 5 & 6 \\ \hline
+    7 & 8 & 9 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+/* labels */
+http://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencingSee 
+\label{fig:my_figure}
+figure~\ref{fig:test} on page~\pageref{fig:test}.
+
+/* Templates */
+http://www.latextemplates.com/
+
+/* symbols */
+http://detexify.kirelabs.org/classify.html
+
+/* quotation marks */
+Single quotation marks are produced in LaTeX using ` and '. Double quotation marks are produced by typing `` and ''
+
+/* install */
+apt-get install texlive-full
+apt-get install gedit-latex-plugin  // obsolete
+apt-get install kile
+
+/* generate pdf */
+pdflatex <input.tex>
+
+/* tutorial */
+http://www.math.uiuc.edu/~hildebr/tex/packages.html
+http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/
+http://www.andy-roberts.net/writing/latex/document_structure
+http://www.andy-roberts.net/writing/latex/bibliographies

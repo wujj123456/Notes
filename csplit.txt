@@ -1,0 +1,11 @@
+csplit
+
+http://www.unix.com/shell-programming-scripting/41060-split-file-into-seperate-files.html
+
+csplit -k -s -f part. split_file /^-----/ "{100}" 2>/dev/null
+
+ls part.?? | while read file; do
+   sed '/^-----/ d' ${file} > ${file}.new && mv ${file}.new ${file}
+   echo "File ${file} contains:"
+   cat ${file}
+done

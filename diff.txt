@@ -1,0 +1,11 @@
+diff
+
+/* exclude path */
+--exclude=".svn"
+
+/* only show files */
+--brief
+
+/* patch a diff file */
+http://stephenjungels.com/jungels.net/articles/diff-patch-ten-minutes.html
+patch foo.txt < bar.patch

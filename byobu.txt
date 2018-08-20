@@ -1,0 +1,40 @@
+byobu
+
+/* change default directory */
+chdir
+
+/* rename a session */
+byobu rename-session -t <original> <new name>
+
+/* if escape keys aren't working */
+rm -r ~/.byobu
+
+/* re-enable F keys */
+Shift + F12
+
+/* vertical split */
+Ctrl-F2: split
+Ctrl-F6: remove split
+Shift-F3/F4: toggle regions
+
+/* horizontal split */
+Shift-F2
+
+/* tmux and screen cheatsheet */
+http://www.dayid.org/os/notes/tm.html
+
+/* status */
+<number>! : number of available updates
+<number># : number of ssh connections
+
+/* config dir */
+~/.byobu
+
+/* group of default windows (screen script) */
+$ cat .byobu/windows.ssh_sessions
+screen -t localhost bash
+screen -t aussie ssh root@aussie
+screen -t beagle ssh root@beagle
+screen -t collie ssh root@collie
+$ BYOBU_WINDOWS=ssh_sessions byobu -S <sessionname>
+(if it's not working, update byobu)

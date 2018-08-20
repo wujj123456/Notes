@@ -1,0 +1,8 @@
+gedit
+
+/* intelligent text completion */
+http://code.google.com/p/gedit-intelligent-text-completion/
+1. Unpack the archive
+2. Put intelligent_text_completion.plugin and intelligent_text_completion.py inside .local/share/gedit/plugins in your home directory. (create it if it doesn't exist yet)
+3. (Re)start Gedit.
+4. Go to Edit->Preferences->Plugins and check the box for Intelligent Text Completion 

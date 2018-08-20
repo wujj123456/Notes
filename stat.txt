@@ -1,0 +1,6 @@
+stat
+
+/* get file creation time */
+http://levlafayette.com/node/478
+stat <file> to get inode
+sudo debugfs -R 'stat <inode>' /dev/sda1

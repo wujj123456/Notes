@@ -1,0 +1,16 @@
+phc
+
+/* undervolt CPU */
+http://openmindedbrain.info/09/05/2010/undervolting-in-ubuntu-10-04-lucid-lts/
+http://linuxsolver.blogspot.com/2011/02/undervolting-cpu-in-ubuntu.html
+
+sudo add-apt-repository ppa:linux-phc/ppa
+sudo apt-get update
+sudo apt-get install linux-generic-phc linux-headers-generic-phc
+sudo update-grub
+cat /sys/devices/system/cpu/cpu0/cpufreq/phc_default_vids 
+
+make prepare
+make
+sudo make install
+cat /sys/devices/system/cpu/cpu0/cpufreq/phc_vids

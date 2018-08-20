@@ -1,0 +1,24 @@
+wget
+
+/* do not go to upper directory */
+--no-parent
+
+/* limit recursion depth */
+wget -l
+
+/* continue download */
+wget --continue
+
+http://linuxreviews.org/quicktips/wget/
+
+DOWNLOAD ENTIRE WEBSITE EASILY
+
+wget http://linuxreviews.org/
+
+wget -r http://linuxreviews.org/
+
+Using browser:
+wget  -r -p -U Mozilla http://www.stupidsite.com/restricedplace.html
+
+Limit speed:
+wget --wait=20 --limit-rate=20K -r -p -U Mozilla http://www.stupidsite.com/restricedplace.html

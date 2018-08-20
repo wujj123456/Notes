@@ -1,0 +1,19 @@
+ClamAV
+
+/* GUI */
+clamtk
+
+/* check system */
+https://lkml.org/lkml/2011/9/30/425
+
+/* package */
+clamav
+
+/* disable daemon */
+sudo update-rc.d clamav-freshclam disable
+
+/* scan */
+sudo clamscan --cross-fs=no -r --follow-dir-symlinks=0 --follow-file-symlinks=0
+
+/* update virus database */
+sudo freshclam

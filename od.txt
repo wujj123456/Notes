@@ -1,0 +1,7 @@
+od
+
+/* dump in hex and ascii */
+od -xa mbr.bin
+
+/* dump in hex for C array */
+od -t x1 examples.desktop | sed 's/[^ ]*//; s/ /, 0x/g; s/$/,/; s/[^ ] *//'

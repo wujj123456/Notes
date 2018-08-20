@@ -1,0 +1,144 @@
+bash control
+
+http://crazedmonkey.com/blog/programming/multiple-expression-if-statement-in-bash.html
+http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
+https://wiki.ubuntu.com/DashAsBinSh
+
+/* array */
+https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays
+
+/* group background tasks and wait for finish */
+{ command1; command2; ... } &
+{ command3; command4; ... } &
+wait
+
+/* ignore pipe return value */
+set -o pipefail
+
+/* export */
+export VARIABLE
+In order to export to parent process, the parent process has to source that script
+. <script with export>
+
+/* exit immediately after an error */
+bash -e
+
+/* iterate through all arguments/parameters */
+for i in $@; do
+done
+
+/* check return value */
+command || { echo "command failed"; exit 1 }
+
+/* auto escape special characters in filenames */
+/* split for loop by new line */
+IFS_BAK=$IFS
+IFS="
+"
+for i in $TEST; do sth; done
+IFS=$IFS_BAK
+
+/* get pid of last command */
+sleep 1s; echo $!
+
+/* while loop */
+while [ condition ]; do
+	commands
+done
+
+/* print all env */
+printenv
+
+/* string */
+http://tldp.org/LDP/abs/html/comparison-ops.html
+-z: string is null
+-n: string is not null
+
+/* return value */
+$?
+
+/* strip path */
+http://stackoverflow.com/questions/125281/how-do-i-remove-the-file-suffix-and-path-portion-from-a-path-string-in-bashecho 
+${x%/*/*/*/*}
+or use basename
+
+/* bash math */
+http://tldp.org/LDP/abs/html/ops.html
+let "n++"
+
+/* catching/read user input */
+http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html
+read
+
+/* if, else if, else */
+if [ ]; then
+elif [ ]; then
+else
+fi
+
+/* switch statement */
+http://www.linuxsig.org/files/bash_scripting.html
+case string1 in
+str1)
+   commands
+   ;;
+str2)
+   commands
+   ;;
+*)
+   commands
+   ;;
+esac
+
+/* trap a signal */
+http://www.linuxquestions.org/questions/programming-9/signal-handling-from-bash-257157/
+http://bash.cyberciti.biz/guide/Use_the_trap_statement_to_catch_signals_and_handle_errors
+
+on_die()
+{
+	echo "Dying..."
+	exit 0
+}
+
+# Execute function on_die() receiving TERM signal
+trap 'on_die' TERM
+
+/* list of signals */
+kill -l
+
+/* unset environmental variable */
+unset LD_DEBUG
+
+/* -a for AND, -o for OR, -n for NOT */
+if [ $foo -eq 1 -o $bar -eq 3 -o $abc -eq 4 ]; then
+    echo Hello World
+fi
+
+/* check environmental variable set */
+http://fixunix.com/60852-post6.html
+
+[ -n "${VAR+x}" ] ## Fails if VAR is unset
+ [ -n "${VAR:+x}" ] ## Fails if VAR is unset or empty
+ [ -n "${VAR-x}" ] ## Succeeds if VAR is unset
+ [ -n "${VAR:-x}" ] ## Succeeds if VAR is unset or empty
+
+/* classic for loop */
+for ((k=0; k<$THREADS; k++));
+do
+	echo $k
+done
+
+/* string comparison */
+"" for variable and strings
+http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-11.html
+(1) s1 = s2
+(2) s1 != s2
+(3) s1 < s2
+(4) s1 > s2 
+
+/* bash divide */
+awk 'BEGIN{printf("%0.2f", '$a' / '$b')}'
+
+/* bash add */
+http://sysblogd.wordpress.com/2007/08/26/let-bash-do-the-math-doing-calculations-using-that-bash/
+$((expression))

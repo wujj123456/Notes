@@ -1,0 +1,18 @@
+useradd/usermod
+
+http://www.cyberciti.biz/faq/howto-linux-add-user-to-group/
+http://www.cyberciti.biz/faq/howto-linux-remove-user-from-group/
+
+/* remove a user from a group */
+Find out groups: id -nG {user-name}
+Change group: useradd -G <groupname> username
+Every group not listed will be removed
+
+/* add a new user to a group */
+useradd -G <groupname> username
+
+/* add existing user to existing group */
+usermod -a -G vboxusers wujj
+
+/* /etc/group modification tool */
+gpasswd

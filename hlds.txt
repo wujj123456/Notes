@@ -1,0 +1,28 @@
+HLDS
+
+Create a Valve Game Server
+
+/* TF2 */
+http://wiki.teamfortress.com/wiki/Linux_dedicated_server
+http://stevenbenner.com/2010/11/how-to-set-up-a-team-fortress-2-dedicated-server-on-ubuntu/
+adduser tf2server
+mkdir hlds && cd hlds
+wget http://storefront.steampowered.com/download/hldsupdatetool.bin && chmod +x hldsupdatetool.bin
+./hldsupdatetool.bin
+./steam
+mkdir tf2server
+./steam -command update -game tf -dir tf2server -verify_all
+./srcds_run -game tf -autoupdate -steambin /home/valveserver/hlds/steam +maxplayers 32 +map mvm_coaltown_event +servercfgfile server1.cfg
+./srcds_run -game tf +maxplayers 32 +map mvm_coaltown_event +servercfgfile server2.cfg
+
+/* TF2 MvM */
+http://forums.steampowered.com/forums/showthread.php?t=2881268
+
+/* multiple servers on one installation */
+https://forums.alliedmods.net/archive/index.php/t-149081.html
+server1.cfg, server2.cfg and server3.cfg in your cfg folder.
+Add this to the command line arguments of each server startup script: '+servercfgfile server#.cfg'
+In each server config, include this somewhere above the 'log on' command: 'sv_logsdir "logs_#"' with the respective # of the server.
+
+/* Failed to open dedicated.so */
+go into bin/, ln -s dedicated_srv.so dedicated.so

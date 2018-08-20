@@ -1,0 +1,27 @@
+gcc
+
+/* manpage package for pthreads */
+apt-get install manpages-posix-dev
+
+/* catch more security errors */
+http://sourceware.org/glibc/wiki/FAQ#Why_no_strlcpy_.2BAC8_strlcat.3F
+gcc -D_FORTIFY_SOURCE
+
+/* default library header path */
+/usr/include
+
+/* show preprocessing result */
+gcc -E *.c
+
+/* http://ubuntuforums.org/showthread.php?t=711169 */
+-I : Sets the path to the include files.
+-L : Sets the path to the libraries.
+-l : Use this library (eg. -lm to use libmath.so, -lpthread to use libpthread.so)
+
+You can have multiple -I, -L and -l entries.
+So, your final command should look like this:
+
+g++ program.cpp -o executable -I /path/to/includes -L /path/to/libraries -l library1 -l library2
+
+/* #define SYMBOL */
+-DSYMBOL

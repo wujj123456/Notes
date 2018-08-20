@@ -1,0 +1,23 @@
+PARSEC
+
+/* Build */
+source env.sh
+parsecmgmt -a build
+
+1. specify compiler
+config/gcc.bldconf:39-49: change all path to /usr
+
+2. minor fix
+add:
+	CFLAGS="${CFLAGS} -fopenmp"
+	CXXFLAGS="${CXXFLAGS} -fopenmp"
+to pkgs/apps/freqmine/parsec/gcc-hooks.bldconf
+
+3. patches
+http://wiki.cs.princeton.edu/index.php/PARSEC#Patches_and_Bugfixes
+https://lists.cs.princeton.edu/pipermail/parsec-users/2011-October/001250.html
+http://rt.openssl.org/Ticket/Display.html?id=2094
+http://rt.openssl.org/Ticket/Display.html?id=2095
+
+4. packages
+	libxmu-dev

@@ -1,0 +1,12 @@
+BOINC
+
+/* suspend for some time */
+--set_run_mode {always | auto | never} [ duration (s) ]
+
+/* remote access */
+http://www.boinc-wiki.info/How_To_Control_BOINC_On_Remote_Computers
+Directory: /var/lib/boinc-client/ 
+remote_hosts.cfg
+gui_rpc_auth.cfg
+
+boinccmd --project http://www.worldcommunitygrid.org/ suspend|resume

@@ -1,0 +1,14 @@
+High Resolution Timer
+
+/* check resolution */
+cat /proc/timer_list
+should have .resolution: 1 nsecs
+
+http://lwn.net/Articles/167897/
+http://elinux.org/High_Resolution_Timers#How_to_detect_if_your_timer_system_supports_high_resolution
+https://rt.wiki.kernel.org/index.php/Cyclictest
+
+/* userspace API */
+struct timespec StartTime;
+clock_gettime(CLOCK_MONOTONIC, &StartTime);
+gcc -o timer timer.c -lrt

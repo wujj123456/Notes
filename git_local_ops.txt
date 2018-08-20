@@ -1,0 +1,134 @@
+git local operations
+
+/* search tags that contains a commit */
+git tag --contains <hash>
+
+/* recover dropped stash */
+git fsck --no-reflog | awk '/dangling commit/ {print $3}'
+git stash apply $stash_hash
+
+/* show more context in git diff */
+git diff -U<n>
+
+/* forget conflict resolution history */
+git rerere forget
+
+/* show previous heads with timestamps */
+git reflog show --date=local
+
+/* stash but keep staging area */
+git stash --keep-index
+
+/* revert a single file to last commit */
+git checkout -- filename
+
+/* add changes to staging area interactively */
+git add -p
+
+/* git diff current directory */
+git diff .
+git difftool .
+
+/* git show using difftool */
+git difftool <commit>~1 <commit>
+
+/* specify difftool one-time */
+git difftool --tool=vimdiff
+
+/* diff ignore new or deleted files */
+--diff-filter=M
+
+/* show changes in staging area */
+http://stackoverflow.com/questions/8544211/git-diff-gives-no-output
+git diff --cached
+
+/* git log show changed files */
+git log --stat
+
+/* check changes before commit */
+git status
+
+/* status don't show untracked files */
+git status -uno
+
+/* status easy to parse format */
+git status --porcelain
+
+/* show files for a commit */
+git show --pretty="format:" --name-only bd61ad98
+
+/* show files under control */
+git ls-files
+
+/* show files for commit */
+git ls-files --cached
+
+/* one line commit history */
+git log --oneline --decorate
+
+/* search all commits for string */
+pickaxe: To use the pickaxe, just pass the -S option.
+git log -S'string' <file>
+
+/* find last modification of a line */
+git blame -L 60,70 File.c
+
+/* git log (tree format) */
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+/* rename file */
+git mv
+
+/* quit/abort commit in vim */
+:cq
+
+/* change commit (head) */
+git commit -a --amend
+
+/* reset author */
+git commit --amend --reset-author
+git commit --amend --author="Name <email>"
+
+/* remove file from control, but keep the file */
+/* revert add before commit */
+git rm --cached <file>
+
+/* remove changes from staging area */
+git reset HEAD <file>
+
+/* go back to last head */
+git reset
+git reset --soft|mixed|hard
+
+/* revert single file */
+git checkout <file>
+
+/* clean untracked files */
+dry run: git clean -n -d
+clean: git clean -f -d
+
+/* go back to 5th-last visited commit */
+git checkout "@{5}"
+
+/* commit with sign-off */
+git commit --signoff
+
+/* bisect */
+git bisect start
+git bisect good <commit id>
+git bisect bad <commit id>
+git bisect reset
+git bisect run ./bug-finder.sh
+
+/* apply patch */
+git apply <patch>
+git apply --reject <patch>: applies parts of the patch
+git am: directly apply patch, instead of diff
+git am -3: when patch conflicts, force it to be applied
+
+/* check patch */
+git apply --stat <patch>
+git apply --check <patch>: only check, not apply
+
+/* generate patch */
+git format-patch -M -C <branch> <commit_early>..<commit_late>

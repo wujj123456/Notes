@@ -1,0 +1,10 @@
+etc/network/interfaces
+
+http://en.kioskea.net/faq/979-having-a-static-ip-address-under-ubuntu-8-10
+http://www.ubuntugeek.com/change-ubuntu-system-from-dhcp-to-a-static-ip-address.html
+
+/* configure static IP address */
+auto eth1 
+iface eth1 inet static 
+address 10.0.0.1 
+netmask 255.255.255.0

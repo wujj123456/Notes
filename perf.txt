@@ -1,0 +1,23 @@
+perf
+
+/* record pid */
+perf record -p <pid>
+
+/* show call graph */
+perf record -g
+
+/* profile context switch */
+perf record -ag -e cs
+
+/* memory bandwidth profiling */
+perf record -e LLC-load-misses,LLC-store-misses -g -p $(pgrep binary)  -- sleep 5
+
+https://dzone.com/articles/container-isolation-gone-wrong
+/* perf top */
+perf top -p 18189 -d 60 --stdio
+
+/* count number of execution for certain line */
+perf probe -L __d_lookup
+perf probe --add __d_lookup
+perf probe --add __d_lookup_loop=__d_lookup:15
+perf stat -p 18189 -e "probe:__d_lookup" -e "probe:__d_lookup_loop" -- sleep 60

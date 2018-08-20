@@ -1,0 +1,76 @@
+gnuplot
+
+/* tutorial */
+http://www.leancrew.com/all-this/2008/06/automated-charts-with-gnuplot/
+EECS582/lec2.tgz
+
+/* set legend position */
+http://folk.uio.no/inf3330/scripting/doc/gnuplot/Kawano/legend-e.html
+set key outside
+set key box
+
+/* change size of the graph */
+set size 0.5 0.5
+
+/* change size of canvas */
+The canvas size is defined by the set terminal command exclusively.
+http://www.harald-harders.de/gnuplot/canvas/
+set terminal png size 800,480
+
+/* set xtics */
+set xtics (2,8,12,24,36,48)
+set xtics 4
+
+/* histogram */
+http://gnuplot-surprising.blogspot.com/2011/09/statistic-analysis-and-histogram.html
+
+/* EECS587/h4p/children.script */
+reset
+n=10	#number of intervals
+#max=0.8	#max value
+#min=-1.5	#min value
+width=10 #(max-min)/n	#interval width
+#function used to map a value to the intervals
+hist(x,width)=width*floor(x/width)+width/2.0
+set term png	#output terminal and file
+set output "P2-histogram-10.png"
+#set xrange [min:max]
+set yrange [0:]
+#to put an empty boundary around the
+#data inside an autoscaled graph.
+set offset graph 0.05,0.05,0.05,0.0
+set xtics 100
+set boxwidth width*0.9
+set style fill solid 0.5	#fillstyle
+set tics out nomirror
+set xlabel "x"
+set ylabel "Frequency"
+#count and plot
+plot "children" u (hist($1,width)):(1.0) smooth freq w boxes lc rgb"green" notitle
+
+/* x, y plot (log/linear) */
+
+/* EECS570/Projects/P1 (log) */
+set title "Scalability for Different Number of Threads (log scale)"
+set xrange [10:26]
+set key left top
+set xlabel "Input Size (log2(n))"
+set ylabel "Calculation Time (log2(us))"
+set term gif
+set output "size_log.gif"
+plot "data/size_1.plot" using 3:4 title "1 core" with linespoints, \
+	"data/size_2.plot" using 3:4 title '2 cores' with linespoints, \
+	"data/size_4.plot" using 3:4 title '4 cores' with linespoints, \
+	"data/size_8.plot" using 3:4 title '8 cores' with linespoints, \
+	"data/size_16.plot" using 3:4 title '16 cores' with linespoints
+
+/* EECS587/h3p/data*/plot.script */
+set title "Speedup"
+set xrange [0:25]
+set key left top
+set xlabel "Number of CPUs"
+set ylabel "Speedups"
+set term gif
+set output "speedup.gif"
+plot "1000.plot" using 1:2 title "n=1000" with linespoints, \
+	"4000.plot" using 1:2 title "n=4000" with linespoints

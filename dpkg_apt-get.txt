@@ -1,0 +1,38 @@
+dpkg && apt-get
+
+/* clear cached archives */
+apt-get clean
+
+/* source.list location */
+/etc/apt/sources.list.d
+
+/* decompress packages without install */
+ar xv <.deb>
+
+/* install source code from repo */
+/etc/apt/sources.list :
+add deb-src for deb
+apt-get source <package>
+
+/* remove all packages from an PPA */
+http://bigbrovar.aoizora.org/index.php/2010/01/10/how-to-safely-remove-ppa-repository-from-ubuntu/
+sudo ppa-purge <PPA>
+
+/* remove PPA */
+http://askubuntu.com/questions/307/how-can-ppas-be-removed
+sudo add-apt-repository --remove ppa:whatever/ppa
+Or
+remove from /etc/apt/sources.list.d
+
+/* get package list */
+dpkg --get-selections 
+
+/* install packages */
+dpkg -i fahclient_7.1.24_Ubuntu-10.10-64bit-release_amd64.deb 
+
+/* remove packages */
+dpkg -r fahclient
+
+/* check packages */
+apt-get install -f
+dpkg --configure -a

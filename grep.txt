@@ -1,0 +1,49 @@
+grep
+
+/* output first N matches */
+-m N
+
+/* get unique records from file A that are not in file B */
+egrep -v -f <file B> <file A>
+
+/* display with color */
+--color=auto
+
+/* only list filenames */
+-l
+
+/* exclude dir/file */
+grep --exclude-dir={.git,.svn} --exclude=tags
+
+/* ignore binary */
+grep -I
+
+/* tab */
+grep -P '\t'
+
+/* exclude pattern */
+grep -v ""
+
+/* multiple pattern, and, or */
+http://www.thegeekstuff.com/2011/10/grep-or-and-not-operators/
+grep -E "aa|bb"
+-E means regex
+grep -E "aa.*bb"
+
+/* show line number */
+grep -n
+
+/* for processing large files */
+http://www.fam.tuwien.ac.at/~schamane/_/blog:080727_grep_with_large_pattern_files
+Split file into chucks will be faster
+split -l 50 pattern-file pattern-file.split.
+for CHUNK in pattern-file.split.* ; do
+        grep -f "$CHUNK" testmail_for_grep.txt
+done
+rm pattern-file.split.*
+
+/* grep fixed number of digits */
+grep '\<[0-9]\{3,5\}\>' test.txt
+
+/* filter lines in one file */
+grep -F -x -v -f <filename> <file to filter>

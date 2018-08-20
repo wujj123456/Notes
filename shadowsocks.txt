@@ -1,0 +1,20 @@
+shadowsocks
+
+/* source code fork */
+https://github.com/ziggear/shadowsocks
+
+/* server installation */
+https://xuri.me/2014/08/14/shadowsocks-setup-guide.html
+apt-get install python-pip python-m2crypto
+pip install shadowsocks
+
+/* start server */
+ssserver -p 8388 -k password -m aes-256-cfb
+
+/* start/stip server (daemon mode) */
+ssserver -p 8388 -k password -m aes-256-cfb --user nobody -d start
+ssserver -d stop
+ssserver -c <config file> -d start
+
+/* windows client */
+https://github.com/shadowsocks/shadowsocks-windows/releases

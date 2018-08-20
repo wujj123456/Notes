@@ -1,0 +1,7 @@
+remmina
+
+/* lock alt+tab to remote */
+hit right ctrl
+
+/* config file location */
+~/.remmina

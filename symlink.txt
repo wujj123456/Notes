@@ -1,0 +1,9 @@
+Symbolic Links (Win7)
+
+http://www.maximumpc.com/article/howtos/howto_master_your_file_system_mklink
+
+mklink <link> <target>
+default creates link to a single file
+/D - directory
+/H - hard link, must point to a file
+/J - hard link to directory

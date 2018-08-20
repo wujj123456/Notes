@@ -1,0 +1,6 @@
+gprof
+
+/* compiler flag */
+-pg
+
+gprof ./exec > output

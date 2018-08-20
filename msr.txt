@@ -1,0 +1,12 @@
+msr
+
+/* rdmsr wrmsr */
+http://linux.koolsolutions.com/2009/09/19/howto-using-cpu-msr-tools-rdmsrwrmsr-in-debian-linux/
+CONFIG_X86_MSR=m (or y)
+modprobe msr
+ls /dev/cpu/0/msr
+rdmsr 0x1a0
+
+/* prefetch */
+http://stackoverflow.com/questions/6662140/hardware-prefetching-in-corei3
+Table 35-3. MSRs in Processors Based on Intel® CoreTM Microarchitecture

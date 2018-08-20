@@ -1,0 +1,19 @@
+lm-sensors
+
+/* detect and read sensors */
+apt-get install lm-sensors
+sensors-detect
+sensors
+
+/* applet for GNOME */
+apt-get install sensors-applet
+
+/* indicator for Unity */
+http://askubuntu.com/questions/66624/how-do-i-get-sensors-applet-working
+psensor
+
+OR
+
+sudo add-apt-repository ppa:alexmurray/indicator-sensors
+sudo apt-get update
+sudo apt-get install indicator-sensors

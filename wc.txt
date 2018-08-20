@@ -1,0 +1,9 @@
+wc
+
+How to count the number of lines in a file in linux shell command
+http://www.wallpaperama.com/forums/how-to-count-the-number-of-lines-in-a-file-in-linux-shell-command-t1084.html
+
+wc -l my_text.txt
+
+/* find longest line */
+wc -L <file>

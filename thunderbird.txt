@@ -1,0 +1,10 @@
+Thunderbird
+
+/* send an email again */
+Select message and "Edit as new"
+
+/* addon */
+Identity Chooser
+
+/* forward as HTML */
+Hold shift when clicking forward button

@@ -1,0 +1,8 @@
+mplayer
+
+/* dump audio file */
+http://ungethym.blogspot.com/2008/11/extract-mp3-from-flv.html
+mplayer -dumpaudio in-video.flv -dumpfile out-audio.mp3
+
+/* convert video to jpeg */
+mplayer -ao null <video file name> -vo jpeg:outdir=output

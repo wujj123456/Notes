@@ -1,0 +1,7 @@
+ftrace
+
+/* change trace buffer size */
+echo <size> > /sys/kernel/debug/tracing/buffer_size_kb
+
+/* tgid for systrace */
+echo 1 > /sys/kernel/debug/tracing/options/print-tgid

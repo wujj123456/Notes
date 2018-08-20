@@ -1,0 +1,14 @@
+Eclipse
+
+/* jump to def */
+F3
+
+/* jump cursor */
+Alt + Left Arrow
+Alt + Right Arror
+
+/* Fix indention */
+Ctrl + i
+
+/* comments */
+Ctrl + /

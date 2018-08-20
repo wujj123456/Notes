@@ -1,0 +1,21 @@
+vlc
+
+/* VLC Direct audio crash */
+http://vlcdirect.blogspot.com/2012/01/vlc-crashes-when-streaming-from-pcmac.html
+VLC Direct -> menu -> settings -> streaming settings -> Avoid Audio Transcoding
+
+/* http hosts */
+/usr/share/vlc/lua/http/.hosts
+
+/* streaming video */
+GUI: http://www.mydigitallife.info/2008/10/23/how-to-set-vlc-player-as-media-server-to-stream-media-files-in-digital-home/
+Command: http://www.videolan.org/doc/streaming-howto/en/ch03.html
+Disable gui: http://forum.videolan.org/viewtopic.php?f=14&t=11580
+-I dummy
+
+/* HTTP stream single file, no gui */
+vlc <file location> --sout "#transcode{vcodec=h264,vb=0,scale=0,acodec=mp4a,ab=128,channels=2,samplerate=44100}:http{mux=ffmpeg{mux=flv},dst=:8080/}" --no-sout-rtp-sap --no-sout-standard-sap --sout-keep -I dummy
+
+/* http interface */
+http://www.videolan.org/doc/play-howto/en/ch04.html#id590873
+vlc -I http [--http-src /directory/ --http-host host:port]

@@ -1,0 +1,49 @@
+Ubuntu 12.04
+
+/* remove media player from sound menu */
+http://www.howtogeek.com/113897/how-to-remove-media-players-from-ubuntus-sound-menu-add-your-own/
+dconf-editor
+	com/canonical/indicator/sound
+Or
+gsettings get com.canonical.indicator.sound interested-media-players
+gsettings get com.canonical.indicator.sound blacklisted-media-players
+gsettings set com.canonical.indicator.sound blacklisted-media-players “[‘rhythmbox’]“
+gsettings set com.canonical.indicator.sound interested-media-players “['rhythmbox', 'vlc', 'amarok']“
+
+/* change default player to Banshee */
+vim /usr/share/applications/defaults.list
+Or
+System Settings -> Details -> Default Applications
+
+/* disable error report */
+http://howtoubuntu.org/how-to-disable-apport-error-reporting-in-ubuntu/
+vim /etc/default/apport
+
+/* unlock root passwd */
+sudo passwd root
+http://blog.sudobits.com/2012/05/03/how-to-login-as-root-in-ubuntu-12-04-lts/
+
+/* configure workspace */
+Ubuntu Tweak -> Tweaks -> Workspace
+
+/* disable guest session */
+http://www.ubuntugeek.com/how-to-disable-or-enable-guest-session-in-ubuntu-12-04.html
+/etc/lightdm/lightdm.conf add:
+allow-guest=false
+
+/* download monitor */
+http://www.ubuntugeek.com/download-monitor-monitors-the-amount-of-data-uploaded-and-downloaded-over-a-network.html
+sudo add-apt-repository ppa:duncanjdavis/download-monitor-submit
+sudo apt-get update
+sudo apt-get install download-monitor
+
+/* display hidden startup applications */
+sudo sed -i ‘s/NoDisplay=true/NoDisplay=false/g’ /etc/xdg/autostart/*.desktop
+
+/* GNOME fallback on Ubuntu 12.04 */
+apt-get install gnome-session-fallback
+apt-get install gnome-panel
+
+/* shortcut */
+http://maketecheasier.com/useful-shortcut-keys-in-ubuntu/2008/07/14
+Ctrl + Alt + L = Lock the screen.

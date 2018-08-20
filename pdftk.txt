@@ -1,0 +1,27 @@
+pdftk
+
+PDF Toolkit: http://www.linux.com/archive/feed/53701
+
+/* convert ps to pdf */
+ps2pdf14
+
+/* search in PDF files */
+find /path -name '*.pdf' -exec pdftotext {} - \; | grep "your query"
+pdfgrep -in evaluation *.pdf
+
+/* join files */
+pdftk file1.pdf file2.pdf cat output newFile.pdf
+pdftk myDocument.pdf cat 1-9 26-end output removedPages.pdf
+
+/* splitting files */
+pdftk 589_Summary.pdf burst
+
+/* adding attachments */
+pdftk html_tidy.pdf attach_files command_ref.html to_page 24 output html_tidy_book.pdf
+
+/* file out forms */
+generate_fdf
+pdftk survey_form.pdf fill_form survey_answers.fdf output filled_survey.pdf
+
+/* extract pages */
+pdftk A=100p-inputfile.pdf cat A22-36 output outfile_p22-p36.pdf

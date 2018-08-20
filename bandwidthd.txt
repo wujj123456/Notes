@@ -1,0 +1,6 @@
+bandwidthd
+
+Note: can't figure it how to make data persistent across runs.  switched to darkstat
+
+/* configuration */
+/etc/bandwidthd/bandwidthd.conf

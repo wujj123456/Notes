@@ -1,0 +1,7 @@
+top
+
+/* batch output */
+show -b -n 1 | head -n 10
+
+/* show thread details */
+top -H -c -p <pid>

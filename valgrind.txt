@@ -1,0 +1,11 @@
+valgrind
+
+/* openMPI */
+http://www.open-mpi.org/faq/?category=debugging#valgrind_clean
+mpirun -np 2 valgrind --suppressions=$PREFIX/share/openmpi/openmpi-valgrind.supp
+
+/* check memleak */
+valgrind --leak-check=full
+
+/* track origin */
+--track-origins=yes

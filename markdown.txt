@@ -1,0 +1,28 @@
+markdown
+
+https://www.linux.com/learn/why-good-linux-sysadmins-use-markdown
+
+/* titles */
+#
+##
+###
+
+/* link */
+[line text](http://...)
+
+/* bullets */
+*
+-
++
+
+/* lists */
+1.
+2.
+3.
+
+/* format */
+*single asterisks*: italics
+**double asterisks**: bold
+
+/* test */
+python -m markdown testmarkdown.md > testmarkdown.html

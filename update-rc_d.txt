@@ -1,0 +1,17 @@
+update-rc.d
+
+/* stop service from auto start - Ubuntu */
+update-rc.d tomcat disable
+
+/* remove service from auto start */
+update-rc.d -f tor remove
+
+/* add service for auto start */
+cp adjustbrightness /etc/init.d/
+update-rc.d adjustbrightness defaults
+
+/* execute script at startup and shutdown */
+http://en.kioskea.net/faq/3348-ubuntu-executing-a-script-at-startup-and-shutdown
+startup: edit /etc/rc.local
+reboot: put script in /etc/rc0.d
+shutdown: put script in /etc/rc6.d

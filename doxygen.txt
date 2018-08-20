@@ -1,0 +1,16 @@
+doxygen
+
+doxygen -g
+
+http://www-scf.usc.edu/~peterchd/doxygen/
+
+    EXTRACT_ALL = YES
+    INLINE_SOURCE = YES
+    HAVE_DOT = YES
+    CALL_GRAPH = YES
+    GENERATE_LATEX = NO
+
+    CALL_GRAPH = YES
+    RECURSIVE = YES
+
+doxygen Doxyfile

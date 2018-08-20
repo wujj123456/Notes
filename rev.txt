@@ -1,0 +1,7 @@
+rev
+
+/* reverse characters in a line */
+echo "test" | rev
+
+/* strip path */
+echo "/test/dd/das" | rev | cut -f 1 -d '/' | rev

@@ -1,0 +1,37 @@
+Google
+
+限制搜索的词语是网页中链接内包含的关键词（可使用多个关键词）
+allinanchor:keyword1 keyword2
+
+限制搜索的词语是网页内文包含的关键词（可使用多个关键词）
+allintext:keyword1 keyword2
+
+限制搜索的词语是网页标题中包含的关键词（可使用多个关键词）
+allintitle:keyword1 keyword2
+
+限制搜索的词语是网页网址中包含的关键词（可使用多个关键词）
+inurl:keyword1 keyword2
+
+限制所搜索的文件一个特定的格式
+filetype:extension
+
+限制搜索的词语是网页中链接内包含的关键词
+inanchor:keyword
+
+限制搜索的词语是网页内文包含的关键词
+intext:keyword
+
+限制搜索的词语是网页标题中包含的关键词
+intitle:keyword
+
+限制搜索的网页的地址
+inurl:keyword
+
+限制所进行的搜索在指定的域名或网站内
+site:domain
+penguins site:>.edu
+
+相似页面
+related:http://www.informit.com
+
+Google Directory

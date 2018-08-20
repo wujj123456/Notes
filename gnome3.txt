@@ -1,0 +1,7 @@
+Gnome 3
+
+/* check gnome version */
+gnome-shell --version
+
+/* notification bar icon fix */
+https://extensions.gnome.org/extension/495/topicons/

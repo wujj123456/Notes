@@ -1,0 +1,29 @@
+grub2
+
+http://ubuntuforums.org/showthread.php?t=1287602
+
+/* remember last boot system */
+/etc/default/grub:
+    GRUB_DEFAULT=saved
+    GRUB_SAVEDEFAULT=true
+
+/* find out grub version */
+grub-install -v
+
+/* recover from Windows Install */
+http://ulyssesonline.com/2010/09/20/recover-grub2-after-windows-install/
+fdisk -l
+mount /dev/sda1 /mnt
+grub-install --root-directory=/mnt/ /dev/sda
+
+/* boot to command line */
+replace "quiet splash" with "text"
+
+/* default config location */
+/etc/default/grub
+
+/* turn off memtest */
+sudo chmod -x /etc/grub.d/20_memtest86+
+
+/* hide partitions */
+parttool (hd0,1) hidden+

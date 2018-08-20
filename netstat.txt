@@ -1,0 +1,19 @@
+netstat
+
+Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+http://www.thegeekstuff.com/2010/03/netstat-command-examples/
+
+/* list all network ports */
+netstat -a
+
+/* list all TCP port */
+netstat -at
+
+/* display PID and program names */
+netstat -p
+
+/* list listened tcp/udp ports */
+netstat -lt/-lu
+
+/* find out pid of a port binding */
+fuser -n tcp 8080

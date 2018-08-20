@@ -1,0 +1,5 @@
+netcat
+
+/* listen to 8000 */
+http://en.wikipedia.org/wiki/Netcat
+nc -l 8000

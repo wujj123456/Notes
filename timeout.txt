@@ -1,0 +1,4 @@
+timeout
+
+/* set timeout for an application */
+timeout <time> <command>

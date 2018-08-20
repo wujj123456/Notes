@@ -1,0 +1,93 @@
+T420
+
+/* lock the DVD tray */
+http://www.poweradded.net/2009/09/cddvd-tray-lockunlock-under-linux.html
+eject -i 0|1
+http://cdctl.sourceforge.net/
+http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/app-misc/cdctl/files/cdctl-0.15-cdc_ioctls.patch?view=markup
+cdctl
+
+/* install and enable laptop-mode */
+/* seems to interfere with thinkfan */
+apt-get install laptop-mode-tools
+vim /usr/sbin/laptop_mode
+near line 506, add current kernel
+reboot
+
+/* set screen brightness */
+echo 5 > /sys/class/backlight/acpi_video0/brightness
+vim /etc/init.d/adjustbrightness
+chmod 755 /etc/init.d/adjustbrightness
+update-rc.d adjustbrightness defaults
+
+/* preserve battery life */
+http://brainstorm.ubuntu.com/idea/22336/
+http://www.thinkwiki.org/wiki/Tp_smapi#Battery_charge_control_features
+apt-get install tp-smapi-source
+module-assistant prepare tp-smapi
+module-assistant auto-install tp-smapi
+modprobe tp-smapi
+
+Or
+
+apt-get install tp-smapi-dkms
+
+/* set charging threshold */
+sudo sh -c 'echo 45 > /sys/devices/platform/smapi/BAT0/start_charge_thresh'
+sudo sh -c 'echo 85 > /sys/devices/platform/smapi/BAT0/stop_charge_thresh'
+
+/* make settings permanent on reboot */
+apt-get install sysfsutils
+Edit /etc/sysfs.conf
+# cat >> /etc/sysfs.conf << EOF
+# For a LiIon battery in a Thinkpad
+devices/platform/smapi/BAT0/start_charge_thresh = 50
+devices/platform/smapi/BAT0/stop_charge_thresh = 80
+EOF
+
+load kernel module at start
+/etc/modules
+
+/* prevent charging for certain minutes */
+sudo sh -c 'echo 17 > /sys/devices/platform/smapi/BAT0/inhibit_charge_minutes'
+
+/ * cancel charging prevention */
+echo 0 > /sys/devices/platform/smapi/BAT0/inhibit_charge_minutes
+
+/* force battery discharging even if on AC */
+echo 1 > /sys/devices/platform/smapi/BAT0/force_discharge
+
+/* cancel forced discharging */
+echo 0 > /sys/devices/platform/smapi/BAT0/force_discharge
+
+/* kernel power regression workaround */
+http://www.techytalk.info/linux-kernel-2-6-38-2-6-39-power-regression-workaround/
+check: cat /sys/module/pcie_aspm/parameters/policy
+change:
+/etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pcie_aspm=force i915.i915_enable_rc6=1"
+update-grub
+
+/* power drain check utility */
+powertop
+Fix the powerup bug on auto boot after halt
+#!/bin/bash
+for con in /sys/bus/pci/devices/*/power/control; do
+echo on > "$con"
+done
+
+run on rc0.d rc6.d
+
+/* control fan speed (otherwise stuck at 100%) */
+http://ubuntuforums.org/showthread.php?t=1749186
+1. apt-get install thinkfan
+2. make sure coretemp is in /etc/modules
+3. load kernel module coretemp
+4. add sensors to /etc/thinkfan.conf
+5. add following line to /etc/modprobe.d/thinkfan.conf
+options thinkpad_acpi fan_control=1
+6. reload kernel module "thinkpad_acpi"
+modprobe -r thinkpad_acpi && modprobe thinkpad_acpi
+7. set START="yes" in /etc/default/thinkfan
+8. start thinkfan: /etc/init.d/thinkfan start
+9. check whether it works: cat /proc/acpi/ibm/fan

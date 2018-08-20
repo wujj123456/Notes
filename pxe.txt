@@ -1,0 +1,155 @@
+PXE
+
+/* diskless system */
+https://www.easycryptomining.com/diskless_mining_node.html
+
+== basic files ==
+apt-get install atftp pxelinux syslinux-common initramfs-tools debootstrap nfs-server 
+
+mkdir /pxe
+cp /usr/lib/syslinux/modules/bios/ldlinux.c32 /pxe/
+cp /usr/lib/syslinux/modules/bios/libcom32.c32 /pxe/
+cp /usr/lib/syslinux/modules/bios/libutil.c32 /pxe/
+cp /usr/lib/PXELINUX/pxelinux.0 /pxe/
+cp /usr/lib/syslinux/modules/bios/vesamenu.c32 /pxe/
+
+== nfs server ==
+vi /etc/exports
+----
+## Replace "192.168.0.0/24" with your network
+/pxe       192.168.0.0/24(rw,no_root_squash,anonuid=1000,anongid=1000,sync,no_subtree_check)
+----
+service nfs-kernel-server restart
+
+== pxe menu ==
+vi /pxe/pxelinux.cfg/stdmenu.cfg
+----
+default vesamenu.c32
+prompt 0
+timeout 0
+
+#menu color border       * #00000000 #00000000 none
+#menu color sel          * #ffffffff #76a1d0ff *
+#menu color hotsel       1;7;37;40 #ffffffff #76a1d0ff *
+#menu color tabmsg       * #ffffffff #00000000 *
+menu vshift 12
+menu rows 10
+menu tabmsgrow 16
+menu timeoutrow 17
+menu tabmsg Press ENTER to boot or TAB to edit a menu entry
+menu autoboot Starting in # seconds
+----
+
+vi /pxe/pxelinux.cfg/default
+----
+include /pxelinux.cfg/stdmenu.cfg
+
+timeout 0
+
+label memtest
+        menu label Memtest
+        kernel /memtest/memtest
+
+label local
+        menu label Local
+        localboot 0
+
+label pxe
+        menu label Pxe
+        ## Replace "vmlinuz-4.4.0-101-generic" with your kernel version
+        kernel /rootfs/pxe/boot/vmlinuz-4.4.0-101-generic
+        ## Replace "192.168.0.200" with your server ip
+        ## Replace "initrd.img-4.4.0-101-generic" with your initrd version
+        append root=/dev/nfs initrd=/rootfs/pxe/boot/initrd.img-4.4.0-101-generic nfsroot=192.168.0.200:/pxe/rootfs/pxe ip=dhcp rw
+----
+
+== memtest ==
+mkdir -p /pxe/memtest /pxe/pxelinux.cfg /pxe/rootfs
+
+cd /pxe/memtest
+wget http://www.memtest.org/download/5.01/memtest86+-5.01.bin.gz
+gzip -dk memtest86+-5.01.bin.gz
+mv memtest86+-5.01.bin memtest
+chmod 644 memtest
+
+== pxe live os ==
+cd /pxe/rootfs
+debootstrap --arch amd64 xenial pxe
+
+vi pxe/etc/hostname
+----
+pxe
+----
+
+vi pxe/etc/fstab
+----
+/proc    /proc    proc    defaults   0 0
+/sys     /sys     sysfs   defaults   0 0
+
+tmpfs   /tmp        tmpfs       defaults,size=1g                                    0    0
+tmpfs   /var/log    tmpfs       defaults,nosuid,nodev,noatime,mode=0755,size=5%     0   0
+----
+
+cd pxe
+chroot .
+
+mount /proc
+apt-get update
+apt-get install openssh-server vim htop iotop iftop nano initramfs-tools
+
+vi /etc/resolvconf/resolv.conf.d/base
+----
+## Replace "192.168.0.200" with your server ip
+nameserver 192.168.0.200
+----
+
+apt-get install linux-image-generic
+## Write down the version in previous /pxe/pxelinux.cfg/default
+ls -l /initrd.img
+ls -l /vmlinuz
+chmod +r /boot/*
+
+## Change root password
+passwd
+
+## Add a new user with sudo privileges or enable root login in /etc/ssh/sshd_config
+## Here we create a "mining" user
+adduser mining
+usermod -aG sudo mining
+
+umount /proc
+exit
+
+== duplicate os ==
+## Change "m1" to whatever you want, the node hostname is generaly a good choise.
+cp -rafp pxe m1
+
+vi m1/etc/hostname
+----
+## Change here to what you want
+m1
+----
+
+## Get your node MAC address (in your already installed OS or by PXE booting and look in /var/log/syslog
+cd /pxe/pxelinux.cfg/
+## Must start with 01-
+vi 01-<mac address separated by ->
+## Change "m1" with what your previously choose
+----
+include /pxelinux.cfg/stdmenu.cfg
+
+label m1
+        menu label m1
+        menu default
+        timeout 100
+        kernel /rootfs/m1/boot/vmlinuz-4.4.0-101-generic
+        append root=/dev/nfs initrd=/rootfs/m1/boot/initrd.img-4.4.0-101-generic nfsroot=192.168.0.200:/pxe/rootfs/m1 ip=dhcp rw
+
+label memtest
+        menu label Memtest
+        kernel /memtest/memtest
+
+label local
+        menu label Local
+        localboot 0
+----

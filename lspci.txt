@@ -1,0 +1,8 @@
+lspci
+
+/* show device in slot */
+lspci -s <slot>
+lspci -vvvs <slot>
+
+/* get vendor and device id */
+lspci -n

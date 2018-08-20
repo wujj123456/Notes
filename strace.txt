@@ -1,0 +1,4 @@
+strace
+
+/* list all syscalls during program execution */
+strace <command>

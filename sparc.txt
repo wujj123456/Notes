@@ -1,0 +1,5 @@
+Sparc
+
+http://en.wikibooks.org/wiki/SPARC_Assembly/Memory_Instructions
+
+http://developers.sun.com/solaris/articles/atomic_sparc/

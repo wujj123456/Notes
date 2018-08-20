@@ -1,0 +1,17 @@
+ss
+
+https://www.linux.com/learn/intro-to-linux/2017/7/introduction-ss-command
+
+/* get stats for tcp window */
+ss -6nt dst <ipv6 address>
+ss -6nt dst <host name> 
+
+/* check sync queue */
+https://blog.cloudflare.com/syn-packet-handling-in-the-wild/
+ss -n state syn-recv sport = :80
+
+/* current listening ports */
+ss -l
+
+/* show connected sockets from address */
+ss dst 192.168.1.139

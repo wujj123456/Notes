@@ -1,0 +1,40 @@
+Xmodmap
+
+Change Keyboard & Mouse Layouts
+
+/* change mouse pointer binding */
+xmodmap -e "pointer = 1 2 3 4 5 6 7 9 8 10 11 12 13"
+
+/* Microsoft Natural Ergonomic Keyboard 4000 */
+
+/* detect keycode */
+xev
+showkey
+evtest /dev/input/event?
+
+/* set keycodes */
+http://lists.x.org/archives/xorg/2006-May/015587.html
+setkeycodes
+
+/* check key map */
+http://juergenchiu.blogspot.com/2009/04/how-to-change-keycode-or-keybinding.html
+xmodmap -pke
+
+/* remap keys */
+xmodmap -e 'keycode <value>=<action>'
+
+/* remap caps lock to backspace */
+http://michaeljaylissner.com/blog/remap-caps-lock-as-backspace
+~/.Xmodmap
+
+!
+! Make the caps lock button a backspace button
+!
+remove Lock = Caps_Lock
+keycode 66 = BackSpace
+
+!
+! Make the caps lock button an ESC button
+!
+remove Lock = Caps_Lock
+keycode 66 = Escape

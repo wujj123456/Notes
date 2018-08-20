@@ -1,0 +1,7 @@
+dd
+
+/* see contents of MBR */
+dd if=/dev/hda of=mbr.bin bs=512 count=1
+
+/* copy iso to usb device */
+dd if=/sth/test.iso of=/dev/sdb1 bs=512M; sync

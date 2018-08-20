@@ -1,0 +1,65 @@
+ffmpeg / avconv
+
+/* x264 guide */
+https://trac.ffmpeg.org/wiki/Encode/H.264
+
+/* rip DVD */
+https://newspaint.wordpress.com/2016/07/27/ripping-a-video-from-dvd-using-ffmpeg/
+ffmpeg -i "concat:VTS_02_0.VOB|VTS_02_1.VOB|VTS_02_2.VOB|VTS_02_3.VOB" -c copy output.mpeg
+-map to select streams
+If no audio, add "-target pal-dvd" (https://trac.ffmpeg.org/ticket/2160)
+
+ffmpeg -i output.mpeg -c:v libx264 -b:v 2M -preset slow -strict -2 -g 60 -vf yadif -c:a aac output.mp4
+
+/* multi-thread (probably not working...) */
+-threads 64
+
+/* scale a video */
+http://stackoverflow.com/questions/10934420/ffmpeg-how-to-scale-a-video-then-apply-a-watermark
+ffmpeg -vf "scale=320:-1" -i in.avi out.avi
+
+/* get media info */
+ffmpeg -i <file>
+
+/* GUI */
+WinFF
+Download presets:http://code.google.com/p/winff/downloads/list
+
+/* cut video */
+http://www.joeldare.com/wiki/video:cut_video_with_ffmpeg
+http://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video
+ffmpeg -i [input_file] -ss [start_seconds] -t [duration_seconds] -c:v copy -c:a copy [outputfile]
+
+/* check supported codecs */
+ffmpeg -codecs
+
+/* compile with mp3 encoder enabled */
+./configure --enable-libmp3lame
+
+/* extract audio from video */
+ffmpeg -i <video> <output.mp3>
+If audio codec already matches output:
+ffmpeg -i <video> -acodec copy <output.mp3>
+
+/* convert wmv to mp4 */
+ffmpeg -i original.wmv -b 600 -s 320x240 -ab 128k -vcodec mpeg4 -acodec aac output.mp4
+
+/* convert rmvb to mp4 */
+http://www.ehow.com/how_6306550_convert-realmedia-mp4-using-linux.html
+ffmpeg -i REAL_FILE -vcodec mpeg4 -sameq -acodec aac -ab ABITRATE -r 30 EXPORTED_FILE.mp4
+
+This converts "REAL_FILE" to an MP4 with the same video quality as the original file (the -sameq switch), with "ABITRATE" as the audio bitrate, and with file name "EXPORTED_FILE.mp4."
+
+NEED TO USE THE LATEST VERSION!  OTHERWISE INPUT FPS MIGHT BE WRONG
+
+/* Converting multiple BMPs to an AVI without compression */
+http://ubuntuforums.org/showthread.php?t=1815998
+
+Use huffyuv encoding: 
+ffmpeg -r 30 -i II%03d.bmp -vcodec huffyuv output.avi
+
+Or rawvideo:
+ffmpeg -i img%d.jpg -vcodec rawvideo output.avi
+
+By default the output will inherit the input frame rate. You can apply the same option to the output. By changing the frame rates you can achieve a certain duration. For example, if I have 900 images and want the output duration to be 60 seconds with an output frame rate of 30, then 900/60=15.
+ffmpeg -r 15 -i img%d.jpg -r 30 -vcodec huffyuv output.avi

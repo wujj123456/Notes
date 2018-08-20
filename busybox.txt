@@ -1,0 +1,10 @@
+Busybox
+
+/* get accurate time */
+$EPOCHREALTIME
+
+/* floating point math */
+dc
+
+/* busybox no root installation */
+http://kevinboone.net/android_nonroot.html

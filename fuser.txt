@@ -1,0 +1,6 @@
+fuser
+
+Show which processes use the named files, sockets, or filesystems.
+
+/* list which user/process is using a specific directory */
+fuser -vm /opt

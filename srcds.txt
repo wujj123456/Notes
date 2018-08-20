@@ -1,0 +1,17 @@
+srcds
+
+/* update TF2 */
+./steam -command update -game tf -dir . -verify_all
+
+/* update L4D2 */
+./steam -command update -game left4dead2 -dir .
+
+/* Start TF2 Server */
+./srcds_run -game tf -port 27015 +maxplayers 24 +map ctf_2fort # -autoupdate
+./srcds_run -game tf -port 27016 +maxplayers 32 +map cp_dustbowl # -autoupdate
+
+/* Start L4D2 Server */
+./srcds_run -game left4dead2 -hostport 27016 +maxplayers 8 +map c5m1_waterfront.bsp +autoupdate 1
+
+/* multiple servers in one folder */
+http://forums.srcds.com/viewtopic/8163

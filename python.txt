@@ -1,0 +1,14 @@
+Python
+
+/* Python.h: no such file or directory */
+apt-get install python-dev
+
+/* crypto */
+PyCrypto
+
+/* statistics */
+numpy, scipy
+
+/* symbolic math */
+sympy
+http://www.linuxjournal.com/content/symbolic-math-python

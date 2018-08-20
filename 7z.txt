@@ -1,0 +1,9 @@
+7z
+
+/* online command generator */
+http://www.howtoadvice.com/7zipHelper
+
+/* extract */
+7z x FileName.7z
+7z x FileName.7z.001
+7z x FileName.7z -o/home/user/Desktop/foldername

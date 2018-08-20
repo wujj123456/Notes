@@ -1,0 +1,5 @@
+dig
+
+/* dnssec */
+http://lwn.net/Articles/516797/
+dig +dnssec fedoraproject.org

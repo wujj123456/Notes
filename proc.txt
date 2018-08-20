@@ -1,0 +1,24 @@
+/proc
+
+/* check network irq */
+cat /proc/interrupts | grep eth
+
+/* check irq affinity */
+cat /proc/irq/<irqnum>/smp_affinity
+
+/* check current kernel config */
+zcat /proc/config.gz
+
+/* available entropy */
+cat /proc/sys/kernel/random/entropy_avail
+
+/* kernel print level */
+echo 7 > /proc/sys/kernel/printk
+echo Y > /sys/module/printk/parameters/ignore_loglevel
+echo "8 8 8 8" > /proc/sys/kernel/printk
+
+/* disable panic */
+echo 0 > /proc/sys/kernel/panic
+
+/* crash kernel */
+echo c > /proc/sysrq-trigger

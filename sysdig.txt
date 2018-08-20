@@ -1,0 +1,6 @@
+sysdig
+
+https://dzone.com/articles/container-isolation-gone-wrong
+sysdig container.name=worker
+sysdig -r worker1.scap -r worker2.scap -c topscalls_time
+sysdig -r worker1.scap -c spectrogram evt.type=lstat

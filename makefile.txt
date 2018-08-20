@@ -1,0 +1,40 @@
+Makefile
+
+/* auto compile <x>.c into <x> */
+all: mallocs timer
+%: %.c
+        $(CC) $(CFLAGS) -o $@ $< $(LINK)
+
+http://coolshell.cn/articles/3790.html
+/* vars.mk */
+
+%:
+    @echo '$*=$($*)'
+
+d-%:
+    @echo '$*=$($*)'
+    @echo ' origin = $(origin $*)'
+    @echo '  value = $(value $*)'
+    @echo ' flavor = $(flavor $*)'
+
+/* test.mk */
+
+OBJDIR := objdir
+OBJS := $(addprefix $(OBJDIR)/,foo.o bar.o baz.o)
+
+foo = $(bar)bar = $(ugh)ugh = Huh?
+
+CFLAGS = $(include_dirs) -O
+include_dirs = -Ifoo -Ibar
+CFLAGS := $(CFLAGS) -Wall
+
+MYOBJ := a.o b.o c.o
+MYSRC := $(MYOBJ:.o=.c)
+
+/* usage */
+make -f test.mk -f var.mk OBJS
+make -f test.mk -f var.mk d-foo
+
+  * $(origin)：告诉你这个变量是来自哪儿，file表示文件，environment表示环境变量，还有environment override，command line，override，automatic等。
+  * $(value)：打出这个变量没有被展开的样子。比如上述示例中的 foo 变量。
+  * $(flavor)：有两个值，simple表示是一般展开的变量，recursive表示递归展开的变量。

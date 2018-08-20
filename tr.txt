@@ -1,0 +1,11 @@
+tr
+
+/* change case in bash */
+http://stackoverflow.com/questions/2264428/converting-string-to-lower-case-in-bash-shell-scripting
+test=Test
+echo $test | tr 'A-Z' 'a-z'
+echo ${test,,}
+echo ${test^^}
+
+/* truncate whitespace */
+tr -d ' '

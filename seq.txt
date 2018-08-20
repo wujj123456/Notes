@@ -1,0 +1,4 @@
+seq
+
+/* used in busybox where {0..10} is not available */
+for i in `seq 0 10`; do sth; done

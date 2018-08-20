@@ -1,0 +1,5 @@
+iostat
+
+/* Check io usage */
+http://ostatic.com/blog/tracking-down-high-io-wait-in-linux#buzz
+iostat -x 1

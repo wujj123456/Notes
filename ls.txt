@@ -1,0 +1,4 @@
+ls
+
+/* list directory entries instead of expanding their contents */
+ls -d *

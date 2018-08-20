@@ -1,0 +1,20 @@
+date
+
+http://www.oreillynet.com/linux/cmd/cmd.csp?path=d/date
+
+/* display in customized format */
+date +"STRING"
+date +"%m%d%Y_%k%M%S"
+
+/* get time since epoch */
+date +%s
+
+/* convert epoch to time */
+date -d @<epoch>
+
+/* change timezone */
+dpkg-reconfigure tzdata
+tzselect
+
+/* force ntp update */
+ntpdate-debian

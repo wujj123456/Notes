@@ -1,0 +1,27 @@
+matplotlib
+
+http://shreevatsa.wordpress.com/2010/03/07/matplotlib-tutorial/
+http://matplotlib.sourceforge.net/examples/pylab_examples/broken_barh.html
+
+/* remove figure margin */
+http://stackoverflow.com/questions/4042192/reduce-left-and-right-margins-in-matplotlib-plot
+bbox_inches='tight' kwarg to plt.savefig
+plt.savefig('test.png', bbox_inches='tight')
+
+/* bypass figure size limit of X server */
+http://stackoverflow.com/questions/4931376/generating-matplotlib-graphs-without-a-running-x-server
+simply call matplotlib.use('Agg') before importing matplotlib.pyplot, and then continue as normal. 
+Example:
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+
+If you have a file which is just several lines of (x,y) values in two columns (e.g. one you may have been using as input to gnuplot), this function may help:
+
+def x_and_y(filename):
+    xs = []; ys = []
+    for l in open(filename).readlines():
+        x, y = [int(s) for s in l.split()]
+        xs.append(x)
+        ys.append(y)
+    return xs, ys

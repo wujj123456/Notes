@@ -1,0 +1,60 @@
+IPV6
+
+/* Google IPV6 hosts */
+https://docs.google.com/Doc?docid=0ARhAbsvps1PlZGZrZG14bnRfNjFkOWNrOWZmcQ
+
+/* Google auto proxy configuration */
+http://www.lostriver.net/ipv6-google-proxy/
+function FindProxyForURL(url, host)
+{
+if( (url.substring(0, 4) != "http") || isPlainHostName(host) ) return "DIRECT";
+else if(
+(shExpMatch(host, "*youtube.com")) ||
+(shExpMatch(host, "*google.com")) ||
+(shExpMatch(host, "*blogger.com")) ||
+(shExpMatch(host, "*appspot.com")) ||
+(shExpMatch(host, "*ytimg.com")) ||
+(shExpMatch(host, "*blogspot.com")) ) {
+ if (url.substring(0, 5) != "https")
+  return "PROXY ipv6.google.com:80; DIRECT";
+ else return "DIRECT";
+ }
+}
+
+/* configure IPV6 DNS */
+http://blog.csdn.net/wangjingfei/archive/2010/03/19/5396845.aspx
+Windows:
+http://blog.csdn.net/wangjingfei/archive/2010/03/25/5417202.aspx
+
+/* prefer IPV6 results in DNS getaddrinfo */
+http://askubuntu.com/questions/9181/how-to-let-the-browser-prefer-ipv6-over-ipv4
+Change /etc/gai.conf to:
+label ::1/128  0
+label ::/0   1
+#label 2002::/16 2
+label ::/96   3
+label ::ffff:0:0/96 4
+label fec0::/10  5
+label fc00::/7  6
+label 2001:0::/32 7
+
+/* IPV6 dns servers */
+2001:470:20::2 # HE.net, GFW-proof
+2620:0:ccc::2 # openDNS
+2620:0:ccd::2 #openDNS
+2001:da8:8000:1:202:120:2:101 # SJTU, no youtube
+http://www.getipv6.info/index.php/DNS_and_Naming_Issues
+http://www.chaz6.com/files/resolv.conf
+
+sudo sed -i 's/nameserver 8.8.8.8/nameserver 2001:470:20::2/' /etc/resolv.conf
+
+/* teredo */
+http://www.ipv6bbs.cn/thread-168-1-1.html
+http://mcs.szu.edu.cn/user/zouzhxi/Article_62009
+http://felixcat.net/2010/04/install-teredo-ipv6/
+http://neolee.com/web/tedero-ipv6-internet-through-home-router/
+
+netsh interface ipv6 install
+netsh interface ipv6 set teredo client teredo.ipv6.microsoft.com
+netsh interface ipv6 show teredo
+netsh interface ipv6 set teredo enterpriseclient

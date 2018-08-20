@@ -1,0 +1,59 @@
+gdb
+
+/* change command history size */
+echo set history save on >> ~/.gdbinit
+echo set history size unlimited >> ~/.gdbinit
+
+/* print register */
+info register
+
+/* disassemble func */
+disass <func>
+
+http://coolshell.cn/articles/3643.html
+
+MULTI-THREADED DEBUGGING:
+
+info thread
+thread <ID>
+break file.c:100 thread all
+set scheduler-locking off|on|step
+    * off 不锁定任何线程，也就是所有线程都执行，这是默认值。
+    * on 只有当前被调试程序会执行。
+    * step 在单步的时候，除了next过一个函数的情况(熟悉情况的人可能知道，这其实是一个设置断点然后continue的行为)以外，只有当前线程会执行。
+
+MACRO DEBUGGING:
+
+gcc argument: -ggdb3
+info macro
+macro
+
+CONDITIONAL BREAKPOINT:
+
+break [where] if [condition]
+
+ARGUMENTS:
+
+gdb -args
+gdb > set args
+
+GDB VARIABLE:
+
+gdb > set $i = 0
+gdb > p a[$i++]
+
+X COMMAND:
+    * x/x 以十六进制输出
+    * x/d 以十进制输出
+    * x/c 以单字符输出
+    * x/i  反汇编 – 通常，我们会使用 x/10i $ip-20 来查看当前的汇编（$ip是指令寄存器）
+    * x/s 以字符串输出
+
+COMMAND COMMAND:
+(gdb) command 1
+Type commands for when breakpoint 1 is hit, one per line.
+End with a line saying just "end".
+>print arg1
+>print arg2
+>print arg3
+>end

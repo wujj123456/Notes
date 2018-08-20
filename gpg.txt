@@ -1,0 +1,21 @@
+gpg
+
+http://www.madboa.com/geek/gpg-quickstart/
+
+/* notes from kernel.org */
+https://lkml.org/lkml/2011/9/30/421
+
+/* convert keys from OpenSSH to GnuPG */
+http://www.sysmic.org/dotclear/index.php?post/2010/03/24/Convert-keys-betweens-GnuPG%2C-OpenSsh-and-OpenSSL
+openssl req -new -x509 -key ~/.ssh/id_rsa -out ssh-cert.pem
+openssl pkcs12 -export -in ssh-certs.pem -inkey ~/.ssh/id_rsa -out ssh-key.p12
+gpgsm --import ssh-key.p12
+
+/* encrypt a file with symmetric cipher */
+gpg -c --force-mdc <filename>
+
+/* decrypt previous file */
+gpg <filename>.gpg
+
+/* WARNING: message was not integrity protected */
+--force-mdc

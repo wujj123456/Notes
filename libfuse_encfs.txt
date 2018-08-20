@@ -1,0 +1,10 @@
+libfuse/encfs
+
+/* API */
+/usr/include/fuse/fuse.h
+
+/* compile */
+gcc -Wall `pkg-config fuse --cflags --libs` hello.c -o hello /usr/lib/libfuse.so
+
+/* struct stat */
+sys/stat.h -> bits/stat.h

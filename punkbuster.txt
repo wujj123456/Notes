@@ -1,0 +1,27 @@
+Punkbuster
+
+/* Manual */
+http://www.evenbalance.com/publications/generic-ad/index.htm
+
+/* restart PB server */
+pb_sv_restart
+
+/* screenshots */
+pb_sv_SsFloor 1 //[Low screenshot filename serial #]
+pb_sv_SsCeiling 10000 //[High screenshot filename serial #]
+pb_sv_SsCmd "" //[Filename of system command to run after screenshots]
+pb_sv_SsWidth 320 //[Requested pixel width of remote screenshots]
+pb_sv_SsHeight 240 //[Requested pixel height of remote screenshots]
+pb_sv_SsXpct 50 //[Percentage across screen for remote screenshots]
+pb_sv_SsYpct 50 //[Percentage down screen for remote screenshots]
+pb_sv_SsSrate 1 //[Sample Rate for remote screenshots]
+pb_sv_SsDelay 0 //[Maximum delay client waits before capturing screenshot]
+pb_sv_SsPath "" //[Path where remote screenshots are saved]
+pb_sv_AutoSsFrom 300 //[Min # of seconds to wait before requesting next ss]
+pb_sv_AutoSsTo 330 //[Max # of seconds to wait before requesting next ss]
+pb_sv_AutoSs 1 //[0=No, 1=Yes (default=0)]
+
+/* scheduled tasks */
+pb_sv_task <start> <every> <command>
+pb_sv_tlist
+pb_sv_taskdel

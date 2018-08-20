@@ -1,0 +1,7 @@
+Excel
+
+/* save chart */
+http://peltiertech.com/WordPress/enhanced-export-chart-procedure/
+
+/* broken axis */
+http://peltiertech.com/WordPress/broken-y-axis-in-excel-chart/

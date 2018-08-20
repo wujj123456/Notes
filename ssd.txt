@@ -1,0 +1,26 @@
+SSD
+
+/* Linux */
+http://mindaugas.kiznis.lt/performance-tuning-linux-virtual-machine/
+https://wiki.archlinux.org/index.php/Solid_State_Drives
+
+Disk scheduler:
+cat /sys/block/sda/queue/scheduler -> noop
+
+Kernel boot parameter:
+elevator=noop
+
+File system mount:
+/dev/VolGroup00/LogVol00 / ext3 defaults,noatime,nodiratime 1 1
+
+mount tmpfs to RAM (fstab)
+
+/* Windows */
+http://www.guru3d.com/article/ocz-vertex-4-ssd-review-with-15-firmware/7
+Drive indexing disabled
+Prefetch disabled
+Superfetch disabled
+Defrag disabled
+at command prompt just type: services
+
+Enable AHCI

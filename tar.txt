@@ -1,0 +1,19 @@
+tar
+
+/* tar compress/decompress */
+tar cvf test.tar <file/dir>
+tar xvf test.tar
+
+/* gzip */
+tar xvzf test.tar.gz
+
+/* LZMA (xz) */
+tar xvJf test.tar.xz
+
+/* list files without decompressing */
+tar tf test.tar
+
+/* uncompress to stdout (not tar) */
+xzcat *.xz
+bzcat *.bz2
+zcat *.gz

@@ -1,0 +1,7 @@
+patch
+
+/* apply a patch */
+patch -p1 < file.patch
+
+/* reverse a patch */
+patch -p1 -R < file.patch

@@ -1,0 +1,16 @@
+ecryptfs
+
+/* encrypt other folders */
+http://bodhizazen.net/Tutorials/Ecryptfs
+sudo mount -t ecryptfs /home/user_name/.Private /home/user_name/Private
+ecryptfs-setup-private
+
+/* migrate home directory to encrypted after installation */
+http://www.adercon.com/ac/node/34
+log in as root
+1. ecryptfs-migrate-home -u <username>
+2. BEFORE reboot, login as username, check no error and files exist
+3. ecryptfs-unwrap-passphrase ~/.ecryptfs/wrapped-passphrase
+Save the output to safe place!
+4. check encryption. Login as root, and ls /home/username
+only two files should show up: "Access-Your-Private-Data.desktop" and "README.txt"

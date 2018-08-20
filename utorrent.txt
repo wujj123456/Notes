@@ -1,0 +1,6 @@
+utorrent
+
+/* disable ads */
+Options -> Preferences -> Advanced
+gui.show_plus_upsell -> false
+sponsored_torrent_offer_enabled -> false

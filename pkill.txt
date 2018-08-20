@@ -1,0 +1,10 @@
+pkill
+
+/* kill an ssh session */
+pkill -9 -t pts/0
+
+/* kill process based on name or other attributes */
+pkill prog
+
+/* list signals */
+kill -l

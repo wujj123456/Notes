@@ -1,0 +1,17 @@
+vpnc
+
+http://www.debuntu.org/how-to-connect-to-a-cisco-vpn-using-vpnc
+http://hi.baidu.com/opbsder/blog/item/6439ed13335fd3daf6039e3d.html
+
+vpnc-connect <conf>
+vpnc-disconnect
+
+/etc/<name>.conf
+
+    IPSec gateway -> Host
+    IPSec ID -> GroupName
+    IPSec secret -> enc_GroupPwd decrypted using http://www.unix-ag.uni-kl.de/~massar/bin/cisco-decode
+    Xauth username and Xauth password are your username and password
+
+/* GUI */
+apt-get install network-manager-vpnc

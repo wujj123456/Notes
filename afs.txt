@@ -1,0 +1,28 @@
+afs
+
+/* install Kerberos */
+apt-get krb5-user krb4-config
+
+/* configure Kerberos */
+dpkg-reconfigure krb5-config krb4-config
+    Realm: UMICH.EDU
+    Kerberos servers:
+        kerberos-1.umich.edu
+        kerberos-2.umich.edu
+        kerberos-3.umich.edu
+    Kerberos admin server (KDC): kerberos-admin.umich.edu
+OR
+get from umich engin: /etc/krb*
+In the [domain_realm] section of /etc/krb5.conf, add the following:
+ifs.umich.edu = UMICH.EDU
+.ifs.umich.edu = UMICH.EDU
+
+/* install and configure OpenAFS */
+apt-get install module-assistant build-essential gcc-4.0
+apt-get install openafs-modules-source
+module-assistant prepare
+module-assistant auto-install openafs-modules
+depmod -a
+dpkg-reconfigure openafs-client
+OR
+cp /etc/openafs/CellServDB

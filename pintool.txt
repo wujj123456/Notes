@@ -1,0 +1,36 @@
+pintool
+
+http://www.pintool.org/docs/45467/Pin/html/
+
+/* debugging */
+-pause-tool 30
+-appdebug
+
+/* Debugging setup */
+1.vim <PinDir>/pin
+after line 44: export LD_LIBRARY_PATH=$cpp_libs:$LD_LIBRARY_PATH
+add: echo $LD_LIBRARY_PATH
+2. run pin, and copy the first line of the output. 
+3. In terminal:
+export LD_LIBRARY_PATH=...
+4. Follow section “Using gdb on Linux”
+http://www.pintool.org/docs/45467/Pin/html/
+
+/* make */
+cd source/tools && make
+
+/* examples */
+source/tools/ManualExamples
+pin -t <obj> -o <outfile> -- <binary>
+../../../pin -t obj-intel64/opcodemix.so -- /bin/ls
+
+/* parent injection mode */
+echo 0 > /proc/sys/kernel/yama/ptrace_scope
+
+/* Notes from tutorial */
+P63: -xyzzy -liveness 1
+pthread functions cannot be called from an analysis or replacement routine
+C/C++ libraries linked into Pintools are not thread-safe
+
+/* xed instruction category doc */
+extras/xed2-intel64/misc/idata.txt

@@ -1,0 +1,7 @@
+darkstat
+
+/* config file */
+/etc/darkstat/init.cfg
+
+/* error: getaddrinfo */
+Use "-b 0.0.0.0"

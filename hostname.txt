@@ -1,0 +1,10 @@
+hostname
+
+http://www.tech-recipes.com/rx/2732/ubuntu_how_to_change_computer_name/
+http://www.ducea.com/2006/08/07/how-to-change-the-hostname-of-a-linux-system/
+
+hostname <name>
+
+/* permanent change on Ubuntu */
+/etc/hostname
+/etc/hosts

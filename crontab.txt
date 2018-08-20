@@ -1,0 +1,9 @@
+crontab
+http://www.adminschoice.com/crontab-quick-reference/
+
+/* edit crontab */
+crontab -e
+0 X  *   *   *     /usr2/<username>/bin/syncmirror.sh
+(execute at X hours daily)
+
+Sunday = 0

@@ -1,0 +1,6 @@
+vboxmanage
+
+http://www.virtualbox.org/manual/ch08.html
+
+/* list vms UUID */
+vboxmanage list vms

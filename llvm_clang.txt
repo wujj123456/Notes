@@ -1,0 +1,25 @@
+LLVM/Clang
+
+http://llvm.org/docs/GettingStarted.html
+http://llvm.org/docs/WritingAnLLVMPass.html
+http://llvm.org/docs/Projects.html
+http://llvm.org/docs/doxygen/html/
+http://llvm.org/docs/ProgrammersManual.html#apis
+http://ubuntuforums.org/showthread.php?t=1222911
+
+/* Default optimizations */
+llvm-as < /dev/null | opt -O2 -disable-output -debug-pass=Arguments 
+
+/* installation */
+svn co http://llvm.org/svn/llvm-project/llvm/tags/RELEASE_31/final llvm
+cd llvm/tools
+svn co http://llvm.org/svn/llvm-project/cfe/tags/RELEASE_31/final clang
+cd ../projects
+svn co http://llvm.org/svn/llvm-project/compiler-rt/tags/RELEASE_31/final compiler-rt
+svn co http://llvm.org/svn/llvm-project/test-suite/tags/RELEASE_31/final test-suite
+
+mkdir build && cd build
+../llvm/configure --prefix=<install dir> --enable-optimized --enable-assertions
+
+/* llvm bitcode instruction opcode location */
+$LLVMPATH/include/llvm/Instruction.def

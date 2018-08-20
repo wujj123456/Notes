@@ -1,0 +1,12 @@
+preload
+
+http://techthrob.com/2009/03/02/drastically-speed-up-your-linux-system-with-preload/
+
+/* change config */
+/etc/preload.conf
+
+/* monitoring log */
+sudo tail -f /var/log/preload.log
+
+/* check files in cache */
+sudo less /var/lib/preload/preload.state

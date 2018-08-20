@@ -1,0 +1,4 @@
+xmllint
+
+/* format xml files */
+xmllint --format <input> --output <output>

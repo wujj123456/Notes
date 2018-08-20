@@ -1,0 +1,7 @@
+Solaris
+
+/* check CPU info */
+psrinfo -v
+
+/* check ISA */
+isainfo -v

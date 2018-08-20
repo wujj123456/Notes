@@ -1,0 +1,48 @@
+hg
+
+/* just use git commands */
+hg githelp -- <git command>
+hg git ...
+
+/* smart log */
+hg sl
+
+/* git branch */
+hg bookmarks
+
+/* git fetch */
+hg pull
+
+/* git checkout <hash> */
+hg update <hash>
+
+/* git rebase master */
+hg rebase -d master
+
+/* git rebase branchA master */
+hg rebase -d master -b branchA
+
+/* change commit text */
+hg amend -e
+
+/* resolve a conflict */
+hg resolve --mark <file-path>
+hg rebase --continue
+
+/* git rebaes -i */
+hg histedit
+
+/* same as git */
+hg status
+hg add
+hg rm
+hg log
+hg log --graph
+hg log --template
+hg log --style
+hg show
+hg commit
+hg amend == hg commit --amend
+hg diff
+hg reflog
+hg reset

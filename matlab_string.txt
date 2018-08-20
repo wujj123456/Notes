@@ -1,0 +1,11 @@
+MATLAB string
+
+/* formatted output */
+imwrite(IM(:,:,1:3),['II' sprintf('%03d',theta_degree) '.bmp'],'BMP');
+imwrite(IM,['II' num2str(theta_degree) '.bmp'],'BMP');
+
+/* number to string */
+num2str()
+
+/* concatenate string */
+str = concat(s1, s2)

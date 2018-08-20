@@ -1,0 +1,31 @@
+Cross Compile
+
+http://linux.bytesex.org/cross-compiler.html
+http://www.cis.upenn.edu/~milom/cross-compile.html
+http://jaeger.morpheus.net/linux/cross-compiler.html
+
+/* binutils */
+binutils: http://ftp.gnu.org/gnu/binutils/
+./configure --prefix=/usr/local --target=sparc-linux
+make
+make install
+ll /usr/local/bin/sparc-linux-*
+ls /usr/local/sparc-linux
+bin/  lib/
+
+/* sparc libraries/headers */
+Download site: http://ftp.ie.freshrpms.net/pub/redhat/linux/5.1/en/os/sparc/RedHat/RPMS/
+
+rpm2cpio glibc-2.0.7-17.sparc.rpm | cpio --extract --make-directories
+rpm2cpio glibc-devel-2.0.7-17.sparc.rpm | cpio --extract --make-directories
+cp -a usr/include /usr/local/sparc-linux
+rpm2cpio kernel-headers-2.0.33-3.sparc.rpm | cpio --extract --make-directories
+cp -a usr/src/linux-<version>/include/linux /usr/local/sparc-linux/include/linux
+cp -a usr/src/linux-<version>/include/asm-sparc /usr/local/sparc-linux/include/asm
+
+cp -a lib/* /usr/local/sparc-linux/lib
+cp -a usr/lib/* /usr/local/sparc-linux/lib
+Then fix broken links. 
+libc.so is a text file and needs to be fixed too
+
+/* compiler */

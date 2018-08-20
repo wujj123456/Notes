@@ -1,0 +1,7 @@
+dmesg
+
+/* list network interfaces (NIC) */
+dmesg | grep network
+
+/* write to kernel log */
+echo something > /dev/kmsg

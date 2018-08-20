@@ -1,0 +1,38 @@
+Android
+
+/* Error: DF-BPA-09 */
+Settings -> Accounts and Sync -> Google -> Unsync Gmail -> Resync Gmail
+
+/* USB transfer MTP */
+apt-get install libmtp9 gmtp
+
+/* Jelly Bean sleep period */
+Settings -> Display
+
+/* change voicemail number */
+Dailer -> Settings
+
+/* screenshot on JB */
+Power + Volume down for 3 seconds
+
+/* developer mode on 4.2 */
+About tablet/phone -> tap on build number 7 times
+
+/* select, copy, cut and paste */
+double tap and hold on to second tap
+
+/* reset defaults */
+App -> <the app> -> clear defaults
+
+/* move to sd card Froyo */
+http://www.bongizmo.com/blog/moving-all-android-apps-to-sdcard-apps2sd-froyo/
+
+/* terminal */
+http://kevinboone.net/android_nonroot.html
+http://kevinboone.net/android_native.html
+
+/* development setup */
+http://esausilva.com/2010/05/13/setting-up-adbusb-drivers-for-android-devices-in-linux-ubuntu/
+http://ptspts.blogspot.com/2011/10/how-to-fix-adb-no-permissions-error-on.html
+Step 11 - sudo adb start-server
+ATTR or ATTRS

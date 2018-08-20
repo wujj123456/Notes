@@ -1,0 +1,6 @@
+gconf-editor
+
+/* disable auto mount */
+in gconf-editor: /apps/nautilus/preferences :
+media_automount: controls auto mount
+media_automount_open: controls auto open folder

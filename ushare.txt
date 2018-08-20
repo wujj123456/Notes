@@ -1,0 +1,14 @@
+ushare
+
+http://nexus172.wordpress.com/2009/04/26/how-to-stream-video-to-your-xbox360-using-ubuntu-ushare/
+http://www.themanfromdelmonte.co.uk/2010/02/09/stream-video-to-xbox-360-from-ubuntu-with-ushare/
+http://liamm.com/tech/how-toxbox-360-media-server-in-linux
+
+/* Stream to XBOX */
+apt-get install ushare
+dpkg-reconfigure ushare
+
+ushare -x  (-x is for xbox compatible mode)
+
+/* stop ushare from auto start */
+update-rc.d ushare disable

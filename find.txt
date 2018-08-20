@@ -1,0 +1,50 @@
+find
+
+/* delete first N files found */
+find . -name abc -print | head -n <N> | xargs -d'\n' -r -n 1 rm -f
+
+/* search multiple directories */
+find ./test ./dir2 -type f -name abc*
+
+/* only files or directories */
+-type f
+-type d
+
+/* or */
+-o
+
+/* and (default) */
+find ./test -name 'abc*' ! -name '*.php'
+
+/* invert match (exclude) */
+find ./test -not -name *.php
+find ./test ! -name *.php
+
+/* limit depth */
+find . -maxdepth 2 -name *.php
+
+/* case insensitive */
+find . -iname
+
+/* find files that were last accessed over 365 days ago */
+http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html
+find . -type f -a -atime +365
+
+/* files that were modified x days back */
+find / -mtime 50
+
+/* files that were modified in a range of days */
+find / -mtime +50 ¨Cmtime -100
+
+/* files modified/access within last hour */
+find . -mmin -60
+find . -amin -60
+
+/* files of give size */
+find / -size +50M -size -100M
+
+/* find empty file/directories */
+-empty
+
+/* execute command */
+find . -exec ls -ld {} \;

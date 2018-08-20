@@ -1,0 +1,16 @@
+ccache
+
+/* clear cache */
+ccache -C
+
+/* change size */
+ccache -M 20G
+
+/* change location */
+export CCACHE_DIR="/var/tmp/ccache-wujj"
+
+/* use ccache */
+ccache $CC ...
+make CC="cache gcc"make CC="ccache gcc"
+Quick way:
+PATH="/usr/lib/ccache:$PATH"

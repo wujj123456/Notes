@@ -1,0 +1,8 @@
+notify-send
+
+http://silverwav.wordpress.com/2010/05/08/notify-osd-now-with-70-less-annoy/
+
+/* remotely send a notification */
+ssh wujj.selfip.com "DISPLAY=:0 notify-send "Hello""
+
+test=`hostname` && ssh wujj.selfip.com "DISPLAY=:0 notify-send \"This is $test\""

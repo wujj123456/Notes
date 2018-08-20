@@ -1,0 +1,10 @@
+PulseAudio & ALSA
+
+/* Completely remove PulseAudio & replace it with ALSA */
+killall pulseaudio
+sudo killall pulseaudio
+sudo apt-get purge pulseaudio pulseaudio-utils gstreamer0.10-pulseaudio libpulse-browse0 paman pavumeter pavucontrol
+sudo mv /etc/asound.conf /etc/asound.conf-bak
+rm ~/.pulse-cookie
+rm -r ~/.pulse
+sudo apt-get install libalsaplayer0

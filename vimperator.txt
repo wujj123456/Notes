@@ -1,0 +1,19 @@
+Vimperator
+
+/* ignore all keys for a url */
+I
+:ignorekeys add
+:ignorekeys list
+
+/* vimperator rc file */
+:mkvimperatorrc
+For windows: C:\Users\<name>\_vimperatorrc
+
+/* vimperator external editor */
+set editor="C:/Program\\ Files\\ (x86)/Vim/vim74/gvim.exe -f"
+
+/* insert mode, enter textarea mode */
+Ctrl-t
+
+/* clear command history */
+set history=0

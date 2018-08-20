@@ -1,0 +1,37 @@
+T32
+
+    v.f
+    d.l
+    v.v
+    y.spath.srd K:\kdev-1\kernel
+    r
+    d.save.binary c:\temp\log.txt __log_buf++30000
+    d.dump a:0xfd8c0000
+        ezaxi - by pass all security
+    d.v %hex.long eaxi:0xf9089000
+    d.in SPR:0x37F01 /long
+        read CPU local registers
+    sys.m.nodebug
+    sys.m.a
+    D.LOAD K:\kdev-1\kobj\vmlinux /nocode
+    Data.LOAD.Elf C:\temp\wlan.ko 0x0:0xFFFFFFBF00000000 /NoCODE /NoClear /name wlan /reloctype 3
+    b.s panic /o
+    snoop.pc on
+    do logbuf.cmm
+    do l2read 0x500
+    mmu.pagetable.list
+    mmu.pagetable.dump <VA>
+    d.v %y.q <address>
+        try to show kernel symbol
+    pedit
+        step a script
+
+    task.config c:\t32\demo\arm\kernel\linux\linux.t32
+    menu.reprogram c:\t32\demo\arm\kernel\linux\linux.men
+    v.v (struct worker *)0xeaf84480
+    v.v (struct cpu_workqueue_struct *)(0xc0d07c00+__per_cpu_offset[1])
+        v.v &cpufreq_cpu_data will give address of per_cpu struct
+        v.v (struct cpufreq_interactive_cpuinfo *)((u64)&cpuinfo+(u64)__per_cpu_offset[0])
+
+    sys.d, winclear
+        clear windows before running cdt detection program

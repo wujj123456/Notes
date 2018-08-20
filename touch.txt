@@ -1,0 +1,4 @@
+touch
+
+/* change file modification time */
+touch -d "$(date -R -r file.txt) - 2 hours" file.txt

@@ -1,0 +1,31 @@
+MATLAB plot
+
+/* semilog plot */
+semilogx(f,vm,'-');
+
+/* change label, title */
+semilogx(f,vm,'-');
+xlabel('f [Hz]');
+ylabel('v_{out}/v_{in}');
+
+/* legend */
+plot(t, vin, '--', t, vout, '-');
+legend('V_{in}', 'V_{out}', 'location', 'Best');
+
+/* title */
+title('title')
+
+/* 3D surface plot */
+surf(x,y,z)
+
+/* multiple graph */
+figure(1)
+figure(2)
+
+/* switch off scientific format on axis */
+set(gca,'xticklabel',num2str(get(gca,'xtick')'))
+
+/* save plot to file */
+print -options 'filename'
+print('-djpeg', '-r100', strcat('plot',num2str(i),'.jpg'))
+http://www.mathworks.com/help/techdoc/ref/print.html

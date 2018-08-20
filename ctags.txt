@@ -1,0 +1,26 @@
+ctags
+
+/* skip python imports */
+--python-kinds=-i
+
+/* include list */
+-L <filename>
+
+/* force language */
+--list-languages
+--language-force=C
+
+/* enable vim to find tags file */
+set tags=tags;
+
+/* generate */
+ctags -R
+
+/* open function */
+vim -t <func>
+
+/* jump in/out */
+^], ^T
+Selective jump: g ^]
+next match - :tn
+previous match - :tp

@@ -1,0 +1,10 @@
+Applications menu
+
+/* customize applications menu */
+All shortcuts are in /usr/share/applications
+Edit corresponding entry
+NoDisplay=true
+OnlyShowIn=MATE
+
+/* local dir config */
+~/.local/share/applications/

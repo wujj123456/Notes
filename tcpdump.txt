@@ -1,0 +1,40 @@
+tcpdump
+
+/* ICMP receive and reply */
+https://blog.cloudflare.com/the-story-of-one-latency-spike/
+tcpdump -ttt -n -i eth2 icmp
+
+tcpdump -r <logfile> -e -vvv -x
+
+The -r switch tells tcpdump where to look for the logfile. -e tells tcpdump to print the headers of the packets, not just their payload. -vvv makes the output very verbose, and -x puts the packets in a hex format that is usually easier to read than ASCII. You may want to specify the -xx option instead of -x to print the link-level (Ethernet) header in hex as well. 
+
+tcpdump -i <interface> -s 65535 -w <some-file>
+
+http://www.linuxjournal.com/content/tcpdump-fu
+
+tcpdump <-i eth1 -vvn> <icmp or udp>
+tcpdump <options> <expression>
+
+Options:
+-i interface: interface to listen on
+-v, -vv, -vvv: more verbose.
+-q: less verbose.
+-e: print link-level (Ethernet) headers.
+-N: display relative hostnames.
+-t: don't print timestamps.
+-n: disable name lookups.
+-s0 (or -s 0): use the max "snaplen"—capture full packets (default in recent versions of tcpdump). 
+-w: output capt
+When tcpdump is called with -w - it prints raw packets to STDOUT.ure file
+-l: turns on line buffering, which makes sure data gets printed to the screen right away
+
+Filter expressions (boolean criteria for "matching" packets):
+tcp
+port 25 and not host 10.0.0.3
+icmp or arp or udp
+vlan 3 and ether src host aa:bb:cc:dd:ee:ff
+arp or udp port 53
+icmp and \(dst host mrorange or dst host mrbrown\) 
+
+The UNIX command strings filters out binary data from streams preserving only text (printable characters). 
+

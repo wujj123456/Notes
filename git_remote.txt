@@ -1,0 +1,32 @@
+git remote
+
+/* check if a commit is in remote branch */
+http://stackoverflow.com/questions/5549479/git-check-if-commit-xyz-in-remote-repo
+git branch -r --contains <commit>
+
+/* show branches from a specific remote */
+http://stackoverflow.com/questions/10075184/git-list-of-branch-names-of-specific-remote
+git ls-remote <remote branch>
+
+/* add remove point */
+git remote add origin <address>
+git push origin master
+
+/* clone branch */
+git clone <host>:/path
+
+/* push a new local branch to remote */
+http://stackoverflow.com/questions/1519006/git-how-to-create-remote-branch
+http://www.zorched.net/2008/04/14/start-a-new-branch-on-your-remote-git-repository/
+git push -u origin my_branch
+
+/* check out at remote branch to local branch */
+git checkout --track -b new_feature_name origin/new_feature_name
+
+/* git cherry-pick from another repo */
+git remote add projectB /path/to/projectB
+git fetch projectB
+git cherry-pick <first_commit>..<last_commit>
+
+/* git show all remotes */
+git remote show [name]

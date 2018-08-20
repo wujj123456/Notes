@@ -1,0 +1,23 @@
+Microsoft Natural Ergonomic Keyboard 4000
+
+http://shkspr.mobi/blog/index.php/2011/12/changing-the-microsoft-4000s-zoom-keys-in-ubuntu/
+http://nickj.org/Ubuntu_desktop_setup_steps#Custom_Key_Bindings.2C_aimed_at_.22Microsoft_Natural_Ergonomic_4000_Keyboard.22
+https://bugs.launchpad.net/ubuntu/+source/linux/+bug/50692
+
+/* Change zoom to scroll */
+http://superuser.com/questions/195474/change-zoom-action-to-scroll-in-a-ms-natural-keyboard-4000
+C:\Program Files\Microsoft Intellitype Pro\commands.xml
+<Application UniqueName="MozillaWindowClass" AppName="Netscape">
+    <C319 Type="6" Activator="ScrollUp" />
+    <C320 Type="6" Activator="ScrollDown" />            
+</Application>
+
+/* Bind Launchers */
+System Settings -> Keyboard -> Shortcuts
+
+/* remap back/forward */
+~/.Xmodmap
+keycode 166 = Up
+keycode 167 = Down
+remove Lock = Caps_Lock
+keycode 66 = BackSpace

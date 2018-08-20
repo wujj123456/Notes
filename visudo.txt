@@ -1,0 +1,6 @@
+visudo
+
+http://ubuntuforums.org/showthread.php?t=477417
+
+%groupname ALL=(root) NOPASSWD: /usr/bin/cpufreq-set
+Where groupname is a group you are in (your username will suffice). 

@@ -1,0 +1,12 @@
+cgroups
+
+/* starting process within a cgroup */
+cgexec -g subsystems:path_to_cgroup command arguments
+cgexec -g cpu:group1 firefox http://www.redhat.com
+
+/* move a process to a cgroup */
+cgclassify -g subsystems:path_to_cgroup pidlist
+e.g.: cgclassify -g cpu,memory:group1 1701
+
+/* start with system-run */
+systemd-run --slice
