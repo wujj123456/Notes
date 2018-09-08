@@ -1,5 +1,8 @@
 Firefox addons/tricks
 
+/* IDN support */
+network.idn_show_punycode = True
+
 /* disable TRR (cloudflare DNS) */
 https://blog.usejournal.com/getting-started-with-dns-over-https-on-firefox-e9b5fc865a43
 network.trr.mode = 5
@@ -64,7 +67,7 @@ Delete in profile folder:
     extensions.sqlite-journal
     extensions.ini
     extensions.cache
-    extensions.rdf 
+    extensions.rdf
 
 /* enable command line */
 devtools.toolbar.enabled = true
@@ -130,7 +133,7 @@ YouTube High Definition
 Dev:
 Web Developer
 
-Linux only: 
+Linux only:
 Flash-Aid
 Disable Ctrl-Q Shortcut
 
