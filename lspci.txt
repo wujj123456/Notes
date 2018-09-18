@@ -5,4 +5,4 @@ lspci -s <slot>
 lspci -vvvs <slot>
 
 /* get vendor and device id */
-lspci -n
+lspci -nn

@@ -1,0 +1,4 @@
+paste
+
+/* join lines with comma */
+paste -sd ',' -
