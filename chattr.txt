@@ -1,0 +1,7 @@
+chattr
+
+https://www.linuxnix.com/how-to-prevent-file-folder-modification-deletion-in-linux/
+
+/* mark file immutable */
+chattr +i no-del.txt
+chattr -i no-del.txt
