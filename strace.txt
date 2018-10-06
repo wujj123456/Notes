@@ -2,3 +2,15 @@ strace
 
 /* list all syscalls during program execution */
 strace <command>
+
+/* show instruction pointer */
+strace -i
+
+/* show relative time */
+strace -r
+
+/* show system time */
+strace -T
+
+/* print summary */
+strace -c
