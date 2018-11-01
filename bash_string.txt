@@ -2,6 +2,9 @@ bash string
 
 http://tldp.org/LDP/abs/html/string-manipulation.html
 
+/* normalizing using string variables */
+https://www.linuxjournal.com/content/normalizing-filenames-and-data-using-bash-string-variable-manipulations
+
 /* check/match substring */
 http://stackoverflow.com/questions/229551/string-contains-in-bash
 string='My string';
