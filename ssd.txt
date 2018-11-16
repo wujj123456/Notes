@@ -1,5 +1,8 @@
 SSD
 
+/* discard without FS */
+blkdiscard
+
 /* Linux */
 http://mindaugas.kiznis.lt/performance-tuning-linux-virtual-machine/
 https://wiki.archlinux.org/index.php/Solid_State_Drives
