@@ -3,6 +3,11 @@ PXE
 /* diskless system */
 https://www.easycryptomining.com/diskless_mining_node.html
 
+== dhcp on ddwrt ==
+https://wiki.dd-wrt.com/wiki/index.php/PXE
+Additional DNSMasq Options:
+dhcp-boot=pxelinux.0,S8026,192.168.32.27
+
 == basic files ==
 apt-get install atftp pxelinux syslinux-common initramfs-tools debootstrap nfs-server 
 
