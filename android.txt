@@ -1,21 +1,21 @@
 Android
 
-/* Error: DF-BPA-09 */
+/* privacy configuration */
+Settings -> Google -> Ads -> Opt out of Ads Personalizatio
+
+/* error: DF-BPA-09 */
 Settings -> Accounts and Sync -> Google -> Unsync Gmail -> Resync Gmail
 
 /* USB transfer MTP */
 apt-get install libmtp9 gmtp
 
-/* Jelly Bean sleep period */
-Settings -> Display
-
 /* change voicemail number */
 Dailer -> Settings
 
-/* screenshot on JB */
+/* screenshot */
 Power + Volume down for 3 seconds
 
-/* developer mode on 4.2 */
+/* developer mode */
 About tablet/phone -> tap on build number 7 times
 
 /* select, copy, cut and paste */
