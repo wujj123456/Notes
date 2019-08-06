@@ -13,6 +13,11 @@ dig @<ip> 8ch.net +noall +answer
 # try to reach server directly
 sudo nmap -Pn -sU -p53 <ip>
 
+dig +short NS epik.com
+dig +short A ns1.epik.com
+whois <ip>
+whois -h whois.ripe.net <ip>
+
 /* dnssec */
 http://lwn.net/Articles/516797/
 dig +dnssec fedoraproject.org
