@@ -1,5 +1,18 @@
 dig
 
+/* investigate why site is unreachable */
+https://arstechnica.com/information-technology/2019/08/8chan-is-all-the-way-down-its-dns-its-always-dns/
+# query nameserver for site
+dig NS 8ch.net
+# get parent DNS server
+dig NS net +noall +additional | head -n5
+# query parent DNS server for record
+dig @a.gtld-servers.net NS 8ch.net +noall +noadditional
+# query DNS server directly
+dig @<ip> 8ch.net +noall +answer
+# try to reach server directly
+sudo nmap -Pn -sU -p53 <ip>
+
 /* dnssec */
 http://lwn.net/Articles/516797/
 dig +dnssec fedoraproject.org
