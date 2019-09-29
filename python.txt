@@ -12,3 +12,6 @@ numpy, scipy
 /* symbolic math */
 sympy
 http://www.linuxjournal.com/content/symbolic-math-python
+
+/* install pip of any version */
+python3.7 -m pip install pip
