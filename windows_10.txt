@@ -25,7 +25,17 @@ Computer Configuration\Administrative Templates\Windows Components\BitLocker Dri
 Computer Configuration > Administrative Templates > Windows Components > OneDrive -> Prevent The Usage Of OneDrive For File Storage
 
 /* Disable cortana */
-gpedit: Computer Configuration -> Administrative Templates -> Windows Components -> Search -> Allow Cortana
+#gpedit: Computer Configuration -> Administrative Templates -> Windows Components -> Search -> Allow Cortana
+1803 and above https://pureinfotech.com/disable-web-search-windows-10-version-1803/
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search
+    CortanaConsent 1 -> 0
+    AllowSearchToUseLocation 0
+    BingSearchEnabled 0
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search
+    ConnectedSearchUseWebOverMeteredConnections 0
+    AllowCortana 0
+    DisableWebSearch 1
+    ConnectedSearchUseWeb 0
 
 /* disable auto reboot for windows update */
 gpedit: Computer Configuration \ Administrative Templates \ Windows Components \ Windows Update -> Configure Automatic Updates
