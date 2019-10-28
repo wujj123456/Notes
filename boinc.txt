@@ -14,3 +14,7 @@ boinccmd --project http://www.worldcommunitygrid.org/ suspend|resume
 /* schedule override */
 vim /var/lib/boinc-client/global_prefs_override.xml
 boinccmd --read_global_prefs_override
+
+/* per project override */
+https://boinc.berkeley.edu/wiki/Client_configuration
+app_config.xml in project data directory (/var/lib/boinc-client/projects/)
