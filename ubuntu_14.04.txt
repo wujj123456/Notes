@@ -4,7 +4,7 @@ Ubuntu 14.04
 http://www.enqlu.com/2014/03/how-to-disable-amazonproduct.html
 Settings -> Security and Privacy -> Search
 
-/* change keyboard & mouse layouts */
+/* change keyboard & mouse layouts, map capslock */
 Ubuntu no longer uses xmodmap, but instead uses xkb
 1) /usr/share/X11/xkb/symbols/
 2) remove remove the existing pre-compiled maps (*.xkb) in /var/lib/xkb/
