@@ -1,5 +1,16 @@
 luks
 
+/* resize encrypted container */
+https://shaakunthala.wordpress.com/2017/11/28/expanding-a-luks-encrypted-disk-image/
+sudo umount /dev/mapper/myluksvol1 && sudo cryptsetup luksClose myluksvol1
+cp /home/shaakunthala/luksvolume1 /home/shaakunthala/luksvolume1.bak
+dd if=/dev/zero of=/home/shaakunthala/luksvolume1 bs=1M count=1024 oflag=append conv=notrunc
+sudo cryptsetup luksOpen /home/shaakunthala/luksvolume1 myluksvol1
+sudo fsck -fvy /dev/mapper/myluksvol1
+sudo resize2fs /dev/mapper/myluksvol1
+sudo fsck -fvy /dev/mapper/myluksvol1
+sudo mount /dev/mapper/myluksvol1 /mnt
+
 /* create encrypted container */
 dd if=/dev/zero of=/data/data.img bs=1M count=$((1024*20))
 sudo cryptsetup --align-payload=1 luksFormat /data/data.img
