@@ -2,6 +2,10 @@ grub2
 
 http://ubuntuforums.org/showthread.php?t=1287602
 
+/* enable grub menu */
+/etc/default/grub:
+    GRUB_TIMEOUT_STYLE=menu
+
 /* remember last boot system */
 /etc/default/grub:
     GRUB_DEFAULT=saved

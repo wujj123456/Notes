@@ -1,5 +1,10 @@
 PXE
 
+/* manpage failure */
+https://unix.stackexchange.com/questions/451123/diskless-ubuntu-manpages-fail
+ln -s /etc/apparmor.d/usr.bin.man /etc/apparmor.d/disable/
+apparmor_parser -R /etc/apparmor.d/usr.bin.man
+
 /* diskless system */
 https://www.easycryptomining.com/diskless_mining_node.html
 
