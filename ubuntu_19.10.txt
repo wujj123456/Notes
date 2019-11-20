@@ -1,0 +1,4 @@
+Ubuntu 19.10
+
+/* openCL library */
+sudo apt install ocl-icd-libopencl1
