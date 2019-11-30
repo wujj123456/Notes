@@ -12,6 +12,7 @@ Every group not listed will be removed
 useradd -G <groupname> username
 
 /* add existing user to existing group */
+# takes effect after logging in
 usermod -a -G vboxusers wujj
 
 /* /etc/group modification tool */
