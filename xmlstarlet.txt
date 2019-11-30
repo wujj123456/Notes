@@ -1,0 +1,4 @@
+xmlstarlet
+
+/* update a field */
+xmlstarlet ed -O -L -u "/global_preferences/max_ncpus_pct" --value 50.0 global_prefs_override.xml
