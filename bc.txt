@@ -1,6 +1,7 @@
 bc
 
 /* floating point */
-scale=3
-1/10
-`echo "scale=3; (${core[i]})/$EXPS" | bc`
+echo "scale=3; 1/10" | bc
+
+/* test value */
+echo "1 > 0" | bc

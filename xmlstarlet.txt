@@ -2,3 +2,7 @@ xmlstarlet
 
 /* update a field */
 xmlstarlet ed -O -L -u "/global_preferences/max_ncpus_pct" --value 50.0 global_prefs_override.xml
+
+/* output value of a field */
+https://stackoverflow.com/questions/23998130/extracting-nodes-values-with-xmlstarlet
+xmlstarlet sel -t -m "/global_preferences/max_ncpus_pct" -v . /etc/boinc-client/global_prefs_override.xml
