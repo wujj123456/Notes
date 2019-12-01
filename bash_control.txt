@@ -103,6 +103,10 @@ on_die()
 # Execute function on_die() receiving TERM signal
 trap 'on_die' TERM
 
+/* exit trap */
+http://redsymbol.net/articles/bash-exit-traps/
+trap 'some_function' EXIT
+
 /* list of signals */
 kill -l
 
