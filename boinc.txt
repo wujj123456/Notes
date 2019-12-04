@@ -18,3 +18,11 @@ boinccmd --read_global_prefs_override
 /* per project override */
 https://boinc.berkeley.edu/wiki/Client_configuration
 app_config.xml in project data directory (/var/lib/boinc-client/projects/)
+
+/* multiple GPUs */
+https://boinc.berkeley.edu/dev/forum_thread.php?id=5377
+<cc_config>
+  <options>
+    <use_all_gpus>1</use_all_gpus>
+  </options>
+</cc_config>
