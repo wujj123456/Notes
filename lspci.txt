@@ -1,8 +1,8 @@
 lspci
 
 /* show device in slot */
-lspci -s <slot>
-lspci -vvvs <slot>
+sudo lspci -s <slot>
+sudo lspci -vvvs <slot>
 
 /* get vendor and device id */
 lspci -nn
