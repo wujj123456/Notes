@@ -1,0 +1,5 @@
+virtualization
+
+/* check virtualization hardware support */
+sudo apt-get install cpu-checker
+sudo kvm-ok
