@@ -17,3 +17,6 @@ usermod -a -G vboxusers wujj
 
 /* /etc/group modification tool */
 gpasswd
+
+/* remove a user from group */
+gpasswd -d user group
