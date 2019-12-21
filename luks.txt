@@ -26,3 +26,14 @@ sudo mkfs.ext4 /dev/mapper/data
 
 /* mount container */
 sudo mount /dev/mapper/data /mnt/data
+
+/* add key to existing encrypted LVM partition */
+https://askubuntu.com/questions/109898/how-to-change-the-password-of-an-encrypted-lvm-system-done-with-the-alternate-i
+cat /etc/crypttab
+sudo cryptsetup luksAddKey /dev/sda3
+
+/* remove key to existing encrypted LVM partition */
+sudo cryptsetup luksRemoveKey /dev/sda3
+
+/* view current used slots/keys */
+sudo cryptsetup luksDump /dev/sda3
