@@ -4,13 +4,14 @@ nvidia-settings
 http://askubuntu.com/questions/23869/could-not-apply-the-stored-configuration-for-the-monitor
 Remove ~/.config/monitors.xml
 
-/* Enable fan speed control in Nvidia control panel */
-http://ubuntuforums.org/showthread.php?t=1678374
-vim /etc/X11/xorg.conf
-add
-	Option "Coolbits" "4"
-in
-	Section "Device"
+/* enable fan control and overclocking */
+https://unix.stackexchange.com/questions/200553/multi-nvidia-gpu-overclocking-for-computations-cuda
+sudo nvidia-xconfig -a --cool-bits=28 --allow-empty-initial-configuration
+Edit xorg.conf and prepend "#" to each line containing allow-empty-initial-configuration to comment it out
+reboot
+
+/* coolbits meaning */
+https://wiki.archlinux.org/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking
 
 /* query and set fan speed in command line */
 http://askubuntu.com/questions/117465/coolbits-not-working
