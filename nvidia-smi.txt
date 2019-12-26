@@ -1,0 +1,7 @@
+nvidia-smi
+
+/* set power limit */
+sudo nvidia-smi -i 2 -pl 95
+
+/* device monitor (temperature, frequency, etc) */
+nvidia-smi dmon
