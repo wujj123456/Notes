@@ -7,3 +7,6 @@ crontab -e
 (execute at X hours daily)
 
 Sunday = 0
+
+/* execute on reboot */
+@reboot <commnad>
