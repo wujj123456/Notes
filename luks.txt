@@ -37,3 +37,8 @@ sudo cryptsetup luksRemoveKey /dev/sda3
 
 /* view current used slots/keys */
 sudo cryptsetup luksDump /dev/sda3
+
+/* backup and restore header */
+https://www.lisenet.com/2013/luks-add-keys-backup-and-restore-volume-header/
+cryptsetup luksHeaderBackup <device> --header-backup-file <file>
+cryptsetup luksHeaderRestore <device> --header-backup-file <file>
