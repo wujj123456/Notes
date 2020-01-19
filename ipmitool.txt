@@ -20,3 +20,22 @@ sol activate
 
 /* deactivate */
 sol deactivate
+
+/* get all sensors information */
+sudo ipmitool sensor list all
+
+/* adjust sensor thresholds */
+https://www.ixsystems.com/community/resources/how-to-change-ipmi-sensor-thresholds-using-ipmitool.35/
+
+Lower Non-Recoverable
+Lower Critical
+Lower Non-Critical
+
+Upper Non-Critical
+Upper Critical
+Upper Non-Recoverable
+
+# Lower limits
+ipmitool sensor thresh "*sensor name*" lower *lnr* *lcr* *lnc*
+# Upper limits
+ipmitool sensor thresh "*sensor name*" lower *lnr* *lcr* *lnc*
