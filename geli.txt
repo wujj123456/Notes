@@ -1,0 +1,24 @@
+geli
+
+/* create encrypted container on FreeBSD */
+https://forums.freebsd.org/threads/geli-encrypted-container-with-zfs-truecrypt-replacement.60492/
+dd if=/dev/zero of=backup.img bs=1M count=102400
+# need to be root from now on
+mdconfig -a -t vnode -f backup.img -u 8
+geli init -e aes -l 256 -s 4096 /dev/md8
+geli attach /dev/md8
+zpool create crypt /dev/md8.eli
+zfs set compression=lz4 crypt
+zfs set mountpoint=/mnt/backup crypt
+chown -R backup:nobody /mnt/backup/
+
+/* unmount and close device */
+zfs umount crypt
+zpool export crypt
+geli detach md8.eli
+mdconfig -d -u 8
+
+/* mount */
+mdconfig -a -t vnode -f backup.img -u 8
+geli attach /dev/md8
+zpool import crypt
