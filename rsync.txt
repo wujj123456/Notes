@@ -27,3 +27,6 @@ nano /home/backup/exclude.txt
 --exclude-from '/home/backup/exclude.txt'
 
 rsync -e 'ssh -p 30000' -avl --delete --stats --progress --exclude-from '/home/backup/exclude.txt' demo@123.45.67.890:/home/demo /backup/
+
+/* show overall progress */
+--info=progress2

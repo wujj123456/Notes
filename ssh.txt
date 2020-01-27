@@ -60,3 +60,6 @@ ssh -t -X login.engin.umich.edu ssh -X nyx-login
 /* auto ssh permission */
 .ssh: 700
 authorized_keys: 640
+
+/* specify which key to use */
+ssh -i <path to key file>
