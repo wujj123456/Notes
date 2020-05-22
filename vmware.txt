@@ -2,3 +2,8 @@ vmware
 
 /* uninstall on Linux */
 vmware-installer -u vmware-player
+
+/* UEFI firmware */
+https://www.serverwatch.com/server-tutorials/enabling-uefi-on-virtual-machines.html
+Edit .vmx and add
+firmware = "efi"
