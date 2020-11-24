@@ -1,0 +1,8 @@
+dante
+
+/* set up danted socks5 server */
+https://community.hetzner.com/tutorials/install-and-configure-danted-proxy-socks5
+
+/* ipv4 and ipv6 */
+https://www.inet.no/dante/doc/1.4.x/config/ipv6.html
+Use 0/0 for addresses
