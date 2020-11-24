@@ -15,6 +15,9 @@ useradd -G <groupname> username
 # takes effect after logging in
 usermod -a -G vboxusers wujj
 
+/* add user to sudoer */
+sudo usermod -a -G sudo wujj
+
 /* /etc/group modification tool */
 gpasswd
 

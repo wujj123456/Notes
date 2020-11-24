@@ -11,7 +11,7 @@ pip install shadowsocks
 /* start server */
 ssserver -p 8388 -k password -m aes-256-cfb
 
-/* start/stip server (daemon mode) */
+/* start/stop server (daemon mode) */
 ssserver -p 8388 -k password -m aes-256-cfb --user nobody -d start
 ssserver -d stop
 ssserver -c <config file> -d start
