@@ -4,3 +4,14 @@ sysctl
 Query: sysctl -q vm.swappiness
 Change: sysctl vm.swappiness=1
 Permanent change: /etc/sysctl.conf
+
+/* switch to BBR from Cubic */
+# append to /etc/sysctl.conf
+net.core.default_qdisc=fq
+net.ipv4.tcp_congestion_control=bbr
+
+# load from /etc/sysctl.conf
+sysctl -p
+
+# verify
+sysctl net.ipv4.tcp_congestion_control
