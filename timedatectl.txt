@@ -1,5 +1,6 @@
 timedatectl
 
-/* set local rtc */
+/* set local rtc (hardware clock) */
+https://docs.fedoraproject.org/en-US/fedora/rawhide/system-administrators-guide/basic-system-configuration/Configuring_the_Date_and_Time/
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 sudo hwclock -w
