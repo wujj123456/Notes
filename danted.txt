@@ -2,7 +2,18 @@ dante
 
 /* set up danted socks5 server */
 https://community.hetzner.com/tutorials/install-and-configure-danted-proxy-socks5
+sudo apt install dante-server
+sudo vim /etc/danted.conf
+sudo systemctl restart danted
+
+/* authenticate by username/password */
+socksmethod: username
+useradd socks -r
+passwd socks
 
 /* ipv4 and ipv6 */
 https://www.inet.no/dante/doc/1.4.x/config/ipv6.html
 Use 0/0 for addresses
+
+/* test socks */
+curl -x socks5://<username>:<password>@<address>:<port> ifconfig.co
