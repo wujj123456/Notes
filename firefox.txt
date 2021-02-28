@@ -1,5 +1,10 @@
 Firefox addons/tricks
 
+/* color management */
+https://cameratico.com/color-management/firefox/
+gfx.color_management.mode = 1
+gfx.color_management.enablev4 = true
+
 /* IDN support */
 network.idn_show_punycode = True
 
