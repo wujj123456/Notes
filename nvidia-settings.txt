@@ -18,3 +18,6 @@ http://askubuntu.com/questions/117465/coolbits-not-working
 http://en.gentoo-wiki.com/wiki/Nvidia#Manual_Fan_Control_for_nVIDIA_Settings
 nvidia-settings -q fans
 nvidia-settings -a [fan:0]/GPUCurrentFanSpeed=80
+
+/* turn off LED */
+nvidia-settings --assign GPULogoBrightness=0
