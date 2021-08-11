@@ -1,5 +1,7 @@
 adb/fastboot
 
+https://adbshell.com/commands/
+
 /* wake up from adb */
 adb shell input keyevent 26
 
@@ -22,9 +24,12 @@ adb reboot bootloader
 sudo adb kill-server
 sudo adb start-server
 
-/* continue */
-fastboot continue
+/* list packages */
+adb shell pm list packages
 
-/* flash */
-fastboot flash <section> <image>
-boot, cache, aboot (emmc_appboot.mbn), persist, recovery, userdata, system
+/* disable packages for current user */
+adb shell pm disable-user --user 0 com.samsung.android.game.gos
+adb shell pm disable-user --user 0 com.samsung.android.game.gametools
+
+/* uninstall packages */
+adb shell pm uninstall --user 0 com.samsung.android.game.gos
