@@ -1,0 +1,12 @@
+Windows Subsystem for Linux (WSL)
+
+/* install */
+wsl --install
+
+/* select distro */
+wsl --list --online
+wsl --install -d <name>
+
+/* change default */
+wslconfig /l
+wslconfig /setdefault <name>
