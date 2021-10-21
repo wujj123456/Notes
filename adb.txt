@@ -33,3 +33,10 @@ adb shell pm disable-user --user 0 com.samsung.android.game.gametools
 
 /* uninstall packages */
 adb shell pm uninstall --user 0 com.samsung.android.game.gos
+
+/* full backup */
+https://9to5google.com/2017/11/04/how-to-backup-restore-android-device-data-android-basics/
+adb backup -apk -shared -all -f <filepath>/backup.ab
+
+/* restore */
+adb restore <filepath>/backup.ab
