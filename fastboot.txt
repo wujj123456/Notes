@@ -1,0 +1,8 @@
+fastboot
+
+/* flash */
+fastboot flash <section> <image>
+boot, cache, aboot (emmc_appboot.mbn), persist, recovery, userdata, system
+
+/* continue */
+fastboot continue

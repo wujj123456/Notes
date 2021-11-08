@@ -1,0 +1,17 @@
+Arch Linux
+
+/* installation */
+archinstall
+time zone: US/Pacific (from /usr/share/zoneinfo/US/)
+
+/* pacman */
+upgrade: -Syu
+install: -S
+
+/* fix empty software store */
+pacman -S gnome-software-packagekit-plugin
+
+/* codecs */
+https://itsfoss.com/things-to-do-after-installing-arch-linux/
+https://linuxdev.io/howto-fix-h-264-videos-not-playing-on-arch-linux/
+sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gst-libav ffmpeg vlc
