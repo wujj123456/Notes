@@ -8,3 +8,6 @@ cut -d' ' -f2-
 
 /* return empty if delimiter is not found */
 cut -d' ' -s -f 1
+
+/* remove last character */
+echo "test" | rev | cut -c 2- | rev
