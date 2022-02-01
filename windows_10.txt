@@ -1,22 +1,11 @@
 Windows 10
 
-/* Generate a battery report */
-https://www.windowscentral.com/generate-battery-report-windows-10
-powercfg /batteryreport /output <filename>
-
-/* Get bios version */
-cmd -> wmic bios get smbiosbiosversion
-
 /* Disable microsoft accounts */
 http://www.intowindows.com/how-to-disable-or-block-microsoft-accounts-in-windows-10/
 Computer Configuration > Windows Settings > Security Settings > Local Polices > Security Options -> Accounts: Block Microsoft accounts
 
 /* disable fast start */
 https://www.tenforums.com/tutorials/4189-turn-off-fast-startup-windows-10-a.html
-
-/* Enable bash */
-Developer Mode
-Control Panel -> Program and Features -> Turn Windows features on and off -> Windows subsystem for Linux
 
 /* enable password for bitlocker */
 Computer Configuration\Administrative Templates\Windows Components\BitLocker Drive Encryption\Operating System Drives

@@ -1,0 +1,23 @@
+PowerShell
+
+/* file hash sha256 */
+Get-FileHash <file>
+
+/* Get bios version */
+wmic bios get smbiosbiosversion
+
+/* Generate a battery report */
+https://www.windowscentral.com/generate-battery-report-windows-10
+powercfg /batteryreport /output <filename>
+
+/* Disable hibernation */
+http://www.sevenforums.com/tutorials/819-hibernate-enable-disable.html
+powercfg /h on
+powercfg /h off
+
+/* Windows Subsystem for Linux (WSL) */
+wsl --install
+wsl --list --online
+wsl --install -d <name>
+wslconfig /l
+wslconfig /setdefault <name>

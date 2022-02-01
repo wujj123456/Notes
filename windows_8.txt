@@ -1,10 +1,5 @@
 Windows 8
 
-/* disable hibernation */
-http://www.sevenforums.com/tutorials/819-hibernate-enable-disable.html
-powercfg -h on
-powercfg -h off
-
 /* increase filesystem memory usage */
 http://www.howtogeek.com/howto/windows-vista/increase-the-filesystem-memory-cache-size-in-vista/
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsMemoryUsage
