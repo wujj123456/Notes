@@ -63,3 +63,7 @@ ffmpeg -i img%d.jpg -vcodec rawvideo output.avi
 
 By default the output will inherit the input frame rate. You can apply the same option to the output. By changing the frame rates you can achieve a certain duration. For example, if I have 900 images and want the output duration to be 60 seconds with an output frame rate of 30, then 900/60=15.
 ffmpeg -r 15 -i img%d.jpg -r 30 -vcodec huffyuv output.avi
+
+/* convert to gif */
+https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
+ffmpeg -ss 30 -t 3 -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
