@@ -1,0 +1,7 @@
+Nut (Network UPS Tools)
+
+https://networkupstools.org/documentation.html
+
+/* pfsense */
+https://blog.victormendonca.com/2020/10/28/how-to-setup-ups-on-pfsense/
+Install nut, configure in services and then REBOOT
