@@ -37,6 +37,9 @@ awk '{$1=$2=""}1'
 /* last field */
 awk '{print $NF}'
 
+/* all fields */
+awk '{print $0}'
+
 /* transpose a file */
 awk '
 { 
