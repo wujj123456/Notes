@@ -1,5 +1,8 @@
 Firefox addons/tricks
 
+/* about:config documentation */
+https://searchfox.org/mozilla-central/source/modules/libpref/init/StaticPrefList.yaml
+
 /* color management */
 https://cameratico.com/color-management/firefox/
 gfx.color_management.mode = 1
