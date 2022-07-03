@@ -1,5 +1,15 @@
 git remote
 
+/* remote server setup */
+git init --bare
+
+/* migrate remote server */
+https://stackoverflow.com/questions/1484648/how-to-migrate-git-repository-from-one-server-to-a-new-one
+git clone --mirror <URL to my OLD repo location>
+cd <New directory where your OLD repo was cloned>
+git remote set-url origin <URL to my NEW repo location>
+git push --mirror origin
+
 /* check if a commit is in remote branch */
 http://stackoverflow.com/questions/5549479/git-check-if-commit-xyz-in-remote-repo
 git branch -r --contains <commit>
@@ -8,7 +18,7 @@ git branch -r --contains <commit>
 http://stackoverflow.com/questions/10075184/git-list-of-branch-names-of-specific-remote
 git ls-remote <remote branch>
 
-/* add remove point */
+/* add remote server */
 git remote add origin <address>
 git push origin master
 
