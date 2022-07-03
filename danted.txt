@@ -7,9 +7,13 @@ sudo vim /etc/danted.conf
 sudo systemctl restart danted
 
 /* authenticate by username/password */
-socksmethod: username
 useradd socks -r
 passwd socks
+
+vim /etc/danted.conf
+```
+socksmethod: username
+```
 
 /* ipv4 and ipv6 */
 https://www.inet.no/dante/doc/1.4.x/config/ipv6.html

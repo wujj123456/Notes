@@ -6,6 +6,7 @@ git init --bare
 /* remote server git-only user */
 adduser git
 vim /home/git/.ssh/authorized_keys
+setfacl -R -m u:git:rx <git folder>
 vipw -> change login shell to /usr/bin/git-shell
 
 /* migrate remote server */
