@@ -3,6 +3,11 @@ git remote
 /* remote server setup */
 git init --bare
 
+/* remote server git-only user */
+adduser git
+vim /home/git/.ssh/authorized_keys
+vipw -> change login shell to /usr/bin/git-shell
+
 /* migrate remote server */
 https://stackoverflow.com/questions/1484648/how-to-migrate-git-repository-from-one-server-to-a-new-one
 git clone --mirror <URL to my OLD repo location>
