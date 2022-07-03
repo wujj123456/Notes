@@ -1,5 +1,15 @@
 ssh
 
+/* disable password login for specific user */
+/etc/ssh/sshd_config
+```
+Match User root
+	PasswordAuthentication yes
+```
+Note: Match applies to all configs afterwards. Either add at the end, or use `Match all` afterwards
+
+systemctl restart ssh
+
 /* 2FA two-factor auth */
 https://lwn.net/Articles/704292/
 
@@ -21,13 +31,17 @@ http://unix.stackexchange.com/questions/12107/how-to-unfreeze-after-accidentally
 https://www.linux.com/learn/tutorials/305769-advanced-ssh-security-tips-and-tricks
 http://www.cyberciti.biz/tips/openssh-deny-or-restrict-access-to-users-and-groups.html
 /etc/ssh/sshd_config
-	PermitRootLogin no
-	Protocol 2
+```
+PermitRootLogin no
+Protocol 2
+```
 
 /* change default port of ssh */
 /etc/ssh/sshd_config 
-	# What ports, IPs and protocols we listen for
-	Port 50683
+```
+# What ports, IPs and protocols we listen for
+Port 50683
+```
 /etc/init.d/ssh restart
 
 /* welcome message */
