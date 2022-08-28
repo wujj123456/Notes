@@ -1,0 +1,10 @@
+youtube-dl / yt-dlp
+
+/* latest projects */
+https://github.com/yt-dlp/yt-dlp
+
+/* list formats */
+-F
+
+/* prefer/convert to MP4 */
+-S res,ext:mp4:m4a --recode mp4
