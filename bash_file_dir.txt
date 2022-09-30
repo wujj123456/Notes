@@ -28,3 +28,8 @@ filename=`basename $name .txt`
 
 /* extract filename only */
 basename
+
+/* negative wildcard match */
+shopt -s extglob
+!(..)
+ls test.!(mp4)
