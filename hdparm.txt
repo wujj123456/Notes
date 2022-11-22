@@ -1,0 +1,4 @@
+hdparm
+
+/* drive read speed test */
+sudo hdparm -Tt /dev/sdb
