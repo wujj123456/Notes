@@ -1,5 +1,8 @@
 ffmpeg / avconv
 
+/* ultimiate guide */
+https://img.ly/blog/ultimate-guide-to-ffmpeg/
+
 /* x264 guide */
 https://trac.ffmpeg.org/wiki/Encode/H.264
 
