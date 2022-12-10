@@ -5,3 +5,7 @@ show -b -n 1 | head -n 10
 
 /* show thread details */
 top -H -c -p <pid>
+
+/* show CPU stats */
+top 1 or press 1
+Press "t" to switch UI
