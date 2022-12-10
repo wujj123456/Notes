@@ -4,6 +4,9 @@ http://crazedmonkey.com/blog/programming/multiple-expression-if-statement-in-bas
 http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
 https://wiki.ubuntu.com/DashAsBinSh
 
+/* sequence */
+{START..END[..INCREMENT]}
+
 /* array */
 https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays
 

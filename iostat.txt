@@ -1,5 +1,7 @@
 iostat
 
-/* Check io usage */
-http://ostatic.com/blog/tracking-down-high-io-wait-in-linux#buzz
-iostat -x 1
+/* display once per second */
+iostat 1
+
+/* use MB */
+iostat -d nvme0n1 -m 1
