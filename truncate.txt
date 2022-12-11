@@ -1,0 +1,4 @@
+truncate
+
+/* truncate file to certain size */
+truncate -s <SIZE> file
