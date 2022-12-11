@@ -1,0 +1,18 @@
+netplan ifconfig dhclient
+
+/* manually bring up interface */
+ifconfig <if> up
+dhclient -r <if>
+dhclient <if>
+
+/* bring up interface at boot */
+vim /etc/netplan/<something>.yaml
+
+network:
+    ethernets:
+        enp68s0f0:
+            dhcp4: true
+    version: 2
+
+netplan generate
+netplan apply
