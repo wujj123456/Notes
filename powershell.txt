@@ -14,10 +14,3 @@ powercfg /batteryreport /output <filename>
 http://www.sevenforums.com/tutorials/819-hibernate-enable-disable.html
 powercfg /h on
 powercfg /h off
-
-/* Windows Subsystem for Linux (WSL) */
-wsl --install
-wsl --list --online
-wsl --install -d <name>
-wslconfig /l
-wslconfig /setdefault <name>

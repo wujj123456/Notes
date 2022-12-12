@@ -1,0 +1,18 @@
+WSL (Windows Subsystem for Linux)
+
+/* wsl cli */
+wsl --install
+wsl --list --online
+wsl --install -d <name>
+wslconfig /l
+wslconfig /setdefault <name>
+
+/* mount luks disk */
+https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk
+GET-CimInstance -query "SELECT * from Win32_DiskDrive"
+
+https://devblogs.microsoft.com/commandline/servicing-the-windows-subsystem-for-linux-wsl-2-linux-kernel/
+wsl --mount [disk-id] --bare
+wsl cryptsetup luksOpen /dev/sdX my-device # Replace /dev/sdX with the block device path in WSL.
+wsl mkdir /mnt/wsl/my-mountpoint
+wsl mount /dev/mapper/my-device /mnt/wsl/my-mountpoint
