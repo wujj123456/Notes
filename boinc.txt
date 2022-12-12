@@ -26,3 +26,12 @@ https://boinc.berkeley.edu/dev/forum_thread.php?id=5377
     <use_all_gpus>1</use_all_gpus>
   </options>
 </cc_config>
+
+/* move working directory */
+systemctl stop boinc-client
+# make sure <dest dir> has a+rx
+mv /var/lib/boinc-client <dest dir>
+ln -sf <dest dir>/boinc-client /var/lib/boinc
+ln -sf <dest dir>/boinc-client /var/lib/boinc-client
+chown boinc:boinc -h /var/lib/boinc
+chown boinc:boinc -h /var/lib/boinc-client
