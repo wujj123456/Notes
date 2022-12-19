@@ -42,3 +42,10 @@ sudo cryptsetup luksDump /dev/sda3
 https://www.lisenet.com/2013/luks-add-keys-backup-and-restore-volume-header/
 cryptsetup luksHeaderBackup <device> --header-backup-file <file>
 cryptsetup luksHeaderRestore <device> --header-backup-file <file>
+
+/* recover luks partition */
+https://forum.cgsecurity.org/phpBB3/viewtopic.php?t=7513
+# find the right offset
+sudo hexdump -C <device> | grep LUKS
+# use testdisk to analyze and write partition table
+testdisk
