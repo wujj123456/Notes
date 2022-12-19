@@ -1,5 +1,9 @@
 ssh
 
+/* preserve color for remote command */
+https://askubuntu.com/questions/16336/how-to-get-coloured-terminal-over-ssh
+ssh -t
+
 /* disable password login for specific user */
 /etc/ssh/sshd_config
 ```
