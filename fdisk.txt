@@ -1,4 +1,10 @@
 fdisk
 
 /* partition information */
-fdisk -l /dev/hdb
+fdisk -l /dev/<device>
+
+/* create partition */
+fdisk /dev/<device>
+n
+p
+w
