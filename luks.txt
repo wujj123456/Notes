@@ -1,5 +1,10 @@
 luks
 
+/* auto mount luks partition during boot */
+https://www.golinuxcloud.com/mount-luks-encrypted-disk-partition-linux/#Mount_LUKS_device_using_fstab_with_key_No_prompt_for_LUKS_passphrase
+/etc/crypttab
+/etc/fstab
+
 /* resize encrypted container */
 https://shaakunthala.wordpress.com/2017/11/28/expanding-a-luks-encrypted-disk-image/
 sudo umount /dev/mapper/myluksvol1 && sudo cryptsetup luksClose myluksvol1
@@ -16,6 +21,7 @@ dd if=/dev/zero of=/data/data.img bs=1M count=$((1024*20))
 sudo cryptsetup --align-payload=1 luksFormat /data/data.img
 
 /* use keyfile instead of password */
+dd if=/dev/random bs=2048 count=1 of=<keyfile>
 sudo cryptsetup luksAddKey /data/data.img <keyfile>
 
 /* map container */
@@ -27,12 +33,10 @@ sudo mkfs.ext4 /dev/mapper/data
 /* mount container */
 sudo mount /dev/mapper/data /mnt/data
 
-/* add key to existing encrypted LVM partition */
-https://askubuntu.com/questions/109898/how-to-change-the-password-of-an-encrypted-lvm-system-done-with-the-alternate-i
-cat /etc/crypttab
+/* add key to existing encrypted partition */
 sudo cryptsetup luksAddKey /dev/sda3
 
-/* remove key to existing encrypted LVM partition */
+/* remove key to existing encrypted partition */
 sudo cryptsetup luksRemoveKey /dev/sda3
 
 /* view current used slots/keys */
