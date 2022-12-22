@@ -1,0 +1,15 @@
+v4l2 camera
+
+/* list devices */
+v4l2-ctl --list-devices
+
+/* list formats */
+v4l2-ctl -d /dev/video0 --list-formats
+v4l2-ctl -d /dev/video0 --list-formats-ext
+
+/* install loopback virtual camera */
+linux-headers
+v4l2loopback
+
+/* feed virtual camera with ffmpeg */
+ffmpeg -f v4l2 -video_size 1280x720 -pix_fmt h264 -i /dev/video1 -pix_fmt yuv420p -f v4l2 /dev/video0
