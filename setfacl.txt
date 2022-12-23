@@ -1,0 +1,13 @@
+getfacl / setfacl
+
+/* see acl list */
+getfacl /dir
+
+/* add acl */
+setfacl -m user:abc:rx /dir
+
+/* remove acl */
+setfacl -x user:abc /dir
+
+/* test user permission */
+sudo -u <user> test -r <file-to-test>
