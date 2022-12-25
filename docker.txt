@@ -1,0 +1,13 @@
+docker
+
+/* always run and on boot */
+docker run --restart=always
+
+/* list containers */
+docker container ls
+
+/* enter container */
+docker exec -it name sh
+
+/* tail logs */
+docker logs <name> -f
