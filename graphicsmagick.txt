@@ -1,0 +1,8 @@
+graphicsmagick
+
+/* man page */
+https://manpages.ubuntu.com/manpages/xenial/man1/convert.1.html
+
+/* merge multiple images into one */
+gm convert *.jpg +append output.jpg  # horizontal
+gm convert *.jpg -append output.jpg  # vertical
