@@ -16,3 +16,7 @@ pacman -S gnome-software-packagekit-plugin
 https://itsfoss.com/things-to-do-after-installing-arch-linux/
 https://linuxdev.io/howto-fix-h-264-videos-not-playing-on-arch-linux/
 sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gst-libav ffmpeg vlc
+
+/* packages */
+openssh vim net-tools boinc mlocate ffmpeg hdparm git python-psutil python-tabulate python-termcolor sysstat lshw syncthing ripgrep dmidecode docker apptainer rust clang xmlstarlet steam
+opencl-nvidia
