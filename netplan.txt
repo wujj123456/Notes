@@ -16,3 +16,7 @@ network:
 
 netplan generate
 netplan apply
+
+/* A start job is running for wait for network to be configured */
+Add `optional: true`
+netplan apply
