@@ -31,3 +31,11 @@ systemd-run --slice tbd.slice --scope <binary>
 /* stop systemd-resolve */
 sudo systemctl disable systemd-resolved.service
 remove symlink /etc/resolv.conf and add a real one
+
+/* timer */
+https://wiki.archlinux.org/title/Systemd/Timers
+https://www.freedesktop.org/software/systemd/man/systemd.timer.html
+systemctl list-timers
+
+/* verify unit files */
+systemd-analyze verify /etc/systemd/system/vertica-backup.timer
