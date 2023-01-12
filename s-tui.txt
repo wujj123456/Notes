@@ -1,0 +1,6 @@
+s-tui
+
+/* measures power consumption */
+https://github.com/amanusk/s-tui#simple-installation
+apt install s-tui
+sudo s-tui
