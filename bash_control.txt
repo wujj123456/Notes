@@ -9,6 +9,14 @@ https://wiki.ubuntu.com/DashAsBinSh
 
 /* array */
 https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays
+# define array
+allThreads=(1 2 4 8 16 32 64 128)
+# loop through elements
+for t in ${allThreads[@]}; do
+# loop through indices
+for i in ${!allThreads[@]}; do
+# append
+myArray+=( "newElement1" "newElement2" )
 
 /* group background tasks and wait for finish */
 { command1; command2; ... } &
