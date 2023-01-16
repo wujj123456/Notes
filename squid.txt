@@ -1,0 +1,14 @@
+squid
+
+/* http proxty with username and password */
+https://stackoverflow.com/questions/3297196/how-to-set-up-a-squid-proxy-with-basic-username-and-password-authentication
+
+/etc/squid/squid.conf
+auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwords
+auth_param basic realm proxy
+acl authenticated proxy_auth REQUIRED
+http_access allow authenticated
+http_port 50466
+
+apt install apache2-utils
+htpasswd -c /etc/squid/passwords <username>
