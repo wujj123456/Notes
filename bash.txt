@@ -1,8 +1,13 @@
-bash control
+bash
 
-http://crazedmonkey.com/blog/programming/multiple-expression-if-statement-in-bash.html
-http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
-https://wiki.ubuntu.com/DashAsBinSh
+https://tldp.org/LDP/Bash-Beginners-Guide/html/
+
+/* string substitutions */
+https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_03.html
+${VAR:-WORD}
+	If VAR is not defined or null, the expansion of WORD is substituted; otherwise the value of VAR is substituted
+${VAR:=WORD}
+	The value is assigned to the parameter if it does not exist
 
 /* sequence */
 {START..END[..INCREMENT]}
@@ -126,7 +131,7 @@ unset LD_DEBUG
 
 /* -a for AND, -o for OR, -n for NOT */
 if [ $foo -eq 1 -o $bar -eq 3 -o $abc -eq 4 ]; then
-    echo Hello World
+    echo Hello World
 fi
 
 /* check environmental variable set */
@@ -157,3 +162,74 @@ awk 'BEGIN{printf("%0.2f", '$a' / '$b')}'
 /* bash add */
 http://sysblogd.wordpress.com/2007/08/26/let-bash-do-the-math-doing-calculations-using-that-bash/
 $((expression))
+
+/* read line by line */
+while read line; do
+...
+done < file
+
+/* file/dir related checks */
+http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
+file exist: [ -e file ]
+regular file exist: [ -f file ]
+dir exist: [ -d dir ]
+symlink exist: [ -h link ]
+
+/* get rid of file extension */
+temp=${FILE1%.eio.gz}
+
+/* Extract filename and extension */
+filename=$(basename $fullfile)
+extension=${filename##*.}
+filename=${filename%.*}
+
+/* extract filename without extension */
+name=file.txt
+filename=`basename $name .txt`
+
+/* extract filename only */
+basename
+
+/* negative wildcard match */
+shopt -s extglob
+!(..)
+ls test.!(mp4)
+
+/* detect if it's an ssh session */
+http://forums.justlinux.com/showthread.php?118349-Bash-Script-Detect-Remote-Local-login
+env | grep -q 'SSH_CLIENT'
+if [ $? -eq 1 ]; then
+     # local 
+else
+     #remote
+fi
+
+/* normalizing using string variables */
+https://www.linuxjournal.com/content/normalizing-filenames-and-data-using-bash-string-variable-manipulations
+
+/* check/match substring */
+http://stackoverflow.com/questions/229551/string-contains-in-bash
+string='My string';
+if [[ "$string" == *My* ]]
+then
+  echo "It's there!";
+fi
+
+/* Extracts $length characters from $string starting at $position */
+echo `expr substr $stringZ 1 2`
+echo ${stringZ:7:3}
+
+/* convert string to number */
+number=$((str))
+
+/* regex expression */
+if [[ $chgnum =~ [0-9]+/ ]]; then
+	...
+fi
+
+/* test number */
+https://stackoverflow.com/questions/806906/how-do-i-test-if-a-variable-is-a-number-in-bash
+re='^[0-9]+$'
+if ! [[ $yournumber =~ $re ]] ; then
+   echo "error: Not a number" >&2; exit 1
+fi
