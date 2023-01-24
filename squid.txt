@@ -1,6 +1,6 @@
 squid
 
-/* http proxty with username and password */
+/* http proxy with username and password */
 https://stackoverflow.com/questions/3297196/how-to-set-up-a-squid-proxy-with-basic-username-and-password-authentication
 
 /etc/squid/squid.conf
@@ -12,3 +12,18 @@ http_port 50466
 
 apt install apache2-utils
 htpasswd -c /etc/squid/passwords <username>
+
+/* http proxy with disk cache */
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/configuring-the-squid-caching-proxy-server
+/etc/squid/squid.conf
+
+1. Adapt the localnet access control lists (ACL) to match the IP ranges that should be allowed to use the proxy
+acl localnet src 192.0.2.0/24
+http_access allow localnet
+2. Update acl Safe_ports to remove anything except 21, 80, 443
+3. Configure cache
+cache_dir ufs /var/spool/squid 10000 16 256
+cache_dir <type> <directory> <size in MB> <1st level #dirs> <2nd level #dirs>
+4. firewall for TCP 3128
+5. Test
+curl -O -L "https://www.redhat.com/index.html" -x "proxy.example.com:3128"
