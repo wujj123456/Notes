@@ -1,0 +1,18 @@
+Ubuntu
+
+/* restore distro configs */
+https://askubuntu.com/questions/66533/how-can-i-restore-configuration-files
+# find which package has the file
+dpkg -S unity-greeter.conf
+# reinstall with distro files
+sudo apt install --reinstall -o Dpkg::Options::="--force-confask,confnew,confmiss" <package-name>
+
+/* gnome shell applications */
+/usr/share/applications/*.desktop
+~/.local/share/applications/*.desktop
+
+/* disable suspend */
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+/* change keyboard & mouse layouts, map capslock */
+apt install gnome-tweaks

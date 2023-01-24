@@ -1,8 +1,0 @@
-Ubuntu 13.04
-
-/* Ubuntu Gnome */
-http://mylinuxexplore.blogspot.com/2013/05/ubuntu-1304-raring-ringtail-gnome.html
-
-/* Upgrade to next release */
-apt-get install update-manager-core
-do-release-upgrade

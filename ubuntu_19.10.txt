@@ -1,8 +1,0 @@
-Ubuntu 19.10
-
-/* openCL library */
-sudo apt install ocl-icd-libopencl1
-
-/* gnome shell applications */
-/usr/share/applications/*.desktop
-~/.local/share/applications/*.desktop

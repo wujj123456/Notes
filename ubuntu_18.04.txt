@@ -1,5 +1,0 @@
-Ubuntu 18.04
-
-/* get new kernel */
-https://itsfoss.com/ubuntu-hwe-kernel/
-sudo apt install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04
