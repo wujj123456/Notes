@@ -1,0 +1,11 @@
+syncthing
+
+/* show relevant path */
+syncthing -paths
+
+/* enable audit log that contains file change history */
+serve --audit
+
+/* Panic: leveldb/table: corruption on data-block */
+https://forum.syncthing.net/t/panic-leveldb-table-corruption-on-data-block/2526/13?source_topic_id=5175
+Delete index database
