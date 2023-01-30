@@ -6,3 +6,6 @@ sudo lspci -vvvs <slot>
 
 /* get vendor and device id */
 lspci -nn
+
+/* check PCIE speed */
+sudo lspci -vvv
