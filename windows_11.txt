@@ -1,5 +1,8 @@
 Windows 11
 
+/* color profiles */
+C:\Windows\System32\spool\drivers\color
+
 /* Disable web search in start */
 https://www.ghacks.net/2021/11/26/how-to-turn-off-search-the-web-results-in-windows-11/
 Computer Configuration > Administrative Templates > Windows Components > Search
