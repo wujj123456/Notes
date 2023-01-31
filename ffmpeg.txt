@@ -3,6 +3,10 @@ ffmpeg / avconv
 /* ultimiate guide */
 https://img.ly/blog/ultimate-guide-to-ffmpeg/
 
+/* fast seek */
+https://superuser.com/questions/1255807/ffmpeg-how-to-achieve-fast-seeking-when-trimming
+Put -ss before -i. -to could be ignored.
+
 /* x264 guide */
 https://trac.ffmpeg.org/wiki/Encode/H.264
 
