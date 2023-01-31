@@ -2,6 +2,12 @@ date
 
 http://www.oreillynet.com/linux/cmd/cmd.csp?path=d/date
 
+/* convert time difference */
+start_time="$(date -d $begin +%s)"
+end_time="$(date -d $end +%s)"
+diff_time="$(($end_time - $start_time))"
+diff_time_str="$(date -d @$diff_time +'%H:%M:%S' -u)"
+
 /* display in customized format */
 date +"STRING"
 date +"%m%d%Y_%k%M%S"
