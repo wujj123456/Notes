@@ -1,0 +1,7 @@
+btrfs
+
+/* list all subvolumes */
+btrfs subvolume list /
+
+/* space usage */
+btrfs filesystem du --summarize <file path>
