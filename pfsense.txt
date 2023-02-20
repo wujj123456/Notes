@@ -2,3 +2,6 @@ pfsense
 
 /* Documents */
 https://www.netgate.com/docs/pfsense/
+
+/* traffic totals db backup */
+/var/db/vnstat/vnstat.db
