@@ -5,3 +5,6 @@ btrfs subvolume list /
 
 /* space usage */
 btrfs filesystem du --summarize <file path>
+
+/* display size with details */
+compsize
