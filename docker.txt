@@ -11,3 +11,6 @@ docker exec -it name sh
 
 /* tail logs */
 docker logs <name> -f
+
+/* stop and remove */
+docker stop <id> && docker rm <id>
