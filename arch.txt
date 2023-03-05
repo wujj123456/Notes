@@ -1,8 +1,21 @@
 Arch Linux
 
+/* downgrade specific packages */
+https://wiki.archlinux.org/title/Arch_Linux_Archive
+pacman -U <URL>
+
+/* skip upgrade for packages */
+https://wiki.archlinux.org/title/pacman#Skip_package_from_being_upgraded
+/etc/pacman.conf
+```
+[options]
+IgnorPkg=something
+```
+or
+pacman --ignore
+
 /* installation */
 archinstall
-time zone: US/Pacific (from /usr/share/zoneinfo/US/)
 
 /* pacman */
 upgrade: -Syu
