@@ -3,6 +3,13 @@ Firefox addons/tricks
 /* about:config documentation */
 https://searchfox.org/mozilla-central/source/modules/libpref/init/StaticPrefList.yaml
 
+/* performance improvements (?) */
+gfx.webrender.all = true
+gfx.canvas.accelerated = true
+
+/* disable efficiency mode for background tabs */
+dom.ipc.processPriorityManager.backgroundUsesEcoQoS = false
+
 /* disable media notification in volume mixer panel */
 media.hardwaremediakeys.enabled = false
 
