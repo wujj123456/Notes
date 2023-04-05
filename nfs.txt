@@ -1,0 +1,10 @@
+nfs
+
+/* basic setup */
+https://ubuntu.com/server/docs/service-nfs
+
+configure directories: /etc/exports
+reload after configuration: exportfs -a (-ra to restart service too)
+
+/* empty directory after mount */
+insecure
