@@ -1,5 +1,19 @@
 vmware
 
+/* guest add-ons */
+https://wiki.archlinux.org/title/VMware/Install_Arch_Linux_as_a_guest
+pacman -Sy open-vm-tools
+systemctl enable vmtoolsd
+systemctl enable vmware-vmblock-fuse
+# reboot or start service
+
+/* shared folders in Linux */
+# list available folders
+vmware-hgfsclient
+# mount
+mkdir /mnt/whatever
+vmhgfs-fuse -o allow_other -o auto_unmount .host:/<shared_folder> <shared folders root directory>
+
 /* uninstall on Linux */
 vmware-installer -u vmware-player
 
