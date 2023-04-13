@@ -8,3 +8,13 @@ reload after configuration: exportfs -a (-ra to restart service too)
 
 /* empty directory after mount */
 insecure
+
+/* service name */
+Ubuntu: nfs-server
+Arch: nfsv4-server
+
+/* restrict network interface */
+/etc/nfs.conf
+
+[nfsd]
+host=192.168.1.123
