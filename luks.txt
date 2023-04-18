@@ -1,5 +1,9 @@
 luks
 
+/* update KDF algorithm */
+https://mjg59.dreamwidth.org/66429.html
+cryptsetup luksConvertKey /dev/whatever --pbkdf argon2id
+
 /* auto mount luks partition during boot */
 https://www.golinuxcloud.com/mount-luks-encrypted-disk-partition-linux/#Mount_LUKS_device_using_fstab_with_key_No_prompt_for_LUKS_passphrase
 /etc/crypttab
