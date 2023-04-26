@@ -2,6 +2,13 @@ systemd
 
 https://www.linux.com/learn/cleaning-your-linux-startup-process
 
+/* show ordering and dependency */
+systemctl show -p Before <unit>
+systemctl list-dependencies <unit> [--reverse]
+
+/* show full output with no scrolling */
+--no-pager --full
+
 /* boot chain */
 systemd-analyze critical-chain
 
