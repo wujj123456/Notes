@@ -2,6 +2,10 @@ bash
 
 https://tldp.org/LDP/Bash-Beginners-Guide/html/
 
+/* process substitution */
+https://www.gnu.org/software/bash/manual/html_node/Process-Substitution.html
+<(list) or >(list)
+
 /* string substitutions */
 https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_03.html
 ${VAR:-WORD}
