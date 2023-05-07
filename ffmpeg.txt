@@ -1,5 +1,8 @@
 ffmpeg / avconv
 
+/* find key frame */
+ffprobe -loglevel error -skip_frame nokey -select_streams v:0 -show_entries frame=pkt_pts_time -of csv=print_section=0 -read_intervals %+10 <filename>
+
 /* ultimiate guide */
 https://img.ly/blog/ultimate-guide-to-ffmpeg/
 
