@@ -12,7 +12,10 @@ sudo apt install --reinstall -o Dpkg::Options::="--force-confask,confnew,confmis
 ~/.local/share/applications/*.desktop
 
 /* disable suspend */
+https://serverfault.com/questions/1045949/how-to-disable-suspend-on-ubuntu-20-04-systemd-via-cli
 systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+/etc/systemd/logind.conf
+systemctl restart systemd-logind
 
 /* change keyboard & mouse layouts, map capslock */
 apt install gnome-tweaks
