@@ -1,5 +1,9 @@
 Windows 11
 
+/* turn off Secure TIme Seeding (STS) */
+https://www.thewindowsclub.com/secure-time-seeding-windows-10
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\UtilizeSslTimeData
+
 /* color profiles */
 C:\Windows\System32\spool\drivers\color
 
