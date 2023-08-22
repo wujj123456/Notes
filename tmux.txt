@@ -10,9 +10,10 @@ C-b :setw synchronize-panes on
 :save-buffer <filename>
 
 /* rebind prefix */
-set -g prefix C-a
+vim ~/.tmux.conf
 unbind C-b
-bind C-a send-prefix
+set-option -g prefix C-a
+bind-key C-a send-prefix
 
 /* quick commands */
 https://robots.thoughtbot.com/a-tmux-crash-course
