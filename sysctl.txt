@@ -15,3 +15,6 @@ sysctl -p
 
 # verify
 sysctl net.ipv4.tcp_congestion_control
+
+/* network perf tuning */
+https://github.com/leandromoreira/linux-network-performance-parameters
