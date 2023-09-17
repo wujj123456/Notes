@@ -16,3 +16,7 @@ Computer Configuration > Administrative Templates > Windows Components > Search
 /* use UTC */
 https://wiki.archlinux.org/title/System_time#Time_standard
 reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
+
+/* shortcuts */
+Shift+Ctrl+Win+B: restarts DWM
+Win+Alt+B: toggle HDR
