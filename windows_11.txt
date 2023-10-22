@@ -20,3 +20,7 @@ reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
 /* shortcuts */
 Shift+Ctrl+Win+B: restarts DWM
 Win+Alt+B: toggle HDR
+
+/* find which process is locking usb drive */
+https://superuser.com/questions/87364/can-windows-tell-me-what-is-using-my-usb-drive
+wevtutil qe System /q:"*[System[(EventID=225)]]" /c:5 /f:text /rd:true
