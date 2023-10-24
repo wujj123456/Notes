@@ -1,5 +1,11 @@
 luks
 
+/* allow discard */
+# open a LUKS device with the --allow-discards option
+cryptsetup --allow-discards --persistent refresh
+# use the refresh command and --persistent option for the LUKS2 header
+cryptsetup --allow-discards --persistent refresh root
+
 /* update KDF algorithm */
 https://mjg59.dreamwidth.org/66429.html
 cryptsetup luksConvertKey /dev/whatever --pbkdf argon2id

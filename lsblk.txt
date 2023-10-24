@@ -1,5 +1,11 @@
 lsblk
 
+/* list with drive model name */
+lsblk -d -o +MODEL
+
+/* check discard */
+lsblk --discard
+
 /* list block devices */
 http://www.tecmint.com/useful-linux-commands-for-newbies/
 lsblk
