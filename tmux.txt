@@ -2,6 +2,10 @@ tmux
 
 http://www.ubuntugeek.com/tmux-terminal-multiplexer.html
 
+/* vim bindings */
+vim ~/.tmux.conf
+set-window-option -g mode-keys vi
+
 /* synchronize all panes (send same command to all panes) */
 C-b :setw synchronize-panes on
 
