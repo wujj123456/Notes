@@ -1,5 +1,11 @@
 WSL (Windows Subsystem for Linux)
 
+/* export and import */
+https://4sysops.com/archives/export-and-import-windows-subsystem-for-linux-wsl/
+wsl --list
+wsl --export <WSL Image Name> <Export file>
+wsl -–import <Image Name you choose> <Directory to store and run the image> <Directory location of the exported .tar file>
+
 /* wsl cli */
 wsl --install
 wsl --list --online
