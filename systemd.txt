@@ -46,3 +46,6 @@ systemctl list-timers
 
 /* verify unit files */
 systemd-analyze verify /etc/systemd/system/vertica-backup.timer
+
+/* reboot to UEFI */
+systemctl reboot --firmware-setup
