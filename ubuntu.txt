@@ -1,5 +1,11 @@
 Ubuntu
 
+/* amd opencl */
+https://rocm.docs.amd.com/en/latest/deploy/linux/installer/install.html
+https://math.dartmouth.edu/~sarunas/amdgpu-opencl.html
+install the deb
+sudo amdgpu-install --no-dkms --usecase=opencl
+
 /* restore distro configs */
 https://askubuntu.com/questions/66533/how-can-i-restore-configuration-files
 # find which package has the file
