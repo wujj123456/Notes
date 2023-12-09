@@ -1,5 +1,9 @@
 Ubuntu
 
+/* disable motd news */
+https://linuxconfig.org/disable-dynamic-motd-and-news-on-ubuntu-20-04-focal-fossa-linux
+/etc/default/motd-news
+
 /* amd opencl */
 https://rocm.docs.amd.com/en/latest/deploy/linux/installer/install.html
 https://math.dartmouth.edu/~sarunas/amdgpu-opencl.html
