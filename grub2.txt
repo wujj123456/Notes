@@ -2,6 +2,9 @@ grub2
 
 http://ubuntuforums.org/showthread.php?t=1287602
 
+/* always show grub menu */
+grub2-editenv - unset menu_auto_hide
+
 /* enable grub menu */
 /etc/default/grub:
     GRUB_TIMEOUT_STYLE=menu

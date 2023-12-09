@@ -1,4 +1,4 @@
 fedora
 
 /* change ssh port */
-sudo semanage port -a -t ssh_port_t -p tcp 777
+semanage port -a -t ssh_port_t -p tcp 777
