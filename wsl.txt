@@ -1,5 +1,16 @@
 WSL (Windows Subsystem for Linux)
 
+/* change default user name */
+https://superuser.com/questions/1566022/how-to-set-default-user-for-manually-installed-wsl-distro
+/etc/wsl.conf
+```
+[user]
+default=username
+```
+
+/* change default wsl version */
+wsl --set-default-version 1
+
 /* export and import */
 https://4sysops.com/archives/export-and-import-windows-subsystem-for-linux-wsl/
 wsl --list
