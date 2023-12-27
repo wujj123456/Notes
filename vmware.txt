@@ -1,5 +1,9 @@
 vmware
 
+/* disable side-channel mitigation */
+Edit .vmx
+ulm.disableMitigations="TRUE"
+
 /* guest add-ons */
 https://wiki.archlinux.org/title/VMware/Install_Arch_Linux_as_a_guest
 pacman -Sy open-vm-tools
