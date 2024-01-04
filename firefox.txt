@@ -3,6 +3,9 @@ Firefox addons/tricks
 /* about:config documentation */
 https://searchfox.org/mozilla-central/source/modules/libpref/init/StaticPrefList.yaml
 
+/* disable address bar auto complete */
+browser.urlbar.autoFill = false
+
 /* performance improvements (?) */
 gfx.webrender.all = true
 gfx.canvas.accelerated = true
