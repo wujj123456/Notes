@@ -2,6 +2,9 @@ systemd
 
 https://www.linux.com/learn/cleaning-your-linux-startup-process
 
+/* change default editor */
+export SYSTEMD_EDITOR=vim
+
 /* show ordering and dependency */
 systemctl show -p Before <unit>
 systemctl list-dependencies <unit> [--reverse]
@@ -49,3 +52,8 @@ systemd-analyze verify /etc/systemd/system/vertica-backup.timer
 
 /* reboot to UEFI */
 systemctl reboot --firmware-setup
+
+/* man pages */
+man systemd-<file>
+man systemd-directives
+man capabilities
