@@ -1,5 +1,8 @@
 Python
 
+/* force unbuffering of stdout/stderr */
+python -u
+
 /* Python.h: no such file or directory */
 apt-get install python-dev
 
