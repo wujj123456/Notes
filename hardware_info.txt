@@ -3,3 +3,4 @@ Hardware Info
 lshw
 lspci
 dmidecode -s bios-version
+hostnamectl
