@@ -1,0 +1,22 @@
+journald / journalctl
+
+/* display logs */
+journalctl -b
+journalctl _PID=1
+journalctl _UID=1002
+
+/* priority */
+journalctl -p 0
+journalctl -p 0..3
+
+/* rotate and clean logs */
+sudo journalctl --rotate --vacuum-time=5d
+
+/* facility (groups of logs) */
+journalctl --facility <auth|authpriv|cron|daemon|syslog|user>
+
+/* json */
+-o <json|json-pretty>
+
+/* other options */
+--no-pager

@@ -25,10 +25,6 @@ systemctl disable bluetooth.service
 /* mask service to make sure it won't start */
 systemctl mask bluetooth.service
 
-/* display logs */
-journalctl -b
-journalctl _PID=1
-
 /* find longest startup */
 systemd-analyze blame
 
@@ -46,6 +42,8 @@ remove symlink /etc/resolv.conf and add a real one
 https://wiki.archlinux.org/title/Systemd/Timers
 https://www.freedesktop.org/software/systemd/man/systemd.timer.html
 systemctl list-timers
+# calendar events
+man systemd.time
 
 /* verify unit files */
 systemd-analyze verify /etc/systemd/system/vertica-backup.timer
@@ -57,3 +55,8 @@ systemctl reboot --firmware-setup
 man systemd-<file>
 man systemd-directives
 man capabilities
+# target manpage
+man systemd.special
+man systemd.resource-control
+# for ulimit
+man bash-builtins
