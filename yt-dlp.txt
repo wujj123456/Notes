@@ -4,6 +4,7 @@ youtube-dl / yt-dlp
 https://github.com/UlyssesZh/yt-dlp-danmaku
 pip install -U yt-dlp-danmaku
 yt-dlp --write-subs --use-postprocessor danmaku https://www.bilibili.com/video/BV1Sm4y1N78J
+Defaults: .venv/lib/python3.11/site-packages/yt_dlp_danmaku/__init__.py
 
 /* latest projects */
 https://github.com/yt-dlp/yt-dlp
