@@ -1,5 +1,10 @@
 youtube-dl / yt-dlp
 
+/* bilibili danmaku */
+https://github.com/UlyssesZh/yt-dlp-danmaku
+pip install -U yt-dlp-danmaku
+yt-dlp --write-subs --use-postprocessor danmaku https://www.bilibili.com/video/BV1Sm4y1N78J
+
 /* latest projects */
 https://github.com/yt-dlp/yt-dlp
 
