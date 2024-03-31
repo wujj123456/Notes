@@ -1,11 +1,38 @@
 Windows 11
 
-/* turn off Secure TIme Seeding (STS) */
+/* hotkeys */
+Shift + Ctrl + Win + B: restarts DWM
+Win + Alt + B: toggle HDR
+
+/* turn off Secure Time Seeding (STS) */
 https://www.thewindowsclub.com/secure-time-seeding-windows-10
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\UtilizeSslTimeData
 
+/* startup */
+Win + R
+shell:startup
+
 /* color profiles */
 C:\Windows\System32\spool\drivers\color
+
+/* find which process is locking usb drive */
+https://superuser.com/questions/87364/can-windows-tell-me-what-is-using-my-usb-drive
+wevtutil qe System /q:"*[System[(EventID=225)]]" /c:5 /f:text /rd:true
+Or
+Powertoys -> File Locksmith
+
+/* use UTC */
+https://wiki.archlinux.org/title/System_time#Time_standard
+reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
+
+/* enable password for bitlocker */
+Computer Configuration > Administrative Templates > Windows Components > BitLocker Drive Encryption
+> Operating System Drives
+
+/* Disable microsoft accounts */
+http://www.intowindows.com/how-to-disable-or-block-microsoft-accounts-in-windows-10/
+Computer Configuration > Windows Settings > Security Settings > Local Polices > Security Options
+> Accounts: Block Microsoft accounts
 
 /* Disable web search in start */
 https://www.ghacks.net/2021/11/26/how-to-turn-off-search-the-web-results-in-windows-11/
@@ -13,14 +40,3 @@ Computer Configuration > Administrative Templates > Windows Components > Search
 > Do not allow web search
 > Don't search the web or display web results in Search
 
-/* use UTC */
-https://wiki.archlinux.org/title/System_time#Time_standard
-reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
-
-/* shortcuts */
-Shift+Ctrl+Win+B: restarts DWM
-Win+Alt+B: toggle HDR
-
-/* find which process is locking usb drive */
-https://superuser.com/questions/87364/can-windows-tell-me-what-is-using-my-usb-drive
-wevtutil qe System /q:"*[System[(EventID=225)]]" /c:5 /f:text /rd:true
