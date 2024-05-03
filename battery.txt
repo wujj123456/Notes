@@ -1,7 +1,5 @@
 Battery
 
-acpi -b
-cat /proc/acpi/battery/BAT0/state
-cat /proc/acpi/battery/BAT0/info
-
-cat /sys/devices/platform/smapi/BAT0/*
+cd /sys/class/power_supply/BAT0
+echo 75 > charge_control_start_threshold
+echo 85 > charge_control_end_threshold
