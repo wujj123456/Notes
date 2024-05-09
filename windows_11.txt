@@ -1,5 +1,9 @@
 Windows 11
 
+/* delete "driver is unavailable" printer */
+https://answers.microsoft.com/en-us/windows/forum/all/uninstalled-printer-still-showing-in-printers/87cf4545-da59-4d86-b669-77e8ca79e650
+Run "shell:::{A8A91A66-3A7D-4424-8D24-04E180695C7A}"
+
 /* hotkeys */
 Shift + Ctrl + Win + B: restarts DWM
 Win + Alt + B: toggle HDR
@@ -39,4 +43,3 @@ https://www.ghacks.net/2021/11/26/how-to-turn-off-search-the-web-results-in-wind
 Computer Configuration > Administrative Templates > Windows Components > Search
 > Do not allow web search
 > Don't search the web or display web results in Search
-
