@@ -1,5 +1,8 @@
 Firefox addons/tricks
 
+/* disallow website mess with paste */
+dom.event.clipboardevents.enabled = false
+
 /* custom search engine */
 https://superuser.com/questions/7327/how-to-add-a-custom-search-engine-to-firefox
 Add a bookmark, replace with %s and set a keyword
