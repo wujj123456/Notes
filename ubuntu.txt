@@ -1,5 +1,10 @@
 Ubuntu
 
+/* disable user namespaces restriction */
+https://github.com/lima-vm/lima/issues/2319
+echo "kernel.apparmor_restrict_unprivileged_userns = 0" > /etc/sysctl.d/99-userns.conf
+sysctl --system
+
 /* disable unattended upgrades */
 sudo apt remove unattended-upgrades
 
