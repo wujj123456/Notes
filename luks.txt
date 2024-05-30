@@ -1,5 +1,13 @@
 luks
 
+/* delete specific key slot */
+https://askubuntu.com/questions/1125246/how-to-remove-an-unknown-key-from-luks-with-cryptsetup
+# first use -v open to check active slots
+cryptsetup -v open --type luks <device> <alias>
+cryptsetup close <alias>
+# Kill slot by ID
+cryptsetup -v luksKillSlot <device> <slot>
+
 /* allow discard */
 https://wiki.archlinux.org/title/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD)
 # open a LUKS device with the --allow-discards option
