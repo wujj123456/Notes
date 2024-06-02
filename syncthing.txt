@@ -1,5 +1,18 @@
 syncthing
 
+/* setup devices and folders through cli */
+https://superuser.com/questions/1397683/how-can-i-configure-syncthing-from-command-line-to-share-a-folder-with-another-c
+# get ID on both server and client
+syncthing cli show system | jq .myID
+# add device to each other
+syncthing cli config devices add --device-id $IDs
+# list folder ids
+syncthing cli config folders list
+# check path if necessary
+syncthing cli config folders $folderID dump-json | jq .path
+# share folder to each other
+syncthing cli config folders $folderID devices add --device-id $IDs
+
 /* show relevant path */
 syncthing -paths
 
