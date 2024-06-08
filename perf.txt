@@ -1,5 +1,8 @@
 perf
 
+/* general performance */
+perf stat -e cache-references,cache-misses,cycles,instructions,branches,faults,migrations
+
 /* record pid */
 perf record -p <pid>
 
