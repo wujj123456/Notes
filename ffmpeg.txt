@@ -1,5 +1,9 @@
 ffmpeg / avconv
 
+/* extract one frame */
+https://superuser.com/questions/1009969/how-to-extract-a-frame-out-of-a-video-using-ffmpeg
+ffmpeg -i <input> -vf "select=eq(n\,34)" -vframes 1 out.png
+
 /* find key frame */
 ffprobe -loglevel error -skip_frame nokey -select_streams v:0 -show_entries frame=pkt_pts_time -of csv=print_section=0 -read_intervals %+10 <filename>
 
