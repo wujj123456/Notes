@@ -3,21 +3,8 @@ youtube-dl / yt-dlp
 /* bilibili danmaku */
 https://github.com/UlyssesZh/yt-dlp-danmaku
 pip install -U yt-dlp-danmaku
-yt-dlp --write-subs --use-postprocessor danmaku https://www.bilibili.com/video/BV1Sm4y1N78J
+yt-dlp --write-subs --use-postprocessor 'danmaku:reserve_blank=1720;font_size=80;duration_still=5;is_reduce_comments=true' https://www.bilibili.com/video/BV...
 Defaults: .venv/lib/python3.11/site-packages/yt_dlp_danmaku/__init__.py
-
-function bdl {
-        id=$1
-        shift
-        cd ~/Downloads
-        yt-dlp --cookies-from-browser firefox:/home/wujj/snap/firefox/common/.mozilla/firefox/<profile>.default $@ https://www.bilibili.com/video/$id
-}
-function bdl {
-        id=$1
-        shift
-        cd ~/Downloads
-        yt-dlp --cookies-from-browser firefox:/home/wujj/snap/firefox/common/.mozilla/firefox/<profile>.default $@ https://www.bilibili.com/video/$id
-}
 
 /* latest projects */
 https://github.com/yt-dlp/yt-dlp
