@@ -1,0 +1,4 @@
+vmstat
+
+/* total disk bytes written since boot */
+vmstat -d
