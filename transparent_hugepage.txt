@@ -1,0 +1,13 @@
+transparent_hugepage (THP)
+
+/* enable at runtime */
+echo always | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+
+/* enable on boot */
+/etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="transparent_hugepage=always"
+update-grub
+
+/* monitor */
+grep Huge /proc/meminfo
+egrep 'trans|thp' /proc/vmstat
