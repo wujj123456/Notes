@@ -1,5 +1,12 @@
 PowerShell
 
+/* Get-Process */
+https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.4
+Get-Process <comma separated names without .exe>
+
+/* Set affinity for multiple processes */
+@(Get-Process <names> | ForEach-Object { $_.ProcessorAffinity = 4294950912 }
+
 /* file hash sha256 */
 Get-FileHash <file>
 
