@@ -1,5 +1,11 @@
 vmware
 
+/* enable more memory to be used by VM */
+https://petri.com/fixing-enough-physical-memory-available-errors-vmware-workstation/
+C:\ProgramData\VMware\VMware Workstation\config.ini
+prefvmx.allVMMemoryLimit
+prefvmx.minVmMemPct
+
 /* disable side-channel mitigation */
 Edit .vmx
 ulm.disableMitigations="TRUE"
