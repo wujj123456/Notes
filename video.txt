@@ -2,5 +2,5 @@ video
 
 /* hardware acceleration */
 https://wiki.archlinux.org/title/Hardware_video_acceleration#Configuring_VA-API
-echo LIBVA_DRIVER_NAME=nvidia >> LIBVA_DRIVER_NAME=nvidia
+echo LIBVA_DRIVER_NAME=nvidia >> /etc/environment
 vainfo
