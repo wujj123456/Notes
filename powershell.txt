@@ -1,5 +1,9 @@
 PowerShell
 
+/* clear history */
+https://stackoverflow.com/questions/13257775/powershells-clear-history-doesnt-clear-history
+(Get-PSReadlineOption).HistorySavePath
+
 /* Get-Process */
 https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.4
 Get-Process <comma separated names without .exe>
