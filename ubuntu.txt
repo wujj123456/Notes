@@ -34,6 +34,8 @@ https://serverfault.com/questions/1045949/how-to-disable-suspend-on-ubuntu-20-04
 systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 /etc/systemd/logind.conf
 systemctl restart systemd-logind
+https://ubuntuhandbook.org/index.php/2024/10/completely-disable-suspend-hibernate/
+/etc/systemd/sleep.conf
 
 /* change keyboard & mouse layouts, map capslock */
 apt install gnome-tweaks
