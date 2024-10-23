@@ -6,6 +6,9 @@ ipmitool/BMC/DCMI/IPMI
 /* IPMIv2 over LAN */
 ipmitool -I lanplus -H 192.168.32.22 -U <username> -P <password> <command>
 
+/* check system event logs */
+sel elist
+
 /* list user */
 user list 1
 
