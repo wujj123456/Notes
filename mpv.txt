@@ -1,0 +1,5 @@
+mpv
+
+/* previous/next video */
+shift + ,
+shift + .
