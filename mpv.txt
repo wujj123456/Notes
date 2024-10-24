@@ -1,5 +1,8 @@
 mpv
 
+/* hotkeys / shortcuts */
+https://defkey.com/mpv-media-player-shortcuts
+
 /* previous/next video */
 shift + ,
 shift + .
