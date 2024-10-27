@@ -1,5 +1,8 @@
 Firefox addons/tricks
 
+/* disable fullscreen pop up */
+full-screen-api.warning.timeout = 0
+
 /* force enable vaapi */
 https://ubuntuhandbook.org/index.php/2024/01/firefox-vaapi-nvidia/
 media.ffmpeg.vaapi.enabled
