@@ -1,7 +1,11 @@
 Python
 
 /* force unbuffering of stdout/stderr */
+https://jvns.ca/blog/2024/11/29/why-pipes-get-stuck-buffering/
 python -u
+PYTHON_UNBUFFERED=1
+sys.stdout.reconfigure(line_buffering=False)
+print(x, flush=True)
 
 /* Python.h: no such file or directory */
 apt-get install python-dev
