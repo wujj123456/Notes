@@ -1,5 +1,9 @@
 grep
 
+/* change buffering */
+grep --line-buffered sth
+unbuffer grep sth
+
 /* output first N matches */
 -m N
 
