@@ -1,28 +1,31 @@
 ipmitool/BMC/DCMI/IPMI
 
-/* default username and password for SV7210 */
--U USERID -P PASSW0RD
+/* manage users */
+https://www.thomas-krenn.com/en/wiki/Configuring_IPMI_under_Linux_using_ipmitool#Users_at_the_USER_Privilege_Level
+ipmitool user list 1
+ipmitool user set name <id> sensor
+ipmitool user set password <id> <password>
+
+/* USER priv access */
+ipmitool -I lanplus -H 192.168.32.22 -L USER -U <username> -P <password> <command>
 
 /* IPMIv2 over LAN */
 ipmitool -I lanplus -H 192.168.32.22 -U <username> -P <password> <command>
 
 /* check system event logs */
-sel elist
-
-/* list user */
-user list 1
+ipmitool sel elist
 
 /* check chasis power status */
-chassis power status
+ipmitool chassis power status
 
 /* hard power reset */
-chassis power reset
+ipmitool chassis power reset
 
 /* activate SoL (Serial over LAN) */
-sol activate
+ipmitool sol activate
 
 /* deactivate */
-sol deactivate
+ipmitool sol deactivate
 
 /* get all sensors information */
 sudo ipmitool sensor list all
