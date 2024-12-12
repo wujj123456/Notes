@@ -5,3 +5,6 @@ sudo nvidia-smi -i 2 -pl 95
 
 /* device monitor (temperature, frequency, etc) */
 nvidia-smi dmon
+
+/* record to csv */
+nvidia-smi dmon -d 6 -c 600 --format csv,noheader,nounit -f <file>
