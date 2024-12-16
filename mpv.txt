@@ -6,3 +6,10 @@ https://defkey.com/mpv-media-player-shortcuts
 /* previous/next video */
 shift + ,
 shift + .
+
+/* play bluray */
+mpv bd:// --bluray-device=<file or device>
+
+/* aacs */
+https://vlc-bluray.whoknowsmy.name/
+Download to ~/.config/aacs/KEYDB.cfg
