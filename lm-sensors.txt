@@ -1,5 +1,9 @@
 lm-sensors
 
+/* monitor HDD temp */
+modprobe drivetemp
+echo drivetemp | sudo tee -a /etc/modules
+
 /* detect and read sensors */
 apt-get install lm-sensors
 sensors-detect
