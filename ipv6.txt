@@ -1,5 +1,8 @@
 IPv6
 
+/* temporarily disable ipv6 */
+sysctl -w net.ipv6.conf.ens3.disable_ipv6=1
+
 /* prefer IPv4 */
 https://askubuntu.com/questions/958876/how-to-disable-ipv6-on-windows-subsystem-for-linux
 Edit /etc/gai.conf, uncomment last 4 lines
