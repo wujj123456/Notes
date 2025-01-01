@@ -1,6 +1,14 @@
-IPV6
+IPv6
 
-/* Google IPV6 hosts */
+/* prefer IPv4 */
+https://askubuntu.com/questions/958876/how-to-disable-ipv6-on-windows-subsystem-for-linux
+Edit /etc/gai.conf, uncomment last 4 lines
+precedence ::ffff:0:0/96 100
+scopev4 ::ffff:169.254.0.0/112  2
+scopev4 ::ffff:127.0.0.0/104    2
+scopev4 ::ffff:0.0.0.0/96       14
+
+/* Google IPv6 hosts */
 https://docs.google.com/Doc?docid=0ARhAbsvps1PlZGZrZG14bnRfNjFkOWNrOWZmcQ
 
 /* Google auto proxy configuration */
@@ -21,12 +29,12 @@ else if(
  }
 }
 
-/* configure IPV6 DNS */
+/* configure IPv6 DNS */
 http://blog.csdn.net/wangjingfei/archive/2010/03/19/5396845.aspx
 Windows:
 http://blog.csdn.net/wangjingfei/archive/2010/03/25/5417202.aspx
 
-/* prefer IPV6 results in DNS getaddrinfo */
+/* prefer IPv6 results in DNS getaddrinfo */
 http://askubuntu.com/questions/9181/how-to-let-the-browser-prefer-ipv6-over-ipv4
 Change /etc/gai.conf to:
 label ::1/128  0
@@ -38,7 +46,7 @@ label fec0::/10  5
 label fc00::/7  6
 label 2001:0::/32 7
 
-/* IPV6 dns servers */
+/* IPv6 dns servers */
 2001:470:20::2 # HE.net, GFW-proof
 2620:0:ccc::2 # openDNS
 2620:0:ccd::2 #openDNS

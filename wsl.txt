@@ -1,5 +1,8 @@
 WSL (Windows Subsystem for Linux)
 
+/* prefer IPv4 when IPv6 is broken */
+see ipv6.txt
+
 /* change default user name */
 https://superuser.com/questions/1566022/how-to-set-default-user-for-manually-installed-wsl-distro
 /etc/wsl.conf
