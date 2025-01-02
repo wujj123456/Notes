@@ -1,5 +1,9 @@
 youtube-dl / yt-dlp
 
+/* download VR video */
+https://github.com/yt-dlp/yt-dlp/issues/9903
+yt-dlp --extractor-arg "youtube:player_client=android_vr"
+
 /* bilibili danmaku */
 https://github.com/UlyssesZh/yt-dlp-danmaku
 pip install -U yt-dlp-danmaku
