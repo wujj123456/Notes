@@ -1,5 +1,8 @@
 nfs
 
+/* check nfs mount version */
+nfsstat -m
+
 /* basic setup */
 https://ubuntu.com/server/docs/service-nfs
 
