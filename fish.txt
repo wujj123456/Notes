@@ -1,5 +1,11 @@
 fish
 
+/* accept only next word from suggestion */
+alt + right
+
+/* cycle through parameters of previous commands */
+alt + .
+
 /* change default shell to fish */
 chsh -s /usr/bin/fish
 
