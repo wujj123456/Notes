@@ -1,5 +1,8 @@
 WSL (Windows Subsystem for Linux)
 
+/* paste in windows terminal */
+ctrl + shift + v
+
 /* workaround systemd update on wsl1 */
 https://superuser.com/questions/1803992/getting-this-error-failed-to-take-etc-passwd-lock-invalid-argument
 sudo mv /var/lib/dpkg/info /var/lib/dpkg/info_silent
