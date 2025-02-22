@@ -2,6 +2,10 @@ systemd
 
 https://www.linux.com/learn/cleaning-your-linux-startup-process
 
+/* read systemd config files */
+systemd-analyze cat-config systemd/logind.conf
+systemd-analyze cat-config systemd/sleep.conf
+
 /* change default editor */
 export SYSTEMD_EDITOR=vim
 
