@@ -18,11 +18,14 @@ systemctl enable vmware-vmblock-fuse
 # reboot or start service
 
 /* shared folders in Linux */
+https://knowledge.broadcom.com/external/article/313233/how-to-configure-vmware-tools-shared-fol.html
 # list available folders
 vmware-hgfsclient
 # mount
 mkdir /mnt/whatever
-vmhgfs-fuse -o allow_other -o auto_unmount .host:/<shared_folder> <shared folders root directory>
+vmhgfs-fuse -o allow_other -o auto_unmount .host:/ /mnt/whatever
+/etc/fstab
+.host:/ /mnt/hgfs fuse.vmhgfs-fuse defaults.allow_other 0 0
 
 /* uninstall on Linux */
 vmware-installer -u vmware-player
