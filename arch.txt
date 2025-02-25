@@ -1,5 +1,8 @@
 Arch Linux
 
+/* query information about a package */
+pacman -Q --info <package>
+
 /* downgrade specific packages */
 https://wiki.archlinux.org/title/Arch_Linux_Archive
 pacman -U <URL>
