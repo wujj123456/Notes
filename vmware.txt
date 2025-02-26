@@ -1,5 +1,8 @@
 vmware
 
+/* shrink/compat disk for Linux guest VM */
+vmware-toolbox-cmd disk shrink /
+
 /* enable more memory to be used by VM */
 https://petri.com/fixing-enough-physical-memory-available-errors-vmware-workstation/
 C:\ProgramData\VMware\VMware Workstation\config.ini
