@@ -5,15 +5,9 @@ ctrl + shift + v
 
 /* workaround systemd update on wsl1 */
 https://superuser.com/questions/1803992/getting-this-error-failed-to-take-etc-passwd-lock-invalid-argument
-sudo mv /var/lib/dpkg/info /var/lib/dpkg/info_silent
-sudo mkdir /var/lib/dpkg/info
-sudo apt update
-sudo apt -f install
-sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info_silent
-sudo rm -rf /var/lib/dpkg/info
-sudo mv /var/lib/dpkg/info_silent /var/lib/dpkg/info
-sudo apt update
-sudo apt upgrade
+https://github.com/microsoft/WSL/issues/10397#issuecomment-1780132430
+Edit problematic /var/lib/dpkg/info/<package>.postinst
+Add `--dry-run` to `systemd-sysusers` command
 
 /* prefer IPv4 when IPv6 is broken */
 see ipv6.txt
