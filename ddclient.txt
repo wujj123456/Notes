@@ -1,44 +1,16 @@
 ddclient
 
-http://blog.anofsinger.com/2007/10/setup-ddclient-for-dyndns-and-opendns.html
-
-/* log */
-/var/log/syslog
-
-/* start daemon */
-sudo /etc/init.d/ddclient start | restart | stop
-
-# Configuration file for ddclient
-#
-# /etc/ddclient.conf
-
-daemon=300                      # check every 300 seconds
-syslog=yes                      # log update msgs to syslog
-pid=/var/run/ddclient.pid
+/* example config */
+daemon=30m
+protocol=dyndns2
+use=web, web=checkip.spdyn.de
+server=update.spdyn.de
+login=<domain>
+password=<password>
+<domain>
 ssl=yes
 
-### Select one of these options to determine your IP address
-## via hardware interface (if you don't have a router/firewall)
-#use=if, if=eth0
-## via our CheckIP server
-
-use=web, web=checkip.dyndns.com/, web-skip='Current IP Address: '
-
-## from the status page for a linksys router/firewall
-#use=linksys, fw=linksys, fw-login=admin, fw-p
-
-#DynDNS for [dyndns_host_name, e.g. bob.ath.cx or bob.dyndns.org]
-################################################################
-server=members.dyndns.org
-protocol=dyndns2
-login=[login]
-password=[password]
-[dyndns_host_name], [dyndns_host_name_2]
-
-#Dynamic IP for [OPENDNS_NETWORK_NAME] OpenDNS account
-######################################################
-server=updates.opendns.com
-protocol=dyndns2
-login=[login]
-password=[password]
-[OPENDNS_NETWORK_NAME]
+/* update IPv4 and IPv6 together */
+https://github.com/ddclient/ddclient/issues/632
+usev4=web, web=ipify-ipv4 some-domain.ericv.example.com
+usev6=web, web=ipify-ipv6 some-domain.ericv.example.com
