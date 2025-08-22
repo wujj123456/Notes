@@ -1,5 +1,0 @@
-apt-file
-
-/* search packages for files */
-apt-file update
-apt-file search <>

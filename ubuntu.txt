@@ -1,5 +1,13 @@
 Ubuntu
 
+/* force apt to use IPv4/IPv6 */
+-o Acquire::ForceIPv4=true
+
+/* make apt use proxy */
+https://askubuntu.com/questions/35223/syntax-for-socks-proxy-in-apt-conf
+/etc/apt/apt.conf.d/30proxy.conf
+Acquire::http::proxy "socks5h://server:port";
+
 /* disable user namespaces restriction */
 https://github.com/lima-vm/lima/issues/2319
 echo "kernel.apparmor_restrict_unprivileged_userns = 0" > /etc/sysctl.d/99-userns.conf

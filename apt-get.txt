@@ -1,4 +1,0 @@
-apt-get
-
-/* force ipv4 */
--o Acquire::ForceIPv4=true
