@@ -12,5 +12,5 @@ ssl=yes
 
 /* update IPv4 and IPv6 together */
 https://github.com/ddclient/ddclient/issues/632
-usev4=web, web=ipify-ipv4 some-domain.ericv.example.com
-usev6=web, web=ipify-ipv6 some-domain.ericv.example.com
+usev4=webv4, webv4=ipify-ipv4 some-domain.ericv.example.com
+usev6=webv6, webv6=ipify-ipv6 some-domain.ericv.example.com
