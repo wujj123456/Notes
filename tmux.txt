@@ -2,6 +2,9 @@ tmux
 
 http://www.ubuntugeek.com/tmux-terminal-multiplexer.html
 
+/* rename a window/pane */
+C-b ,
+
 /* auto renumber windows */
 set-option -g renumber-windows on
 
