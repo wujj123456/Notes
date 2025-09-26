@@ -1,5 +1,28 @@
 vmware
 
+/* NAT ssh configuration */
+https://superuser.com/questions/244324/how-can-i-set-it-up-so-i-can-ssh-into-my-vmware-guest-vm
+Edit C:\ProgramData\VMware\vmnetdhcp.conf or /etc/vmware/vmnet8/dhcp/dhcp.conf
+```
+# Just like a normal dhcpd reservation
+host my_vm_1 {
+     hardware ethernet *your_vm_eth_mac_here**;
+     # This is in default range for guests, but outside the 'pool'.
+     # - check that it matches your vmware config
+     fixed-address 192.168.198.10;
+     # And/or your own internal nameserver etc
+     option domain-name-servers 8.8.8.8;
+     option domain-name "some_domain_suffix";
+     # This is the default default-route of the VM
+     option routers 192.168.198.2;
+}
+```
+Edit C:\ProgramData\VMware\vmnetnat.conf or /etc/vmware/vmnet8/nat/nat.conf
+```
+[incomingtcp]
+22222 = 192.168.198.10:22
+```
+
 /* shrink/compat disk for Linux guest VM */
 vmware-toolbox-cmd disk shrink /
 
