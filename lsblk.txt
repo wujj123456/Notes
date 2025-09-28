@@ -9,3 +9,6 @@ lsblk --discard
 /* list block devices */
 http://www.tecmint.com/useful-linux-commands-for-newbies/
 lsblk
+
+/* show disk uuid */
+ls -l /dev/disk/by-uuid/
