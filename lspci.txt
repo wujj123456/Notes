@@ -9,3 +9,6 @@ lspci -nn
 
 /* check PCIE speed */
 sudo lspci -vvv
+
+/* disable pci device */
+echo 1 > /sys/devices/pci0000:00/0000:00:02.1/remove
