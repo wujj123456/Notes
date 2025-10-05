@@ -1,0 +1,8 @@
+nmcli
+
+/* arch package */
+pacman -Sy networkmanager
+
+/* common commands */
+nmcli device wifi list
+nmcli device wifi connect SSID_or_BSSID password PASSWORD
