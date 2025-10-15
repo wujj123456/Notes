@@ -2,6 +2,9 @@ tmux
 
 http://www.ubuntugeek.com/tmux-terminal-multiplexer.html
 
+/* go to windows 10+ */
+C-b '
+
 /* rename a window/pane */
 C-b ,
 
