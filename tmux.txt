@@ -46,6 +46,12 @@ tmux new -s <session-name>
 /* list active sessions */
 tmux list-session
 
+/* attach to specific session */
+tmux attach -t <name>
+
+/* rename session */
+C-b $
+
 /* re-order/move windows */
 http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows
 let window number 3 and window number 1 swap their positions:
