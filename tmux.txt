@@ -2,6 +2,10 @@ tmux
 
 http://www.ubuntugeek.com/tmux-terminal-multiplexer.html
 
+/* rotate pane layouts */
+C-b Space
+:rotate-windows
+
 /* go to windows 10+ */
 C-b '
 
