@@ -1,5 +1,11 @@
 Ubuntu
 
+/* ubuntu 25.10 amdgpu gdm crash */
+https://medium.com/@techstoriesonline/fixing-gdm-login-screen-failure-after-ubuntu-25-10-31a6473e52e6
+sudo mv /etc/ld.so.conf.d/20-amdgpu.conf /etc/ld.so.conf.d/20-amdgpu.conf.disabled
+sudo ldconfig
+sudo systemctl restart gdm
+
 /* install newer hwe kernels on LTS */
 sudo apt-get install --install-recommends linux-generic-hwe-24.04
 
