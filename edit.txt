@@ -1,0 +1,4 @@
+edid
+
+/* query HDMI information */
+edid-decode /sys/class/drm/card1-HDMI-A-1/edid
