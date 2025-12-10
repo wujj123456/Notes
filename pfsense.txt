@@ -1,5 +1,8 @@
 pfsense
 
+/* stablize unbound */
+Disable DNS registration in DHCP settings and each interface
+
 /* Documents */
 https://www.netgate.com/docs/pfsense/
 
