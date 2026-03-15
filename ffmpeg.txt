@@ -1,5 +1,15 @@
 ffmpeg / avconv
 
+/* concat videos */
+https://trac.ffmpeg.org/wiki/Concatenate
+
+> cat mylist.txt
+file '/path/to/file1.wav'
+file '/path/to/file2.wav'
+file '/path/to/file3.wav'
+
+ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.wav
+
 /* extract one frame */
 https://superuser.com/questions/1009969/how-to-extract-a-frame-out-of-a-video-using-ffmpeg
 ffmpeg -i <input> -vf "select=eq(n\,34)" -vframes 1 out.png
