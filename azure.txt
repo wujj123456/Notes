@@ -1,0 +1,7 @@
+Azure
+
+/* create VM from image */
+az vm create --resource-group CPDN --name "cpdn-azure-10" --image "Canonical:ubuntu-26_04-lts:server:latest" --os-disk-name "cpdn-10-disk-newzealandnorth" --os-disk-size-gb "32" --size "Standard_F4ams_v6" --priority "spot" --nics "cpdn-10-nic-newzealandnorth" --nic-delete-option "Detach" --os-disk-delete-option "Detach" --location "newzealandnorth" --admin-username "azureuser" --ssh-key-values $(cat ~/.ssh/authorized_keys)
+
+/* create VM from existing disk */
+az vm create --resource-group CPDN --name "cpdn-azure-8" --attach-os-disk "cpdn-8-disk-newzealandnorth" --os-type "linux" --size "Standard_F4ams_v6" --priority "spot" --nics "cpdn-8-nic-newzealandnorth" --nic-delete-option "Detach" --os-disk-delete-option "Detach" --location "newzealandnorth"
