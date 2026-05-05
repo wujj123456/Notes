@@ -1,5 +1,11 @@
 ffmpeg / avconv
 
+/* select streams and combine into a new video */
+ffmpeg -i 1.mp4 -itsoffset 1.0 -i 2.mp4 -c copy -map 1:v:0 -map 0:a:0 -map_metadata 1 output.mp4
+-itsoffset: offset time
+-map: select streams
+-map_metadata: select metadata
+
 /* concat videos */
 https://trac.ffmpeg.org/wiki/Concatenate
 
