@@ -1,0 +1,16 @@
+podman
+
+/* list all images */
+podman image list -a
+
+/* prune all images not in use */
+podman image prune -a
+
+/* clean up all unused system resources */
+podman system prune --all
+
+/* check which container is using image */
+podman ps --all --storage
+
+/* force remove all images */
+podman rmi --all --force
