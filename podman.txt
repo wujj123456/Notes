@@ -14,3 +14,6 @@ podman ps --all --storage
 
 /* force remove all images */
 podman rmi --all --force
+
+/* remove build containers */
+buildah rm --all
