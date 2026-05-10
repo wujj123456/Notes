@@ -1,5 +1,8 @@
 luks
 
+/* find uuid of luks device */
+sudo cryptsetup luksUUID <device>
+
 /* delete specific key slot */
 https://askubuntu.com/questions/1125246/how-to-remove-an-unknown-key-from-luks-with-cryptsetup
 # first use -v open to check active slots
