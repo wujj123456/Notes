@@ -1,5 +1,8 @@
 ssh-keygen
 
+/* change passphrase after creation */
+ssh-keygen -p
+
 /* generate public key from private key */
 ssh-keygen -y
 
