@@ -1,5 +1,9 @@
 nfs
 
+/* mount options */
+https://syncopio.com/blog/nfs-mount-cheat-sheet/
+rw,hard,noatime,rsize=1048576,wsize=1048576,nconnect=8
+
 /* check nfs mount version */
 nfsstat -m
 
