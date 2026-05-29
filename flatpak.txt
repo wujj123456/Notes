@@ -1,0 +1,5 @@
+flatpak
+
+/* clean up packages and repo */
+flatpak  uninstall --unused
+flatpak repair
