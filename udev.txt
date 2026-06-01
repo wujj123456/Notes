@@ -1,0 +1,10 @@
+udev
+
+/* query properties */
+udevadm info --query=property --path=/sys/class/net/eth0
+
+/* attribute walk */
+udevadm info --attribute-walk --path=/sys/class/net/eth0
+
+/* debug udev rules */
+udevadm test /sys/class/net/eth0 -v
