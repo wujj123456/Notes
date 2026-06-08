@@ -1,5 +1,8 @@
 docker
 
+/* fix permission errors */
+usermod -aG docker $USER
+
 /* always run and on boot */
 docker run --restart=always
 
