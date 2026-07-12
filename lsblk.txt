@@ -1,5 +1,8 @@
 lsblk
 
+/* list with serial */
+lsblk -d -o +SERIAL
+
 /* list with drive model name */
 lsblk -d -o +MODEL
 
