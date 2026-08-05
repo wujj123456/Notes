@@ -1,5 +1,8 @@
 vim
 
+/* clean up wrong newline format */
+:set ff=unix
+
 /* split evenly */
 ^w, =
 
