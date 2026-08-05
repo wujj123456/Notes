@@ -1,16 +1,13 @@
 ddclient
 
-/* example config */
+/* example config for ddclient 4.0+ */
+ssl=yes
 daemon=30m
+
 protocol=dyndns2
-use=web, web=checkip.spdyn.de
 server=update.spdyn.de
 login=<domain>
 password=<password>
 <domain>
-ssl=yes
-
-/* update IPv4 and IPv6 together */
-https://github.com/ddclient/ddclient/issues/632
-usev4=webv4, webv4=ipify-ipv4 some-domain.ericv.example.com
-usev6=webv6, webv6=ipify-ipv6 some-domain.ericv.example.com
+usev4=webv4, webv4=ipify-ipv4
+usev6=webv6, webv6=ipify-ipv6
