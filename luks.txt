@@ -75,3 +75,57 @@ https://forum.cgsecurity.org/phpBB3/viewtopic.php?t=7513
 sudo hexdump -C <device> | grep LUKS
 # use testdisk to analyze and write partition table
 testdisk
+
+/* boot with usb drive */
+https://www.tqdev.com/2022-luks-with-usb-unlock/
+
+# generate uuid
+sudo apt install uuid
+uuid
+85125e5e-7bc4-11ec-afea-67650910c179
+
+# create and copy key to usb
+dd if=/dev/urandom bs=1 count=256 > 85125e5e-7bc4-11ec-afea-67650910c179.lek
+cp 85125e5e-7bc4-11ec-afea-67650910c179.lek /media/maurits/B54D-B744
+
+# add key to luks partition
+sudo blkid --match-token TYPE=crypto_LUKS -o device
+sudo cryptsetup luksAddKey /dev/sda3 85125e5e-7bc4-11ec-afea-67650910c179.lek
+# Change original /etc/crypttab
+sda3_crypt UUID=b9570e0f-3bd3-40b0-801f-ee20ac460207 none luks,discard
+# To
+sda3_crypt UUID=b9570e0f-3bd3-40b0-801f-ee20ac460207 85125e5e-7bc4-11ec-afea-67650910c179 luks,discard,keyscript=/bin/luksunlockusb
+
+# script
+cat << "END" > luksunlockusb
+#!/bin/sh
+set -e
+if [ ! -e /mnt ]; then
+    mkdir -p /mnt
+    sleep 3
+fi
+for usbpartition in /dev/disk/by-id/usb-*-part1; do
+    usbdevice=$(readlink -f $usbpartition)
+    if mount -t vfat $usbdevice /mnt 2>/dev/null; then
+        if [ -e /mnt/$CRYPTTAB_KEY.lek ]; then
+            cat /mnt/$CRYPTTAB_KEY.lek
+            umount $usbdevice
+            exit
+        fi
+        umount $usbdevice
+    fi
+done
+/lib/cryptsetup/askpass "Insert USB key and press ENTER: "
+END
+
+chmod 755 luksunlockusb
+sudo mv luksunlockusb /bin/luksunlockusb
+
+# initrd modules
+/etc/initramfs-tools/modules
+vfat
+nls_cp437
+nls_ascii
+usb_storage
+
+sudo update-initramfs -u
