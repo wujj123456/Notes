@@ -1,5 +1,9 @@
 Python
 
+/* wide char support for tabulate */
+pip install -U 'tabulate[widechars]'
+apt install python3-wcwidth
+
 /* force unbuffering of stdout/stderr */
 https://jvns.ca/blog/2024/11/29/why-pipes-get-stuck-buffering/
 python -u

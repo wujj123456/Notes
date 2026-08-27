@@ -1,5 +1,8 @@
 youtube-dl / yt-dlp
 
+/* install all dependencies */
+pip install -U 'yt-dlp[default]'
+
 /* download VR video */
 https://github.com/yt-dlp/yt-dlp/issues/9903
 yt-dlp --extractor-arg "youtube:player_client=android_vr"
