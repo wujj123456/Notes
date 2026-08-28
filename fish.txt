@@ -1,5 +1,9 @@
 fish
 
+/* disable greeting */
+https://fishshell.com/docs/current/cmds/fish_greeting.html
+set -U fish_greeting
+
 /* accept only next word from suggestion */
 alt + right
 
