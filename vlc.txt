@@ -24,3 +24,10 @@ vlc -I http [--http-src /directory/ --http-host host:port]
 cvlc
 cvlc <file or .m3u playlist>
 cvlc --random <folder>
+
+/* libaacs bluray */
+download libaacs and copy into VLC directory
+https://github.com/KnugiHK/libaacs-libbdplus-windows/releases
+copy keydb.cfg
+Windows: C:\ProgramData\aacs
+Linux: ~/.config/aacs/
