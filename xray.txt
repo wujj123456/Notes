@@ -1,0 +1,13 @@
+xray
+
+/* install */
+https://github.com/XTLS/Xray-install
+
+/* config */
+https://github.com/XTLS/Xray-examples/tree/main/VLESS-TCP-XTLS-Vision-REALITY
+
+/* client */
+https://github.com/2dust/v2rayNG/releases
+
+/* oracle cloud iptables */
+sudo iptables -I INPUT 5 -p tcp --dport 443 -m conntrack --ctstate NEW -j ACCEPT
