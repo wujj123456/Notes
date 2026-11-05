@@ -1,0 +1,9 @@
+cpupower
+
+https://ubuntu.com/server/docs/explanation/performance/perf-tune-cpupower/#the-cpupower-tool
+
+/* display basic info */
+cpupower monitor
+
+/* set frequency or governor */
+cpupower frequency-set --max 5G
