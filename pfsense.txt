@@ -8,3 +8,7 @@ https://www.netgate.com/docs/pfsense/
 
 /* traffic totals db backup */
 /var/db/vnstat/vnstat.db
+
+/* update packages from cli */
+https://www.netgate.com/blog/critical-php-security-update
+pfSense-upgrade -c && pkg upgrade -y && pkg upgrade -fy pfSense-pkg-WireGuard && /etc/rc.reboot
