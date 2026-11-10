@@ -1,5 +1,8 @@
 ssh
 
+/* verify sshd config */
+sshd -T
+
 /* preserve color for remote command */
 https://askubuntu.com/questions/16336/how-to-get-coloured-terminal-over-ssh
 ssh -t
