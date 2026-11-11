@@ -1,0 +1,4 @@
+gputaskman
+
+https://github.com/shanselman/gputaskman/
+pipx install gputaskman
