@@ -1,5 +1,9 @@
 perf
 
+/* avx perf on amd zen 4 */
+perf top -e fp_ops_retired_by_width.pack_256_uops_retired
+perf top -e fp_ops_retired_by_width.pack_512_uops_retired
+
 /* general performance */
 perf stat -e cache-references,cache-misses,cycles,instructions,branches,faults,migrations
 
